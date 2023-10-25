@@ -9,10 +9,10 @@
 
 class Read {
     private:
-        static vector<Classes> aula;
+        vector<Classes> aula;
     public:
         void Read_Classes();
-        static vector<Classes> getCLass();
+        vector<Classes> getClass();
 
 };
 

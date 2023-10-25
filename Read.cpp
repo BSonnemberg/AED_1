@@ -1,39 +1,41 @@
-//
-// Created by Beatriz Sonnemberg on 25/10/2023.
-//
-
 #include "Read.h"
 #include "Classes.h"
 #include <fstream>
 #include <sstream>
-using namespace  std;
+#include <string>
+#include <iostream>
 
 void Read::Read_Classes() {
-    string ClassCode,UcCode,Weekday,Type;
-    double StartHour,Duration;
-    char c;
-    vector<Classes> aula;
-    string file = "classes.txt";
-    string line;
-    ifstream in(file);
-    while (!in.eof()) {
-        getline(in, line);
-        istringstream iss(line);
-        getline(iss, ClassCode,c);
-        getline(iss, UcCode,c);
-        getline(iss, Weekday,c);
-        iss >> StartHour >> c;
-        iss >> Duration >> c;
-        getline(iss, Type,c);
 
-        Classes classes = Classes(ClassCode, UcCode, Weekday,StartHour,Duration,Type);
+    std::string classCode, ucCode, weekDay, type;
+    std::string dir = "classes.txt", line;
+    std::ifstream input(dir);
+    double startHour, duration;
+    char sep = ',';
+
+    // ignore first line
+    getline(input, line);
+
+    while (getline(input, line)) {
+
+        std::stringstream stream(line);
+        // get schedule details
+        getline(stream, classCode, sep);
+        getline(stream, ucCode, sep);
+        getline(stream, weekDay, sep);
+
+        startHour = std::stod(stream.str());
+        duration = std::stod(stream.str());
+        getline(stream, type, sep);
+
+        Classes classes = Classes(classCode, ucCode, weekDay, startHour, duration, type);
         aula.push_back(classes);
-
     }
 }
 
-std::vector<Classes> Read::getCLass(){
+std::vector<Classes> Read::getClass(){
     return aula;
+
     
 }
 
