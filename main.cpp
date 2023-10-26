@@ -7,7 +7,16 @@ int main() {
     Read reader;
     reader.Read_Classes();
     std::vector<Classes> aux = reader.getClass();
-    for(size_t i = 0; i < aux.size(); i++)
-        cout << aux[i].getClassCode();
+
+    cout << aux[0].getClassCode() << '\n';
+    cout << aux[0].getUcCode() << '\n';
+    cout << aux[0].getWeekday()<< '\n';
+    cout << aux[0].getStartHour()<< '\n';
+    cout << aux[0].getDuration()<< '\n';
+    cout << aux[0].getType()<< '\n';
+
+
+
+
     return 0;
 }

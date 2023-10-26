@@ -4,31 +4,33 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+using namespace std;
 
 void Read::Read_Classes() {
 
-    std::string classCode, ucCode, weekDay, type;
-    std::string dir = "classes.txt", line;
-    std::ifstream input(dir);
-    double startHour, duration;
+    string ClassCode, UcCode, Weekday, Type;
+    string dir = "../schedule/classes.csv", line;
+    ifstream input(dir);
+    double StartHour, Duration;
     char sep = ',';
 
-    // ignore first line
+
     getline(input, line);
 
     while (getline(input, line)) {
 
-        std::stringstream stream(line);
-        // get schedule details
-        getline(stream, classCode, sep);
-        getline(stream, ucCode, sep);
-        getline(stream, weekDay, sep);
+        stringstream iss(line);
 
-        startHour = std::stod(stream.str());
-        duration = std::stod(stream.str());
-        getline(stream, type, sep);
+        getline(iss, ClassCode, sep);
+        getline(iss, UcCode, sep);
+        getline(iss, Weekday, sep);
+        iss>> StartHour >> sep;
+        iss>> Duration >> sep;
+        getline(iss, Type);
 
-        Classes classes = Classes(classCode, ucCode, weekDay, startHour, duration, type);
+
+
+        Classes classes = Classes(ClassCode, UcCode, Weekday, StartHour, Duration, Type);
         aula.push_back(classes);
     }
 }

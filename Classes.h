@@ -6,11 +6,18 @@
 using namespace std;
 
 class Classes {
-    string ClassCode,UcCode,Weekday,Type;
-    double StartHour,Duration;
+    private:
+        string ClassCode,UcCode,Weekday,Type;
+        double StartHour,Duration;
     public:
-        string getClassCode();
         Classes(string ClassCode, string UcCode,string Weekday,double StartHour,double Duration,string Type);
+
+        string getClassCode();
+        string getUcCode();
+        string getWeekday();
+        string getType();
+        double getStartHour();
+        double getDuration();
 
 
 
