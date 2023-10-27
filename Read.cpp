@@ -14,11 +14,9 @@ void Read::Read_Classes() {
     double StartHour, Duration;
     char sep = ',';
 
-
     getline(input, line);
 
     while (getline(input, line)) {
-
         stringstream iss(line);
 
         getline(iss, ClassCode, sep);
@@ -29,15 +27,44 @@ void Read::Read_Classes() {
         getline(iss, Type);
 
 
-
         Classes classes = Classes(ClassCode, UcCode, Weekday, StartHour, Duration, Type);
         aula.push_back(classes);
     }
 }
 
-std::vector<Classes> Read::getClass(){
+vector<Classes> Read::getClassvector(){
     return aula;
 
     
+}
+
+void Read::Read_Student() {
+    int StudentCode;
+    string StudentName, UcCode,ClassCode;
+
+    string  dir = "../schedule/students_classes.csv", line;
+
+    ifstream input(dir);
+    char sep =',';
+
+    getline(input,line);
+
+    while(getline(input,line)){
+        stringstream iss (line);
+
+        iss >> StudentCode >> sep;
+        getline(iss, StudentName, sep);
+        getline(iss, UcCode, sep);
+        getline(iss, ClassCode);
+
+        Student student = Student(StudentCode,StudentName,UcCode,ClassCode);
+        students.push_back(student);
+    }
+
+
+}
+
+vector<Student> Read::getStudentvector() {
+    return students;
 }
 
