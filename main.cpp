@@ -24,9 +24,5 @@ int main() {
     cout << aux1[0].getUcCode()<< '\n';
     cout << aux1[0].getClassCode()<< '\n';
 
-
-
-
-
     return 0;
 }
