@@ -1,15 +1,17 @@
 # ninja log v5
 576	690	1698253874117410077	Projeto_AED	5ea6e2387e3894e8
 7487	9122	7201453384724714	CMakeFiles/Projeto_AED.dir/Classes.cpp.obj	56e670552a51375c
-7454	9779	7201453391294684	CMakeFiles/Projeto_AED.dir/main.cpp.obj	2a025a032e4adb1d
-7473	9806	7201453391474717	CMakeFiles/Projeto_AED.dir/Read.cpp.obj	8bc5a70d8a6da69d
-9807	10153	7201453395034669	Projeto_AED.exe	bdb65023eee60a08
-88	1725	7201472876705919	CMakeFiles/Projeto_AED.dir/Student.cpp.obj	143a9542e643810a
-49	2068	7201472880001856	CMakeFiles/Projeto_AED.dir/main.cpp.obj	2a025a032e4adb1d
-18	2392	7201474791258709	CMakeFiles/Projeto_AED.dir/main.cpp.obj	2a025a032e4adb1d
-116	2433	7201474791701490	CMakeFiles/Projeto_AED.dir/Read.cpp.obj	8bc5a70d8a6da69d
-37	3166	7201475626209699	CMakeFiles/Projeto_AED.dir/main.cpp.obj	2a025a032e4adb1d
-53	3532	7201475630185786	CMakeFiles/Projeto_AED.dir/Read.cpp.obj	8bc5a70d8a6da69d
-3538	3821	7201475633035933	Projeto_AED.exe	428bfeb1fa67eeb7
 6	1183	7201475833891539	CMakeFiles/Projeto_AED.dir/main.cpp.obj	2a025a032e4adb1d
+53	3532	7201475630185786	CMakeFiles/Projeto_AED.dir/Read.cpp.obj	8bc5a70d8a6da69d
+88	1725	7201472876705919	CMakeFiles/Projeto_AED.dir/Student.cpp.obj	143a9542e643810a
 1184	1462	7201475836700539	Projeto_AED.exe	428bfeb1fa67eeb7
+1	1401	7203830392110465	CMakeFiles/Projeto_AED.dir/main.cpp.obj	7dbbfabd67dd2d9e
+247	1497	7203830393367183	CMakeFiles/Projeto_AED.dir/Classes.cpp.obj	6c7683006a9c9f17
+545	1830	7203830396597046	CMakeFiles/Projeto_AED.dir/Student.cpp.obj	b016979e5e085628
+451	2189	7203830400508359	CMakeFiles/Projeto_AED.dir/classes_per_uc.cpp.obj	617ebd150b308795
+316	3161	7203830410348032	CMakeFiles/Projeto_AED.dir/Read.cpp.obj	1554abdd330552a6
+3161	3620	7203830414797883	Projeto_AED.exe	a5debb55a21ee38c
+6	1588	7203832982131614	CMakeFiles/Projeto_AED.dir/main.cpp.obj	7dbbfabd67dd2d9e
+1589	1856	7203832984701478	Projeto_AED.exe	a5debb55a21ee38c
+5	1524	7203833742761818	CMakeFiles/Projeto_AED.dir/main.cpp.obj	7dbbfabd67dd2d9e
+1525	1863	7203833746074959	Projeto_AED.exe	a5debb55a21ee38c

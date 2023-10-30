@@ -68,3 +68,29 @@ vector<Student> Read::getStudentvector() {
     return students;
 }
 
+void Read::Read_classes_per_uc() {
+    string UcCode, ClassCode;
+
+    string dir = "../schedule/classes_per_uc.csv";
+    string line;
+
+    ifstream input(dir);
+    char sep = ',';
+
+    getline(input, line);
+
+    while (getline(input, line)) {
+        stringstream iss(line);
+
+        getline(iss, UcCode, sep);
+        getline(iss, ClassCode);
+
+        classes_per_uc classesPerUcEntry = classes_per_uc(UcCode, ClassCode);
+        classesPerUC.push_back(classesPerUcEntry);
+    }
+}
+
+vector<classes_per_uc> Read::getClassesPerUCvector() {
+    return classesPerUC;
+}
+

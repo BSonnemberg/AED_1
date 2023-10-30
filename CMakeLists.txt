@@ -10,4 +10,6 @@ add_executable(Projeto_AED main.cpp
         Classes.h
         Student.cpp
         Student.h
-        Student.h)
+        Student.h
+        classes_per_uc.cpp
+        classes_per_uc.h)
