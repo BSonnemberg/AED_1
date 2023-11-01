@@ -4,6 +4,8 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include "Student.h"
+#include <algorithm>
 using namespace std;
 
 void Read::Read_Classes() {
@@ -28,12 +30,15 @@ void Read::Read_Classes() {
 
 
         Classes classes = Classes(ClassCode, UcCode, Weekday, StartHour, Duration, Type);
-        aula.push_back(classes);
+        lesson.push_back(classes);
+
     }
+
+
 }
 
 vector<Classes> Read::getClassvector(){
-    return aula;
+    return lesson;
 
     
 }
@@ -67,4 +72,36 @@ void Read::Read_Student() {
 vector<Student> Read::getStudentvector() {
     return students;
 }
+
+
+
+
+
+
+
+
+
+int Read::weekdayToNumber(const std::string& day) {
+    // Mapeamento dos dias da semana para números
+    if (day == "Monday") return 1;
+    if (day == "Tuesday") return 2;
+    if (day == "Wednesday") return 3;
+    if (day == "Thursday") return 4;
+    if (day == "Friday") return 5;
+    return 0; // Em caso de erro ou dia inválido
+}
+
+void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula) {
+    std::sort(aula.begin(), aula.end(), [this](Classes a, Classes b) {
+        // Primeiro, compara os dias da semana
+        if (weekdayToNumber(a.getWeekday()) != weekdayToNumber(b.getWeekday())) {
+            return weekdayToNumber(a.getWeekday()) < weekdayToNumber(b.getWeekday());
+        } else {
+            // Se os dias forem iguais, compara as horas de início
+            return a.getStartHour() < b.getStartHour();
+        }
+    });
+}
+
+
 

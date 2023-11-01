@@ -10,7 +10,7 @@
 
 class Read {
     private:
-        vector<Classes> aula;
+        vector<Classes> lesson;
         vector<Student> students;
     public:
         void Read_Classes();
@@ -18,6 +18,16 @@ class Read {
 
         void Read_Student();
         vector<Student> getStudentvector();
+
+    bool compareStudentCodes(Student a, Student b);
+    void sortStudentsByCode(std::vector<Student>& students);
+
+
+
+    int weekdayToNumber(const std::string& day);
+    void sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula);
+
+
 
 };
 

@@ -10,4 +10,13 @@ add_executable(Projeto_AED main.cpp
         Classes.h
         Student.cpp
         Student.h
-        Student.h)
+        Student.h
+        Schedule.cpp
+        Schedule.h
+        Menu.cpp
+        Menu.h
+        Menu.cpp
+        Menu.cpp
+        Menu.cpp
+        Menu.cpp
+)
