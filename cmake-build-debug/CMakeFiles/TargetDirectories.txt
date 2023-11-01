@@ -1,3 +1,0 @@
-C:/Users/Marta/Desktop/FEUP-AED-project/cmake-build-debug/CMakeFiles/Projeto_AED.dir
-C:/Users/Marta/Desktop/FEUP-AED-project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Marta/Desktop/FEUP-AED-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

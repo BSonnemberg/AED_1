@@ -11,6 +11,7 @@ add_executable(Projeto_AED main.cpp
         Student.cpp
         Student.h
         Student.h
+
         Schedule.cpp
         Schedule.h
         Menu.cpp
@@ -19,4 +20,7 @@ add_executable(Projeto_AED main.cpp
         Menu.cpp
         Menu.cpp
         Menu.cpp
-)
+
+        classes_per_uc.cpp
+        classes_per_uc.h)
+
