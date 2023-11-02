@@ -40,10 +40,10 @@ bool Slot::overlaps(Slot& other) {
     if (this->weekDay != other.getWeekDay()) {
         return false;
     }
-    if (this->startTime >= other.getEndTime()  this->endTime <= other.getStartTime()) {
+    if (this->startTime >= other.getEndTime() ||  this->endTime <= other.getStartTime()) {
         return false;
     }
-    if(this->type == "T"  other.getType() == "T") {
+    if(this->type == "T" || other.getType() == "T") {
         return false;
     }
     return true;
