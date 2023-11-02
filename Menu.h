@@ -6,6 +6,7 @@
 #define PROJETO_AED_MENU_H
 #include <iostream>
 #include "Schedule.h"
+#include "Requests.h"
 using namespace std;
 
 class Menu {
@@ -18,6 +19,7 @@ class Menu {
         void menuStudentUC();
         void menuStudentClass();
         void menuStudentClassUC();
+        void menuChangeClass();
 };
 
 

@@ -12,8 +12,12 @@ using namespace std;
 
 int main() {
 
-    Menu menu;
-    menu.firstMenu();
+    /*Menu menu;
+    menu.firstMenu();*/
+
+    Read reader;
+    Requests requests(reader);
+    requests.switchClass(202025232, "L.EIC002",  "1LEIC05");
 
 
 

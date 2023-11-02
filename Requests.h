@@ -21,8 +21,8 @@ public:
 
 
     Requests(Read& reader);
-    void switchClass( int StudentCode, std::string ucCode, std::string& newClassCode);
-    bool vacancy(std::string& ucCode, basic_string<char> oldClassCode, std::string& newClassCode);
+    void switchClass( int StudentCode, std::string ucCode, std::string newClassCode);
+    bool vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode);
     bool capacity (string ucCode, string newClassCode);
 
 private:

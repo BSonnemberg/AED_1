@@ -50,6 +50,9 @@ void Menu::firstMenu(){
                     menuStudentClassUC();
                     break;
                 case 7:
+                    menuChangeClass();
+                    break;
+                case 8:
                     std::cout << "Exiting the program. Goodbye!" << std::endl;
                     return; // Encerra o programa
                 default:
@@ -57,7 +60,7 @@ void Menu::firstMenu(){
                     break;
             }
         }
-    } while (option != 7);
+    } while (option != 8);
 
 }
 
@@ -158,4 +161,23 @@ void  Menu::menuStudentClassUC() {
         sorting = "Numerical";
     }
     schedule.printStudentClassUc(UcCode,ClassCode,sorting);
+}
+
+void Menu::menuChangeClass() {
+    int StudentCode;
+    std::string ucCode;
+    std::string newClassCode;
+    Read reader;
+    Requests request (reader);
+
+    cout << "Please insert the student code: ";
+    cin >> StudentCode;
+
+    cout << "Please insert the UC Code: ";
+    cin >> ucCode;
+
+    cout << "Please insert the New Class Code: ";
+    cin >> newClassCode;
+
+    request.switchClass(StudentCode,ucCode,newClassCode);
 }

@@ -5,7 +5,7 @@
 
 Requests::Requests(Read& reader) : reader(reader) {}
 
-bool Requests::vacancy(std::string& ucCode, basic_string<char> oldClassCode, std::string& newClassCode) {
+bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode) {
     std::vector<Student> students = reader.getStudentvector();
     int maxOccupancyDifference = 4; // Máxima diferença de ocupação permitida
 
@@ -41,12 +41,15 @@ bool Requests::vacancy(std::string& ucCode, basic_string<char> oldClassCode, std
     return true;
 }
 
-    void Requests::switchClass(int StudentCode, std::string ucCode, std::string &newClassCode) {
+    void Requests::switchClass(int StudentCode, std::string ucCode, std::string newClassCode) {
+        reader.Read_Student();
         std::vector<Student> students = reader.getStudentvector();
+
         bool studentFound = false;
 
 
-        for (Student &student: students) {
+        for (Student student: students) {
+
             if (student.getStudentCode() == StudentCode && student.getUcCode() == ucCode) {
                 studentFound = true;
 
@@ -55,7 +58,7 @@ bool Requests::vacancy(std::string& ucCode, basic_string<char> oldClassCode, std
                               << newClassCode << "." << std::endl;
                 } else {
                     // Verificar se a turma existe
-                    if (vacancy(ucCode, student.getClassCode(), newClassCode) && capacity(ucCode, newClassCode) ) {
+                    if (vacancy(ucCode, student.getClassCode(), newClassCode) && capacity(ucCode, newClassCode)) {
 
                         student.setClassCode(newClassCode);
                         std::cout << "The student " << student.getStudentName() << " was transferred to the class "
@@ -63,8 +66,7 @@ bool Requests::vacancy(std::string& ucCode, basic_string<char> oldClassCode, std
                         reader.updateStudentClass(StudentCode, ucCode, newClassCode);
                     } else if (!vacancy(ucCode, student.getClassCode(), newClassCode)) {
                         std::cout << "The change causes imbalance in classes" << std::endl;
-                    }
-                    else{
+                    } else {
                         cout << "Não há vagas na nova turma!";
                     }
 
@@ -72,11 +74,17 @@ bool Requests::vacancy(std::string& ucCode, basic_string<char> oldClassCode, std
 
                 break;
             }
-        }
 
+        }
         if (!studentFound) {
             std::cout << "Student not found." << std::endl;
         }
+
+
+
+
+
+
     }
 
 bool Requests::capacity(std::string ucCode, std::string newClassCode) {
