@@ -14,10 +14,11 @@ int main() {
 
     /*Menu menu;
     menu.firstMenu();*/
-
     Read reader;
     Requests requests(reader);
-    requests.switchClass(202025232, "L.EIC002",  "1LEIC05");
+
+
+    requests.switchUC(202031607,"L.EIC004","1LEIC05","L.EIC002");
 
 
 

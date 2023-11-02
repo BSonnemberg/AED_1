@@ -105,3 +105,122 @@ bool Requests::capacity(std::string ucCode, std::string newClassCode) {
 
 }
 
+
+
+
+
+
+
+
+
+bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassCode) {
+    reader.Read_Student();
+    std::vector<Student> students = reader.getStudentvector();
+    int ucCount = 0;
+    string studentName;
+
+    for (Student student : students) {
+
+        if (student.getStudentCode() == StudentCode) {
+            studentName = student.getStudentName();
+
+
+
+            if(student.getUcCode()==ucCode) {
+
+
+                cout << "Student is already registered for the specified UC.";
+                return false;
+            }
+
+        ucCount++;
+
+        }
+    }
+
+
+    if (ucCount >= 7) {
+        std::cout << "The student is already registered in 7 UCs. Cannot add more." << std::endl;
+        return false;
+    }
+
+    // Verificar se há vaga na nova UC.
+    else if (!capacity( ucCode, newClassCode)) {
+        std::cout << "No vacancy in the new UC. Cannot add." << std::endl;
+        return false;
+    }
+
+
+    else {
+        // Adicionar a UC para o aluno e atualizar o arquivo "students_classes.csv".
+        cout << studentName;
+        reader.addStudentClass(StudentCode, studentName, ucCode, newClassCode);
+        std::cout << "UC " << ucCode << " added to student " << StudentCode << "." << std::endl;
+        return true;
+    }
+}
+
+// Função para remover uma UC de um aluno
+bool Requests::removeUC(int StudentCode, string ucCode) {
+
+    std::vector<Student> students = reader.getStudentvector();
+    bool found = false;
+    string studentName;
+    string classCode;
+
+    for (Student& student : students) {
+
+        if (student.getStudentCode() == StudentCode && student.getUcCode() == ucCode ) {
+            studentName = student.getStudentName();
+            classCode = student.getClassCode();
+
+            found = true;
+            return true;
+        }
+        std::cout << "UC not found for the student." << std::endl;
+        return false;
+    }
+
+    // Remover a UC do aluno e atualizar o arquivo "students_classes.csv".
+    reader.removeStudentClass(StudentCode, studentName,ucCode, classCode);
+    std::cout << "UC " << ucCode << " removed from student " << StudentCode << "." << std::endl;
+
+    return true;
+}
+
+// Função para trocar de UC para um aluno
+void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, const std::string& newUCCode) {
+    string studentname;
+    Read reader;
+    reader.Read_Student();
+    if (!capacity(newClassCode,newClassCode)) {
+        std::cout << "Transfer not allowed. The class has reached its maximum occupancy difference." << std::endl;
+        return;
+    }
+    // Verificar conflito de horários.
+
+
+    std::vector<Student> students = reader.getStudentvector();
+    bool found = false;
+
+    for (Student& student : students) {
+        if (student.getStudentCode() == StudentCode) {
+            if (student.getUcCode() == ucCode) {
+
+                if (student.getClassCode() == newClassCode && student.getUcCode() == newUCCode) {
+                    std::cout << "The student " << student.getStudentName() << " is already in the class " << newClassCode << "in uc" << newUCCode <<  "." << std::endl;
+                } else {
+                    std::cout << "Student found." << std::endl;
+                }
+                found = true;
+                studentname = student.getStudentName();
+                break;
+            }
+        }
+    }
+
+    // Remover a UC atual e adicionar a nova UC para o aluno
+
+    removeUC(StudentCode, ucCode);
+    addUC(StudentCode,  newUCCode, newClassCode);
+}

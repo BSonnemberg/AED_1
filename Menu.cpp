@@ -20,7 +20,10 @@ void Menu::firstMenu(){
                   << "5 - Print the students of a given Class" << std::endl
                   << "6 - Print the students of a given Class and UC" << std::endl
                   << "7 - Change the student Class of a given UC" << endl
-                  << "8 - Exit" << std::endl;
+                  << "8 - Add  UC" << endl
+                  << "9 - Remove UC" << endl
+                  << "10 - Switch UC" << endl
+                  << "11 - Exit" << std::endl;
         std::cout << "Please insert a number: ";
 
         std::cin >> option;
@@ -53,6 +56,15 @@ void Menu::firstMenu(){
                     menuChangeClass();
                     break;
                 case 8:
+                    menuAddUc();
+                    break;
+                case 9:
+                    menuRemoveUc();
+                    break;
+                case 10:
+                    menuSwitchUC();
+                    break;
+                case 11:
                     std::cout << "Exiting the program. Goodbye!" << std::endl;
                     return; // Encerra o programa
                 default:
@@ -60,7 +72,7 @@ void Menu::firstMenu(){
                     break;
             }
         }
-    } while (option != 8);
+    } while (option != 11);
 
 }
 
@@ -180,4 +192,53 @@ void Menu::menuChangeClass() {
     cin >> newClassCode;
 
     request.switchClass(StudentCode,ucCode,newClassCode);
+}
+
+void Menu::menuAddUc() {
+    Read reader;
+    Requests request (reader);
+    int StudentCode;
+    std::string ucCode;
+    std::string newClassCode;
+    cout << "Please insert the student code: ";
+    cin >> StudentCode;
+    cout << "Please insert the new UC Code: ";
+    cin >> ucCode;
+    cout << "Please insert the new Class Code: ";
+    cin >> newClassCode;
+
+    request.addUC(StudentCode,ucCode,newClassCode);
+
+}
+
+void Menu::menuRemoveUc() {
+    Read reader;
+    Requests request (reader);
+    int StudentCode;
+    string ucCode;
+    cout << "Please insert the student code: ";
+    cin >> StudentCode;
+    cout << "Please insert the ucCode: ";
+    cin >> ucCode;
+    request.removeUC(StudentCode,ucCode);
+}
+
+void Menu::menuSwitchUC() {
+    Read reader;
+    Requests request (reader);
+    int StudentCode;
+    string ucCode;
+    string newClassCode;
+    string newUCCode;
+    cout << "Please insert the student code: ";
+    cin >> StudentCode;
+    cout << "Please insert the ucCode: ";
+    cin >> ucCode;
+    cout << "Please insert the new Class Code: ";
+    cin >> newClassCode;
+    cout << "Please insert the new UC Code: ";
+    cin >> newUCCode;
+
+    request.switchUC(StudentCode,ucCode,newClassCode, newUCCode);
+
 }

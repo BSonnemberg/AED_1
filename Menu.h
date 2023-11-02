@@ -20,6 +20,9 @@ class Menu {
         void menuStudentClass();
         void menuStudentClassUC();
         void menuChangeClass();
+        void menuAddUc();
+        void menuRemoveUc();
+        void menuSwitchUC();
 };
 
 

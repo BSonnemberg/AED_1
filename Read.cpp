@@ -167,6 +167,97 @@ void Read::updateStudentClass(int studentCode, string ucCode, string newClassCod
 }
 
 
+void Read::addStudentClass(int studentCode, const std::string& studentName, const std::string& ucCode, const std::string& classCode) {
+    // Abra o arquivo original para leitura
+    std::string filename = "../schedule/students_classes.csv";
+    std::ifstream inFile(filename);
+
+    if (!inFile.is_open()) {
+        std::cerr << "Error opening the file." << std::endl;
+        return;
+    }
+
+    // Verifique se a entrada já existe no arquivo
+    std::string line;
+    while (std::getline(inFile, line)) {
+        std::istringstream lineStream(line);
+        std::string currentStudentCode;
+        std::string currentStudentName;
+        std::string currentUcCode;
+        std::string currentClassCode;
+
+        if (std::getline(lineStream, currentStudentCode, ',') &&
+            std::getline(lineStream, currentStudentName, ',') &&
+            std::getline(lineStream, currentUcCode, ',') &&
+            std::getline(lineStream, currentClassCode)) {
+
+
+        }
+    }
+
+    // Agora abra o arquivo para adicionar a nova entrada
+    std::ofstream outFile(filename, std::ios::app);  // Abra o arquivo no modo de anexar
+
+    if (!outFile.is_open()) {
+        std::cerr << "Error opening the file for writing." << std::endl;
+        inFile.close();
+        return;
+    }
+
+    // Escreva a nova entrada no arquivo
+    outFile << studentCode << "," << studentName << "," << ucCode << "," << classCode << std::endl;
+
+    // Feche os arquivos
+    inFile.close();
+    outFile.close();
+}
+
+
+void Read::removeStudentClass(int studentCode,string studentName, string ucCode, string classCode) {
+    std::string filename = "../schedule/students_classes.csv";
+    std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome do arquivo temporário
+    std::ifstream inFile(filename);
+    std::ofstream outFile(tempFilename);
+    std::string line;
+    bool removed = false;
+
+    while (std::getline(inFile, line)) {
+        std::istringstream lineStream(line);
+        std::string currentStudentCode;
+        std::string currentstudentName, currentUcCode, currentclassCode;
+
+        if (std::getline(lineStream, currentStudentCode, ',') &&
+            std::getline(lineStream, currentstudentName, ',') &&
+            std::getline(lineStream, currentUcCode, ',') &&
+            std::getline(lineStream, currentclassCode)) {
+
+            if (currentStudentCode == std::to_string(studentCode) && currentUcCode == ucCode) {
+                // A entrada corresponde ao aluno e UC, então não a copiamos para o arquivo de saída (removemos).
+                removed = true;
+            } else {
+                // A entrada não corresponde, então a copiamos para o arquivo de saída.
+                outFile << currentStudentCode << "," << currentstudentName << "," << currentUcCode << "," << currentclassCode << '\n';
+            }
+        }
+    }
+
+    inFile.close();
+    outFile.close();
+
+    if (removed) {
+        if (std::remove(filename.c_str()) == 0 && std::rename(tempFilename.c_str(), filename.c_str()) == 0) {
+            // Sucesso ao substituir o arquivo original após a remoção da entrada.
+        } else {
+            std::cerr << "Error replacing the original file." << std::endl;
+        }
+    }
+}
+
+
+
+
+
+
 
 
 
