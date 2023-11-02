@@ -24,5 +24,8 @@ add_executable(Projeto_AED main.cpp
         Requests.cpp
         Requests.h
         Classes_Uc.cpp
-        Classes_Uc.h)
+        Classes_Uc.h
+        Slot.cpp
+        Slot.h
+        Slot.h)
 
