@@ -19,7 +19,8 @@ void Menu::firstMenu(){
                   << "4 - Print the students of a given UC" << std::endl
                   << "5 - Print the students of a given Class" << std::endl
                   << "6 - Print the students of a given Class and UC" << std::endl
-                  << "7 - Exit" << std::endl;
+                  << "7 - Change the student Class of a given UC" << endl
+                  << "8 - Exit" << std::endl;
         std::cout << "Please insert a number: ";
 
         std::cin >> option;

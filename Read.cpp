@@ -103,12 +103,9 @@ void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula) {
     });
 }
 
-
-
-void Read::Read_classes_per_uc() {
+void Read::Read_Classes_Per_Uc() {
     string UcCode, ClassCode;
-
-    string dir = "../schedule/classes_per_uc.csv";
+    string dir= "../schedule/classes_per_uc.csv";
     string line;
 
     ifstream input(dir);
@@ -116,19 +113,60 @@ void Read::Read_classes_per_uc() {
 
     getline(input, line);
 
-    while (getline(input, line)) {
+    while(getline(input, line)){
         stringstream iss(line);
 
         getline(iss, UcCode, sep);
         getline(iss, ClassCode);
 
-        classes_per_uc classesPerUcEntry = classes_per_uc(UcCode, ClassCode);
-        classesPerUC.push_back(classesPerUcEntry);
+        Classes_Uc classesPerUcEntry = Classes_Uc(UcCode, ClassCode);
+        classesPerUc.push_back(classesPerUcEntry);
     }
 }
 
-vector<classes_per_uc> Read::getClassesPerUCvector() {
-    return classesPerUC;
+vector<Classes_Uc> Read::getClassesPerUcvector() {
+    return classesPerUc;
 }
+void Read::updateStudentClass(int studentCode, string ucCode, string newClassCode) {
+    std::string filename = "../schedule/students_classes.csv";
+    std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome de arquivo temporário
+    std::ifstream inFile(filename);
+    std::ofstream outFile(tempFilename);
+    std::string line;
+    bool updated = false;
+
+    while (std::getline(inFile, line)) {
+        std::istringstream lineStream(line);
+        std::string currentStudentCode;
+        std::string studentName, currentUcCode, classCode;
+
+        if (std::getline(lineStream, currentStudentCode, ',') &&
+            std::getline(lineStream, studentName, ',') &&
+            std::getline(lineStream, currentUcCode, ',') &&
+            std::getline(lineStream, classCode)) {
+
+            if (currentStudentCode == std::to_string(studentCode) && currentUcCode == ucCode) {
+                outFile << studentCode << "," << studentName << "," << ucCode << "," << newClassCode << '\n';
+                updated = true;
+            } else {
+                outFile << currentStudentCode << "," << studentName << "," << currentUcCode << "," << classCode << '\n';
+            }
+        }
+    }
+
+    inFile.close();
+    outFile.close();
+
+    if (updated) {
+        if (std::remove(filename.c_str()) == 0 && std::rename(tempFilename.c_str(), filename.c_str()) == 0) {
+            // Sucesso ao substituir o arquivo original
+        } else {
+            std::cerr << "Error replacing the original file." << std::endl;
+        }
+    }
+}
+
+
+
 
 

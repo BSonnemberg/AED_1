@@ -21,6 +21,8 @@ add_executable(Projeto_AED main.cpp
         Menu.cpp
         Menu.cpp
 
-        classes_per_uc.cpp
-        classes_per_uc.h)
+        Requests.cpp
+        Requests.h
+        Classes_Uc.cpp
+        Classes_Uc.h)
 

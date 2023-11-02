@@ -19,7 +19,7 @@ class Student {
         string getStudentName();
         string getUcCode();
         string getClassCode();
-
+        void setClassCode(string& newClassCode);
 
 
 

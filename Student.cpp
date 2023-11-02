@@ -22,3 +22,6 @@ string Student::getUcCode() {
 string Student::getClassCode() {
     return ClassCode;
 }
+void Student::setClassCode(string& newClassCode){
+    ClassCode = newClassCode;
+}

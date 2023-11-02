@@ -5,7 +5,8 @@
 #include "Schedule.h"
 #include "Menu.h"
 
-#include "classes_per_uc.h"
+#include "Classes_Uc.h"
+#include "Requests.h"
 
 using namespace std;
 
@@ -20,11 +21,7 @@ int main() {
 
 
 
-    reader.Read_classes_per_uc();
-    vector<classes_per_uc> aux2 =reader.getClassesPerUCvector();
 
-    cout << '\n' << aux2[0].getUcCode()<< '\n';
-    cout << aux2[0].getClassCode()<< '\n';
 
-    return 0;
+
 }
