@@ -10,6 +10,7 @@ class Classes {
         string ClassCode,UcCode,Weekday,Type;
         double StartHour,Duration;
     public:
+        Classes();
         Classes(string ClassCode, string UcCode,string Weekday,double StartHour,double Duration,string Type);
 
         string getClassCode();

@@ -1,5 +1,7 @@
 #include "Classes.h"
 
+Classes::Classes() {}
+
 
 Classes::Classes(string ClassCode,string UcCode,string Weekday, double StartHour, double Duration,string Type) {
     this->ClassCode = ClassCode;

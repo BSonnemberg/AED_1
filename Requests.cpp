@@ -1,11 +1,12 @@
 #include "Requests.h"
-#include <iostream>
 #include <algorithm>
 
 
-Requests::Requests(Read& reader) : reader(reader) {}
+Requests::Requests(Read reader) {}
 
 bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode) {
+    Read reader;
+    reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
     int maxOccupancyDifference = 4; // Máxima diferença de ocupação permitida
 
@@ -42,6 +43,7 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
 }
 
     void Requests::switchClass(int StudentCode, std::string ucCode, std::string newClassCode) {
+    Read reader;
         reader.Read_Student();
         std::vector<Student> students = reader.getStudentvector();
 
@@ -66,7 +68,8 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
                         reader.updateStudentClass(StudentCode, ucCode, newClassCode);
                     } else if (!vacancy(ucCode, student.getClassCode(), newClassCode)) {
                         std::cout << "The change causes imbalance in classes" << std::endl;
-                    } else {
+                    }  else {
+
                         cout << "Não há vagas na nova turma!";
                     }
 
@@ -88,6 +91,8 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
     }
 
 bool Requests::capacity(std::string ucCode, std::string newClassCode) {
+    Read reader;
+    reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
     int newClassOccupancy = 1;
     int cap = 30;
@@ -114,12 +119,17 @@ bool Requests::capacity(std::string ucCode, std::string newClassCode) {
 
 
 bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassCode) {
+    Read reader;
     reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
     int ucCount = 0;
     string studentName;
 
     for (Student student : students) {
+        if (reader.hasTimeConflict(ucCode, newClassCode)) {
+            std::cout << "Time conflict with another class in the same UC. Cannot add." << std::endl;
+            return false;
+        }
 
         if (student.getStudentCode() == StudentCode) {
             studentName = student.getStudentName();
@@ -151,6 +161,7 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
     }
 
 
+
     else {
         // Adicionar a UC para o aluno e atualizar o arquivo "students_classes.csv".
         cout << studentName;
@@ -162,7 +173,8 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
 
 // Função para remover uma UC de um aluno
 bool Requests::removeUC(int StudentCode, string ucCode) {
-
+    Read reader;
+    reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
     bool found = false;
     string studentName;
@@ -224,3 +236,4 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
     removeUC(StudentCode, ucCode);
     addUC(StudentCode,  newUCCode, newClassCode);
 }
+

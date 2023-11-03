@@ -15,13 +15,15 @@
 #include "Read.h"
 #include <vector>
 #include <string>
+#include <iostream>
+
 
 class Requests {
 public:
 
 int cap =30;
 
-    Requests(Read& reader);
+    Requests(Read reader);
     void switchClass( int StudentCode, std::string ucCode, std::string newClassCode);
     bool vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode);
     bool capacity (string ucCode, string newClassCode);
@@ -32,7 +34,6 @@ int cap =30;
 
 private:
 
-    Read& reader;
 
 
 };

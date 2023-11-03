@@ -258,6 +258,3 @@ void Read::removeStudentClass(int studentCode,string studentName, string ucCode,
 
 
 
-
-
-
