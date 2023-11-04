@@ -29,6 +29,7 @@ double Classes::getStartHour() {
     return StartHour;
 }
 
+
 double Classes::getDuration() {
     return Duration;
 }
@@ -36,3 +37,4 @@ double Classes::getDuration() {
 string Classes::getType() {
     return Type;
 }
+

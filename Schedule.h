@@ -8,14 +8,14 @@ class Schedule {
     public:
 
         void printStudentSchedule(int StudentCode);
-    pair<std::pair<int, int>, std::pair<int, int>>  calcularHoras(Classes aula);
-    void printClassSchedule (string ClassCode);
+        pair<std::pair<int, int>, std::pair<int, int>>  calcularHoras(Classes aula);
+        void printClassSchedule (string ClassCode);
 
-    void printUcSchedule (string UcCode);
+        void printUcSchedule (string UcCode);
 
-    void printStudentClass(string ClassCode, string sortType);
-    void printStudentUc (string UcCode, string sortType);
-    void printStudentClassUc (string UcCode, string ClassCode, string sortType);
+        void printStudentClass(string ClassCode, string sortType);
+        void printStudentUc (string UcCode, string sortType);
+        void printStudentClassUc (string UcCode, string ClassCode, string sortType);
 
 
 

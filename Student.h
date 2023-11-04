@@ -14,15 +14,13 @@ class Student {
         string StudentName, UcCode,ClassCode;
     public:
         Student(int StudentCode, string StudentName, string UcCode, string ClassCode);
+        Student();
 
         int getStudentCode();
         string getStudentName();
         string getUcCode();
         string getClassCode();
         void setClassCode(string& newClassCode);
-
-
-
 
 
 };

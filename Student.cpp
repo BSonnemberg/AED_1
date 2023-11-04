@@ -25,3 +25,6 @@ string Student::getClassCode() {
 void Student::setClassCode(string& newClassCode){
     ClassCode = newClassCode;
 }
+
+
+

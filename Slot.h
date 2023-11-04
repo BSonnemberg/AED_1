@@ -6,19 +6,21 @@
 class Slot {
 public:
     Slot();
-    Slot(std::string &weekDay, float &beginTime, float &duration, std::string &type);
+    Slot(std::string weekDay, double beginTime, double duration, std::string type);
+
+
     std::string getWeekDay();
     std::string getType();
-    float getStartTime();
-    float getEndTime();
+    double getStartTime();
+    double getEndTime();
     bool overlaps(Slot &other);
     bool operator==(Slot &other);
     bool operator<(Slot &other);
 
 private:
     std::string weekDay;
-    float startTime;
-    float endTime;
+    double startTime;
+    double endTime;
     std::string type;
 };
 

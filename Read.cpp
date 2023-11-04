@@ -34,7 +34,6 @@ void Read::Read_Classes() {
 
     }
 
-
 }
 
 vector<Classes> Read::getClassvector(){

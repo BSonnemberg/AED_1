@@ -3,6 +3,69 @@
 
 
 Requests::Requests(Read reader) {}
+Requests::Requests() {}
+
+bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::string newClassCode){
+
+    std::vector<Classes> students_classes= this->getStudentClasses(StudentCode);
+
+    std::vector<Slot> DestClasses_Slot= this->getClassSlots(newClassCode,ucCode);
+    for( Classes class_slots:students_classes){
+        if(class_slots.getUcCode()!=ucCode){
+            Slot ActualSlot = Slot(class_slots.getWeekday(),class_slots.getStartHour(), class_slots.getDuration(), class_slots.getType());
+            for(Slot DestSlot : DestClasses_Slot){
+                if(DestSlot.overlaps(ActualSlot)){
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+
+vector<Classes> Requests::getStudentClasses(int StudentCode){
+    Read reader;
+    reader.Read_Student();
+    reader.Read_Classes();
+    vector<Classes> aux;
+    std::vector<Student> students = reader.getStudentvector();
+    std::vector<Classes> classes = reader.getClassvector();
+
+    for (Student student: students) {
+        if(StudentCode==student.getStudentCode()){
+            for(Classes class_: classes) {
+                if(class_.getClassCode()==student.getClassCode() && class_.getUcCode()==student.getUcCode()){
+                    aux.push_back(class_);
+                }
+
+            }
+        }
+    }
+    return aux;
+}
+
+
+vector<Slot> Requests::getClassSlots(std::string ClassCode, std::string UcCode){
+    Read reader;
+    reader.Read_Classes();
+    vector<Slot> aux;
+    std::vector<Classes> classes = reader.getClassvector();
+
+    for (Classes class_: classes){
+        if(class_.getUcCode()==UcCode && class_.getClassCode()==ClassCode){
+            Slot slot=Slot(class_.getWeekday(), class_.getStartHour(), class_.getDuration(), class_.getType());
+            aux.push_back(slot);
+        }
+
+    }
+    return aux;
+}
+
+
+
+
+
 
 bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode) {
     Read reader;
@@ -43,11 +106,12 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
 }
 
     void Requests::switchClass(int StudentCode, std::string ucCode, std::string newClassCode) {
-    Read reader;
+        Read reader;
         reader.Read_Student();
         std::vector<Student> students = reader.getStudentvector();
 
         bool studentFound = false;
+        bool checkOverlap=false;
 
 
         for (Student student: students) {
@@ -59,8 +123,8 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
                     std::cout << "The student " << student.getStudentName() << " is already in the class "
                               << newClassCode << "." << std::endl;
                 } else {
-                    // Verificar se a turma existe
-                    if (vacancy(ucCode, student.getClassCode(), newClassCode) && capacity(ucCode, newClassCode)) {
+                    checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
+                    if (vacancy(ucCode, student.getClassCode(), newClassCode) && capacity(ucCode, newClassCode) && checkOverlap){
 
                         student.setClassCode(newClassCode);
                         std::cout << "The student " << student.getStudentName() << " was transferred to the class "
@@ -69,8 +133,12 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
                     } else if (!vacancy(ucCode, student.getClassCode(), newClassCode)) {
                         std::cout << "The change causes imbalance in classes" << std::endl;
                     }  else {
-
-                        cout << "Não há vagas na nova turma!";
+                        if (checkOverlap==false){
+                            cout<<"There is a schedule conflit";
+                        }
+                        else{
+                            cout << "Não há vagas na nova turma!";
+                        }
                     }
 
                 }
@@ -82,11 +150,6 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
         if (!studentFound) {
             std::cout << "Student not found." << std::endl;
         }
-
-
-
-
-
 
     }
 
@@ -111,34 +174,20 @@ bool Requests::capacity(std::string ucCode, std::string newClassCode) {
 }
 
 
-
-
-
-
-
-
-
 bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassCode) {
     Read reader;
     reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
     int ucCount = 0;
     string studentName;
+    bool checkOverlap=false;
 
     for (Student student : students) {
-        if (reader.hasTimeConflict(ucCode, newClassCode)) {
-            std::cout << "Time conflict with another class in the same UC. Cannot add." << std::endl;
-            return false;
-        }
 
         if (student.getStudentCode() == StudentCode) {
             studentName = student.getStudentName();
 
-
-
             if(student.getUcCode()==ucCode) {
-
-
                 cout << "Student is already registered for the specified UC.";
                 return false;
             }
@@ -153,14 +202,17 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
         std::cout << "The student is already registered in 7 UCs. Cannot add more." << std::endl;
         return false;
     }
+    checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
 
+    if (checkOverlap==false){
+        cout<<"There is a schedule conflit";
+        return false;
+    }
     // Verificar se há vaga na nova UC.
     else if (!capacity( ucCode, newClassCode)) {
         std::cout << "No vacancy in the new UC. Cannot add." << std::endl;
         return false;
     }
-
-
 
     else {
         // Adicionar a UC para o aluno e atualizar o arquivo "students_classes.csv".
@@ -172,6 +224,7 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
 }
 
 // Função para remover uma UC de um aluno
+
 bool Requests::removeUC(int StudentCode, string ucCode) {
     Read reader;
     reader.Read_Student();
@@ -209,7 +262,8 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
         std::cout << "Transfer not allowed. The class has reached its maximum occupancy difference." << std::endl;
         return;
     }
-    // Verificar conflito de horários.
+
+// Verificar conflito de horários.
 
 
     std::vector<Student> students = reader.getStudentvector();
@@ -229,6 +283,11 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
                 break;
             }
         }
+    }
+    bool checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
+
+    if (checkOverlap==false){
+        cout<<"There is a schedule conflit";
     }
 
     // Remover a UC atual e adicionar a nova UC para o aluno

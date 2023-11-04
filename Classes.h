@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+
 using namespace std;
 
 class Classes {
@@ -19,6 +20,7 @@ class Classes {
         string getType();
         double getStartHour();
         double getDuration();
+
 
 
 

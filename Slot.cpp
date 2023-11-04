@@ -14,7 +14,7 @@ Slot::Slot(){
     type = "";
 }
 
-Slot::Slot(std::string &weekDay, float &startTime, float &duration, std::string &type) {
+Slot::Slot(std::string weekDay, double startTime, double duration, std::string type) {
     this->weekDay = weekDay;
     this->startTime = startTime;
     this->endTime = startTime + duration;
@@ -28,11 +28,11 @@ std::string Slot::getType(){
     return type;
 }
 
-float Slot::getStartTime(){
+double Slot::getStartTime(){
     return startTime;
 }
 
-float Slot::getEndTime(){
+double Slot::getEndTime(){
     return endTime;
 }
 
