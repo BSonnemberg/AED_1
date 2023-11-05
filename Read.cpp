@@ -1,3 +1,7 @@
+/**
+ * @file Read.cpp
+ * @brief This file contains the implementation of the Read class, which is responsible for reading class and student data from CSV files.
+ */
 #include "Read.h"
 #include "Classes.h"
 #include <fstream>
@@ -7,7 +11,9 @@
 #include "Student.h"
 #include <algorithm>
 using namespace std;
-
+/**
+ * @brief Reads class information from a CSV file and stores it in the 'lesson' vector.
+ */
 void Read::Read_Classes() {
 
     string ClassCode, UcCode, Weekday, Type;
@@ -35,13 +41,18 @@ void Read::Read_Classes() {
     }
 
 }
-
+/**
+ * @brief Returns the 'lesson' vector containing class information.
+ * @return Vector of Classes objects.
+ */
 vector<Classes> Read::getClassvector(){
     return lesson;
 
     
 }
-
+/**
+ * @brief Reads student information from a CSV file and stores it in the 'students' vector.
+ */
 void Read::Read_Student() {
     int StudentCode;
     string StudentName, UcCode,ClassCode;
@@ -67,19 +78,19 @@ void Read::Read_Student() {
 
 
 }
-
+/**
+ * @brief Returns the 'students' vector containing student information.
+ * @return Vector of Student objects.
+ */
 vector<Student> Read::getStudentvector() {
     return students;
 }
-
-
-
-
-
-
-
-
-
+/**
+ * @brief Converts a weekday string to a corresponding numeric representation.
+ * @param day The weekday string (e.g., "Monday", "Tuesday").
+ * @return Numeric representation of the weekday (1 for Monday, 2 for Tuesday, and so on).
+ *         Returns 0 in case of an error or an invalid day.
+ */
 int Read::weekdayToNumber(const std::string& day) {
     // Mapeamento dos dias da semana para números
     if (day == "Monday") return 1;
@@ -89,7 +100,13 @@ int Read::weekdayToNumber(const std::string& day) {
     if (day == "Friday") return 5;
     return 0; // Em caso de erro ou dia inválido
 }
-
+/**
+ * @brief Sorts the 'aula' vector of Classes objects by weekday and start hour.
+ *
+ * This function sorts the input vector 'aula' based on the weekday and start hour of each class.
+ *
+ * @param aula A vector of Classes objects to be sorted.
+ */
 void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula) {
     std::sort(aula.begin(), aula.end(), [this](Classes a, Classes b) {
         // Primeiro, compara os dias da semana
@@ -101,7 +118,9 @@ void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula) {
         }
     });
 }
-
+/**
+ * @brief Reads class information per UC (University Course) from a CSV file and stores it in the 'classesPerUc' vector.
+ */
 void Read::Read_Classes_Per_Uc() {
     string UcCode, ClassCode;
     string dir= "../schedule/classes_per_uc.csv";
@@ -122,10 +141,22 @@ void Read::Read_Classes_Per_Uc() {
         classesPerUc.push_back(classesPerUcEntry);
     }
 }
-
+/**
+ * @brief Returns the 'classesPerUc' vector containing class information per UC.
+ * @return Vector of Classes_Uc objects.
+ */
 vector<Classes_Uc> Read::getClassesPerUcvector() {
     return classesPerUc;
 }
+/**
+ * @brief Updates the class associated with a student's UC (University Course).
+ *
+ * This function updates the class information for a specific student's UC in the 'students_classes.csv' file.
+ *
+ * @param studentCode The code of the student to update.
+ * @param ucCode The code of the UC (University Course) to update.
+ * @param newClassCode The new class code to associate with the student's UC.
+ */
 void Read::updateStudentClass(int studentCode, string ucCode, string newClassCode) {
     std::string filename = "../schedule/students_classes.csv";
     std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome de arquivo temporário
@@ -165,7 +196,16 @@ void Read::updateStudentClass(int studentCode, string ucCode, string newClassCod
     }
 }
 
-
+/**
+ * @brief Adds a new student class entry to the 'students_classes.csv' file.
+ *
+ * This function adds a new entry for a student's class to the 'students_classes.csv' file. It checks if the entry already exists and appends the new entry if it doesn't.
+ *
+ * @param studentCode The code of the student to add.
+ * @param studentName The name of the student to add.
+ * @param ucCode The UC (University Course) code to associate with the student.
+ * @param classCode The class code to associate with the UC.
+ */
 void Read::addStudentClass(int studentCode, const std::string& studentName, const std::string& ucCode, const std::string& classCode) {
     // Abra o arquivo original para leitura
     std::string filename = "../schedule/students_classes.csv";
@@ -211,7 +251,16 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
     outFile.close();
 }
 
-
+/**
+ * @brief Removes a student class entry from the 'students_classes.csv' file.
+ *
+ * This function removes an existing entry for a student's class from the 'students_classes.csv' file. It checks for a match and removes the entry accordingly.
+ *
+ * @param studentCode The code of the student to remove.
+ * @param studentName The name of the student to remove.
+ * @param ucCode The UC (University Course) code to disassociate from the student.
+ * @param classCode The class code to disassociate from the UC.
+ */
 void Read::removeStudentClass(int studentCode, string ucCode, string classCode) {
     std::string filename = "../schedule/students_classes.csv";
     std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome do arquivo temporário

@@ -6,7 +6,14 @@
 #include <set>
 #include <algorithm>
 
-
+/**
+ * @brief Calculate the start and end times of a class.
+ *
+ * This function calculates the start and end times of a class based on its start hour and duration.
+ *
+ * @param aula The class object for which to calculate the hours.
+ * @return A pair containing the start time and end time in hours and minutes.
+ */
 std::pair<std::pair<int, int>, std::pair<int, int>> Schedule:: calcularHoras(Classes aula) {
     int horasInicio = static_cast<int>(aula.getStartHour());
     double decimalMinutosInicio = (aula.getStartHour() - horasInicio) * 60;
@@ -25,7 +32,13 @@ std::pair<std::pair<int, int>, std::pair<int, int>> Schedule:: calcularHoras(Cla
     return {{horasInicio, minutosInicio}, {horasFim, minutosFim}};
 }
 
-
+/**
+ * @brief Print the schedule for a specific student.
+ *
+ * This function reads student and class information, filters classes for the given student, and prints the student's schedule.
+ *
+ * @param studentCode The code of the student for whom the schedule needs to be printed.
+ */
 void Schedule::printStudentSchedule(int studentCode) {
     bool ft =true;
     bool found=false;
@@ -67,7 +80,13 @@ void Schedule::printStudentSchedule(int studentCode) {
         cout << "     " << Class.getType() << "    " << Class.getClassCode() << "    " << Class.getUcCode() << "\n";
     }
 }
-
+/**
+ * @brief Print the schedule for a specific class based on the provided class code.
+ *
+ * This function reads class information, filters classes by the given class code, and prints the class schedule.
+ *
+ * @param ClassCode The code of the class for which the schedule needs to be printed.
+ */
 void Schedule::printClassSchedule(std::string ClassCode) {
 
     Read reader;
@@ -105,7 +124,13 @@ void Schedule::printClassSchedule(std::string ClassCode) {
     }
 }
 
-
+/**
+ * @brief Print the schedule for a specific course (UC) based on the provided UC code.
+ *
+ * This function reads class information, filters classes by the given UC code, and prints the UC schedule.
+ *
+ * @param UcCode The code of the UC (Course) for which the schedule needs to be printed.
+ */
 void Schedule::printUcSchedule(std::string UcCode) {
     Read reader;
     reader.Read_Classes();
@@ -155,11 +180,27 @@ void Schedule::printUcSchedule(std::string UcCode) {
 
 
 
-
+/**
+ * @brief Compares two student objects based on their student codes.
+ *
+ * This function is used to compare two student objects by their student codes.
+ *
+ * @param a The first student object for comparison.
+ * @param b The second student object for comparison.
+ * @return True if the student code of 'a' is less than the student code of 'b', otherwise false.
+ */
 bool compareStudentsbyCode(Student a , Student b){
     return a.getStudentCode()<b.getStudentCode();
 }
-
+/**
+ * @brief Compares two student objects based on their student names.
+ *
+ * This function is used to compare two student objects by their student names.
+ *
+ * @param a The first student object for comparison.
+ * @param b The second student object for comparison.
+ * @return True if the student name of 'a' is lexicographically less than the student name of 'b', otherwise false.
+ */
 bool compareStudentbyName(Student a, Student b){
     return a.getStudentName()<b.getStudentName();
 }
@@ -168,7 +209,14 @@ bool compareStudentbyName(Student a, Student b){
 
 
 
-
+/**
+ * @brief Print the student information for a specific course (UC) based on the provided UC code and sorting type.
+ *
+ * This function reads student information, filters students by the given UC code, and prints their details.
+ *
+ * @param UcCode The code of the UC (Course) for which student information needs to be printed.
+ * @param sortType The sorting type for the student list. It can be "Alphabetical" for sorting by name or any other value for sorting by student code.
+ */
 void Schedule::printStudentUc(std::string UcCode, string sortType) {
     std::set<std::string> printedIDs; // Conjunto para rastrear IDs de alunos já impressos
     Read reader;
@@ -207,7 +255,15 @@ void Schedule::printStudentUc(std::string UcCode, string sortType) {
 }
 
 
-
+/**
+ * @brief Print the student information for a specific course (UC) and class based on the provided UC code, class code, and sorting type.
+ *
+ * This function reads student information, filters students by the given UC code and class code, and prints their details.
+ *
+ * @param UcCode The code of the UC (Course) for which student information needs to be printed.
+ * @param ClassCode The code of the class for which student information needs to be printed.
+ * @param sortType The sorting type for the student list. It can be "Alphabetical" for sorting by name or any other value for sorting by student code.
+ */
 void Schedule::printStudentClassUc(std::string UcCode, std::string ClassCode, string sortType) {
 
     Read reader;
@@ -247,7 +303,14 @@ void Schedule::printStudentClassUc(std::string UcCode, std::string ClassCode, st
 
 }
 
-
+/**
+ * @brief Print the student information for a specific class based on the provided class code and sorting type.
+ *
+ * This function reads student information, filters students by the given class code, and prints their details.
+ *
+ * @param classCode The code of the class for which student information needs to be printed.
+ * @param sortType The sorting type for the student list. It can be "Alphabetical" for sorting by name or any other value for sorting by student code.
+ */
 void Schedule::printStudentClass(std::string classCode, string sortType) {
     std::set<std::string> printedIDs; // Conjunto para rastrear IDs de alunos já impressos
     Read reader;

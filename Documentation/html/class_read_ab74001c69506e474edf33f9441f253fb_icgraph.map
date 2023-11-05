@@ -1,0 +1,16 @@
+<map id="Read::updateStudentClass" name="Read::updateStudentClass">
+<area shape="rect" id="Node000001" title="Update the class associated with a student&#39;s UC (University Course)." alt="" coords="588,31,765,57"/>
+<area shape="rect" id="Node000002" href="$class_requests.html#a7ed97404bc0301d666acbd8966d8c348" title="Switch a student&#39;s class within the same UC (subject)." alt="" coords="386,5,540,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="573,34,540,30,541,25,574,29"/>
+<area shape="rect" id="Node000005" href="$class_requests.html#a491c078f83497f6013aa8bb8ddc697c8" title="Undo the last student enrollment action." alt="" coords="407,56,519,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="574,59,520,65,520,60,573,54"/>
+<area shape="rect" id="Node000003" href="$class_menu.html#a07e39cc3c192472ff5a605ecf4024dd5" title="Display the menu for changing a student&#39;s Class for a given UC." alt="" coords="168,5,338,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,21,338,21,338,16,371,16"/>
+<area shape="rect" id="Node000004" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,56,120,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="186,39,116,58,115,53,184,34"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="228,56,278,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="391,72,278,72,278,67,391,67"/>
+<area shape="rect" id="Node000007" href="$class_menu.html#a73c0982f4c0b8ee38660c92f3c082b28" title="Perform an undo operation in the menu." alt="" coords="208,107,298,133"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="393,89,299,112,297,107,391,84"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="192,107,115,86,116,81,194,102"/>
+</map>

@@ -1,0 +1,98 @@
+\doxysection{FEUP-\/\+AED-\/project/\+Requests.h File Reference}
+\hypertarget{_requests_8h}{}\label{_requests_8h}\index{FEUP-\/AED-\/project/Requests.h@{FEUP-\/AED-\/project/Requests.h}}
+
+
+This file defines the \doxylink{class_requests}{Requests} class and related data structures for managing student enrollment actions.  
+
+
+{\ttfamily \#include "{}Classes.\+h"{}}\newline
+{\ttfamily \#include "{}Student.\+h"{}}\newline
+{\ttfamily \#include "{}Read.\+h"{}}\newline
+{\ttfamily \#include "{}Slot.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+Include dependency graph for Requests.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_requests_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_requests_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_action}{Action}}
+\begin{DoxyCompactList}\small\item\em Data structure to represent a student enrollment action. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_requests}{Requests}}
+\begin{DoxyCompactList}\small\item\em Class for managing student enrollment actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_requests_8h_af2692440dfe110e8b04fdfcbcebd8b13}{REQUESTS\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b}{Action\+Type}} \{ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950bab9ebe0f5c663eb08e954dffa8897551b}{Add\+UC}}
+, \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba830c54eb45e5944dbe032767c19ffb6d}{Remove\+UC}}
+, \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba26617f48cb45b1024036834d85b7774b}{Switch\+UC}}
+, \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950babb091e76d6536a77191070d6bddaaa84}{switch\+Class}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible student enrollment action types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines the \doxylink{class_requests}{Requests} class and related data structures for managing student enrollment actions. 
+
+The \doxylink{class_requests}{Requests} class provides functions for adding, switching, or removing a student\textquotesingle{}s enrollment in classes and subjects (UCs). 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_requests_8h_af2692440dfe110e8b04fdfcbcebd8b13}\label{_requests_8h_af2692440dfe110e8b04fdfcbcebd8b13} 
+\index{Requests.h@{Requests.h}!REQUESTS\_H@{REQUESTS\_H}}
+\index{REQUESTS\_H@{REQUESTS\_H}!Requests.h@{Requests.h}}
+\doxysubsubsection{\texorpdfstring{REQUESTS\_H}{REQUESTS\_H}}
+{\footnotesize\ttfamily \#define REQUESTS\+\_\+H}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b}\label{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b} 
+\index{Requests.h@{Requests.h}!ActionType@{ActionType}}
+\index{ActionType@{ActionType}!Requests.h@{Requests.h}}
+\doxysubsubsection{\texorpdfstring{ActionType}{ActionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b}{Action\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of possible student enrollment action types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddUC@{AddUC}!Requests.h@{Requests.h}}\index{Requests.h@{Requests.h}!AddUC@{AddUC}}}\Hypertarget{_requests_8h_a21d5e8f8cdaa838586b31007df0a950bab9ebe0f5c663eb08e954dffa8897551b}\label{_requests_8h_a21d5e8f8cdaa838586b31007df0a950bab9ebe0f5c663eb08e954dffa8897551b} 
+Add\+UC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemoveUC@{RemoveUC}!Requests.h@{Requests.h}}\index{Requests.h@{Requests.h}!RemoveUC@{RemoveUC}}}\Hypertarget{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba830c54eb45e5944dbe032767c19ffb6d}\label{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba830c54eb45e5944dbe032767c19ffb6d} 
+Remove\+UC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SwitchUC@{SwitchUC}!Requests.h@{Requests.h}}\index{Requests.h@{Requests.h}!SwitchUC@{SwitchUC}}}\Hypertarget{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba26617f48cb45b1024036834d85b7774b}\label{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba26617f48cb45b1024036834d85b7774b} 
+Switch\+UC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{switchClass@{switchClass}!Requests.h@{Requests.h}}\index{Requests.h@{Requests.h}!switchClass@{switchClass}}}\Hypertarget{_requests_8h_a21d5e8f8cdaa838586b31007df0a950babb091e76d6536a77191070d6bddaaa84}\label{_requests_8h_a21d5e8f8cdaa838586b31007df0a950babb091e76d6536a77191070d6bddaaa84} 
+switch\+Class&\\
+\hline
+
+\end{DoxyEnumFields}

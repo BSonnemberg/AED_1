@@ -1,0 +1,67 @@
+<map id="Read::getStudentvector" name="Read::getStudentvector">
+<area shape="rect" id="Node000001" title="Get the &#39;students&#39; vector containing student information." alt="" coords="1104,302,1260,328"/>
+<area shape="rect" id="Node000002" href="$class_requests.html#a1e43413ca401286e55ae61ec0795496a" title="Add a new UC (subject) to a student&#39;s enrollment." alt="" coords="410,276,533,303"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1140,297,1100,280,1055,267,930,248,832,246,732,254,606,267,533,278,532,273,605,262,732,248,832,240,931,243,1057,262,1102,275,1142,292"/>
+<area shape="rect" id="Node000006" href="$class_requests.html#a90deae9ae0ad87478c9e68b5cad465d9" title="Check if the new class has the capacity to accommodate a student." alt="" coords="636,378,770,404"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1136,337,1057,362,980,375,903,384,770,393,770,387,903,379,979,370,1055,356,1134,332"/>
+<area shape="rect" id="Node000007" href="$class_requests.html#a7ed97404bc0301d666acbd8966d8c348" title="Switch a student&#39;s class within the same UC (subject)." alt="" coords="395,378,549,404"/>
+<area shape="poly" id="edge33_Node000001_Node000007" title=" " alt="" coords="1153,340,1109,369,1057,393,991,414,934,427,883,435,834,437,733,432,605,419,532,408,533,402,606,414,733,427,834,432,882,429,933,422,990,409,1055,389,1107,364,1150,336"/>
+<area shape="rect" id="Node000009" href="$class_requests.html#ae740e8b002387e2d4d64ed85f53e8c2a" title="Switch a student&#39;s UC (subject) and class." alt="" coords="402,327,541,354"/>
+<area shape="poly" id="edge34_Node000001_Node000009" title=" " alt="" coords="1088,321,542,341,541,335,1088,316"/>
+<area shape="rect" id="Node000011" href="$class_requests.html#a98598d5225f12e76784b59c3bc32c7f5" title="Retrieve the list of classes in which a student is enrolled." alt="" coords="855,276,1050,303"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1089,307,1050,303,1050,298,1089,302"/>
+<area shape="rect" id="Node000013" href="$class_schedule.html#aa59bbc2b2a2fb29cf966befff6ae939c" title="Print the student information for a specific class based on the provided class code and sorting type." alt="" coords="859,530,1046,556"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="1174,344,1158,384,1133,432,1100,479,1058,520,1036,532,1034,527,1054,516,1096,476,1128,429,1153,382,1169,342"/>
+<area shape="rect" id="Node000015" href="$class_schedule.html#aa2f3fefaf2f97e60360535aef1cb14b1" title="Print the student information for a specific course (UC) and class based on the provided UC code,..." alt="" coords="851,580,1054,607"/>
+<area shape="poly" id="edge21_Node000001_Node000015" title=" " alt="" coords="1178,344,1164,393,1141,455,1106,517,1084,546,1058,570,1038,582,1036,578,1054,566,1080,542,1102,514,1136,452,1159,392,1173,343"/>
+<area shape="rect" id="Node000017" href="$class_schedule.html#afec105252efbadf3e7ace892f3a92cb3" title="Print the schedule for a specific student based on the provided student code." alt="" coords="849,23,1056,50"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="1173,287,1159,238,1136,178,1102,116,1080,88,1054,64,1036,52,1038,48,1058,60,1084,84,1106,113,1141,175,1164,237,1178,286"/>
+<area shape="rect" id="Node000019" href="$class_schedule.html#a9878adf0f8ba2753b6e5c09a245a0330" title="Print the student information for a specific course (UC) based on the provided UC code and sorting ty..." alt="" coords="868,74,1037,100"/>
+<area shape="poly" id="edge27_Node000001_Node000019" title=" " alt="" coords="1169,288,1153,248,1128,201,1096,154,1054,114,1034,103,1036,98,1058,110,1100,151,1133,198,1158,246,1174,286"/>
+<area shape="rect" id="Node000021" href="$class_requests.html#a77bb8be1738d4eba5c221fdc6043d7a5" title="Remove a UC (subject) from a student&#39;s enrollment." alt="" coords="881,124,1024,151"/>
+<area shape="poly" id="edge30_Node000001_Node000021" title=" " alt="" coords="1162,290,1118,230,1088,199,1055,172,1016,154,1018,149,1057,167,1092,195,1122,227,1167,287"/>
+<area shape="rect" id="Node000023" href="$class_requests.html#a491c078f83497f6013aa8bb8ddc697c8" title="Undo the last student enrollment action." alt="" coords="416,175,528,202"/>
+<area shape="poly" id="edge35_Node000001_Node000023" title=" " alt="" coords="1152,294,1108,263,1055,237,984,217,910,202,835,192,762,186,629,183,528,187,528,181,629,178,762,181,836,187,911,197,985,212,1057,232,1111,259,1155,290"/>
+<area shape="rect" id="Node000025" href="$class_requests.html#aa186de6e06476332ee8e1b59e8e683bd" title="Check if there is a vacancy for a student in a new class." alt="" coords="887,479,1018,506"/>
+<area shape="poly" id="edge39_Node000001_Node000025" title=" " alt="" coords="1167,343,1122,403,1092,435,1057,463,1018,481,1016,476,1055,458,1088,431,1118,400,1162,340"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="228,226,278,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,275,278,247,279,242,397,270"/>
+<area shape="rect" id="Node000004" href="$class_menu.html#ad79b0e4c2440cffb77b0d0417e246bc5" title="Display the menu for adding a new UC for a student." alt="" coords="187,276,319,303"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,292,319,292,319,287,394,287"/>
+<area shape="rect" id="Node000005" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,276,120,303"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="171,292,120,292,120,287,171,287"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="665,372,614,344,556,317,524,306,526,301,558,313,616,340,667,367"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="621,394,549,394,549,388,621,388"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="623,376,535,357,536,352,625,371"/>
+<area shape="rect" id="Node000008" href="$class_menu.html#a07e39cc3c192472ff5a605ecf4024dd5" title="Display the menu for changing a student&#39;s Class for a given UC." alt="" coords="168,378,338,404"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="379,394,339,394,339,388,379,388"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="180,374,166,368,116,337,78,306,81,302,119,332,169,363,183,369"/>
+<area shape="rect" id="Node000010" href="$class_menu.html#a414d87b52170d8320872a5f69dc9f898" title="Display the menu for switching a student&#39;s UC and Class." alt="" coords="178,327,328,354"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="386,343,328,343,328,338,386,338"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="184,325,115,306,116,301,186,320"/>
+<area shape="rect" id="Node000012" href="$class_requests.html#a661dfb22aca4687cead64f1dcccb9a73" title="Check for class schedule overlaps when enrolling in a new class." alt="" coords="605,276,801,303"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="840,292,801,292,801,287,840,287"/>
+<area shape="poly" id="edge15_Node000012_Node000002" title=" " alt="" coords="589,292,534,292,534,287,589,287"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="667,313,616,341,558,368,526,380,524,374,556,363,614,336,665,309"/>
+<area shape="poly" id="edge17_Node000012_Node000009" title=" " alt="" coords="625,309,536,329,535,324,623,304"/>
+<area shape="rect" id="Node000014" href="$class_menu.html#a834d54763dfa6294184f21d7463350f7" title="Display the menu for printing students of a given class." alt="" coords="386,530,557,556"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="844,546,558,546,558,540,844,540"/>
+<area shape="poly" id="edge20_Node000014_Node000005" title=" " alt="" coords="401,527,347,510,286,486,224,455,166,418,135,390,107,359,70,305,74,302,111,355,138,387,169,414,227,451,289,481,349,505,403,522"/>
+<area shape="rect" id="Node000016" href="$class_menu.html#a0feb41af9ea0f9fa3ca136de08e67d15" title="Display the menu for printing students of a given Class and UC." alt="" coords="608,580,798,607"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="836,596,798,596,798,591,836,591"/>
+<area shape="poly" id="edge23_Node000016_Node000005" title=" " alt="" coords="593,609,493,611,437,607,380,600,322,587,267,568,214,543,166,509,142,485,122,458,92,399,73,344,64,304,69,303,78,343,97,397,127,455,146,482,169,505,217,538,269,563,324,582,381,594,438,602,493,605,593,604"/>
+<area shape="rect" id="Node000018" href="$class_menu.html#a7a8604e4e4366c062830e0c8d5af2052" title="Display the menu for printing a student&#39;s schedule." alt="" coords="607,23,799,50"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="833,39,799,39,799,34,833,34"/>
+<area shape="poly" id="edge26_Node000018_Node000005" title=" " alt="" coords="622,22,523,11,465,8,404,10,342,17,281,30,223,52,169,82,146,103,126,128,96,183,78,237,69,277,63,275,73,235,91,181,121,125,142,99,166,78,221,47,280,25,341,12,404,5,465,3,523,5,623,17"/>
+<area shape="rect" id="Node000020" href="$class_menu.html#acfa5c245689ada163658b0898aef5362" title="Display the menu for printing students of a given UC." alt="" coords="625,74,781,100"/>
+<area shape="poly" id="edge28_Node000019_Node000020" title=" " alt="" coords="852,90,782,90,782,84,852,84"/>
+<area shape="poly" id="edge29_Node000020_Node000005" title=" " alt="" coords="613,74,516,64,400,65,340,71,280,84,223,103,169,129,149,144,131,162,102,204,82,245,70,277,65,275,77,243,97,201,127,159,145,140,166,125,221,98,279,79,339,66,400,59,516,59,614,68"/>
+<area shape="rect" id="Node000022" href="$class_menu.html#a374b3531c7f88ca41ece6b02d2ee7c6b" title="Display the menu for removing a UC from a student." alt="" coords="394,124,549,151"/>
+<area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="865,140,550,140,550,135,865,135"/>
+<area shape="poly" id="edge32_Node000022_Node000005" title=" " alt="" coords="379,130,328,130,274,134,220,145,169,165,135,190,108,221,73,277,68,274,104,217,132,186,166,161,218,140,273,129,328,124,379,125"/>
+<area shape="poly" id="edge36_Node000023_Node000003" title=" " alt="" coords="401,207,279,236,277,231,400,202"/>
+<area shape="rect" id="Node000024" href="$class_menu.html#a73c0982f4c0b8ee38660c92f3c082b28" title="Perform an undo operation in the menu." alt="" coords="208,175,298,202"/>
+<area shape="poly" id="edge37_Node000023_Node000024" title=" " alt="" coords="400,191,298,191,298,186,400,186"/>
+<area shape="poly" id="edge38_Node000024_Node000005" title=" " alt="" coords="194,206,169,216,119,247,81,278,78,274,116,243,166,211,192,201"/>
+<area shape="poly" id="edge40_Node000025_Node000007" title=" " alt="" coords="871,496,745,489,674,479,605,463,542,436,492,407,495,403,544,432,606,458,675,474,745,484,872,491"/>
+</map>

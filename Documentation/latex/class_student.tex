@@ -1,0 +1,155 @@
+\doxysection{Student Class Reference}
+\hypertarget{class_student}{}\label{class_student}\index{Student@{Student}}
+
+
+Represents a student with information such as student code, name, course code, and class code.  
+
+
+
+
+{\ttfamily \#include $<$Student.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_ac9b92b03a2ba6b16803e19de1d9ec72a}{Student}} (int Student\+Code, string Student\+Name, string Uc\+Code, string Class\+Code)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_student}{Student} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}} ()
+\item 
+int \mbox{\hyperlink{class_student_acc4398bbb587e8f0223e03e0208622ea}{get\+Student\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Get the unique code of the student. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_student_adfa5b05932a1abd3d51757a714c48633}{get\+Student\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the student. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_student_a57b73ea0cbe801f47c8e9500bca8370f}{get\+Uc\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Get the code of the course associated with the student. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_student_a982f61f95b1791042001eeb1735109d3}{get\+Class\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Get the code of the class the student is enrolled in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_a341dcd179417ceb313d1ed0f1236d1c0}{set\+Class\+Code}} (string \&new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Set the code of the class the student is enrolled in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a student with information such as student code, name, course code, and class code. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_student_ac9b92b03a2ba6b16803e19de1d9ec72a}\label{class_student_ac9b92b03a2ba6b16803e19de1d9ec72a} 
+\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Student\+::\+Student (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{string}]{Student\+Name,  }\item[{string}]{Uc\+Code,  }\item[{string}]{Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_student}{Student} class. 
+
+Initializes a \doxylink{class_student}{Student} object with the provided information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em Student\+Name} & The name of the student. \\
+\hline
+{\em Uc\+Code} & The code of the course associated with the student. \\
+\hline
+{\em Class\+Code} & The code of the class the student is enrolled in. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}\label{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d} 
+\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Student\+::\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_student_a982f61f95b1791042001eeb1735109d3}\label{class_student_a982f61f95b1791042001eeb1735109d3} 
+\index{Student@{Student}!getClassCode@{getClassCode}}
+\index{getClassCode@{getClassCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getClassCode()}{getClassCode()}}
+{\footnotesize\ttfamily string Student\+::get\+Class\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the code of the class the student is enrolled in. 
+
+\begin{DoxyReturn}{Returns}
+The code of the class as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_student_acc4398bbb587e8f0223e03e0208622ea}\label{class_student_acc4398bbb587e8f0223e03e0208622ea} 
+\index{Student@{Student}!getStudentCode@{getStudentCode}}
+\index{getStudentCode@{getStudentCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getStudentCode()}{getStudentCode()}}
+{\footnotesize\ttfamily int Student\+::get\+Student\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the unique code of the student. 
+
+\begin{DoxyReturn}{Returns}
+The unique code of the student as an integer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_student_acc4398bbb587e8f0223e03e0208622ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_student_adfa5b05932a1abd3d51757a714c48633}\label{class_student_adfa5b05932a1abd3d51757a714c48633} 
+\index{Student@{Student}!getStudentName@{getStudentName}}
+\index{getStudentName@{getStudentName}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getStudentName()}{getStudentName()}}
+{\footnotesize\ttfamily string Student\+::get\+Student\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the student. 
+
+\begin{DoxyReturn}{Returns}
+The name of the student as a string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_student_adfa5b05932a1abd3d51757a714c48633_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_student_a57b73ea0cbe801f47c8e9500bca8370f}\label{class_student_a57b73ea0cbe801f47c8e9500bca8370f} 
+\index{Student@{Student}!getUcCode@{getUcCode}}
+\index{getUcCode@{getUcCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getUcCode()}{getUcCode()}}
+{\footnotesize\ttfamily string Student\+::get\+Uc\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the code of the course associated with the student. 
+
+\begin{DoxyReturn}{Returns}
+The code of the course as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_student_a341dcd179417ceb313d1ed0f1236d1c0}\label{class_student_a341dcd179417ceb313d1ed0f1236d1c0} 
+\index{Student@{Student}!setClassCode@{setClassCode}}
+\index{setClassCode@{setClassCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{setClassCode()}{setClassCode()}}
+{\footnotesize\ttfamily void Student\+::set\+Class\+Code (\begin{DoxyParamCaption}\item[{string \&}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Set the code of the class the student is enrolled in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Class\+Code} & The new class code to set for the student. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_student_8h}{Student.\+h}}\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_student_8cpp}{Student.\+cpp}}\end{DoxyCompactItemize}

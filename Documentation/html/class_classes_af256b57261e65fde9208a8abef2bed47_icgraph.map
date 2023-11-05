@@ -1,0 +1,21 @@
+<map id="Classes::getDuration" name="Classes::getDuration">
+<area shape="rect" id="Node000001" title="Get the duration of the class." alt="" coords="874,56,1016,83"/>
+<area shape="rect" id="Node000002" href="$class_schedule.html#a6905559b21827d527aa5b60a31fbc421" title="Calculate the start and end times of a class." alt="" coords="663,56,826,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="858,72,826,72,826,67,858,67"/>
+<area shape="rect" id="Node000003" href="$class_schedule.html#a9d25b5808ff82034464cb394b2270df9" title="Print the schedule for a specific class based on the provided class code." alt="" coords="414,5,609,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="664,55,576,35,577,30,665,50"/>
+<area shape="rect" id="Node000006" href="$class_schedule.html#afec105252efbadf3e7ace892f3a92cb3" title="Print the schedule for a specific student based on the provided student code." alt="" coords="408,56,615,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="648,72,616,72,616,67,648,67"/>
+<area shape="rect" id="Node000008" href="$class_schedule.html#a7c5e61f20a2821f13fa8fe6c3b471e1c" title="Print the schedule for a specific course (UC) based on the provided UC code." alt="" coords="423,107,601,133"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="665,89,577,109,576,103,664,84"/>
+<area shape="rect" id="Node000004" href="$class_menu.html#a1acead50b9875211b01a4a7f64d39b14" title="Display the menu for printing a class&#39;s schedule." alt="" coords="174,5,354,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="398,21,355,21,355,16,398,16"/>
+<area shape="rect" id="Node000005" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,56,120,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,39,119,58,118,53,192,34"/>
+<area shape="rect" id="Node000007" href="$class_menu.html#a7a8604e4e4366c062830e0c8d5af2052" title="Display the menu for printing a student&#39;s schedule." alt="" coords="168,56,360,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="392,72,360,72,360,67,392,67"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="152,72,120,72,120,67,152,67"/>
+<area shape="rect" id="Node000009" href="$class_menu.html#af80a0caed06ad9718803be8c58bdd6ea" title="Display the menu for printing a UC&#39;s schedule." alt="" coords="182,107,346,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="407,123,346,123,346,117,407,117"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="192,105,118,86,119,81,194,100"/>
+</map>

@@ -1,11 +1,26 @@
 #include "Requests.h"
 #include <algorithm>
 
-
+/**
+ * @brief Constructor for the Requests class.
+ * @param reader An instance of the Read class for reading and managing class and student data.
+ */
 Requests::Requests(Read reader) {}
-
+/**
+ * @brief Default constructor for the Requests class.
+ */
 Requests::Requests() {}
-
+/**
+ * @brief Check for class schedule overlaps for a student's enrollment in a new class.
+ *
+ * This function checks if enrolling a student in a new class with a specified UC (subject)
+ * causes a schedule overlap with their current enrolled classes.
+ *
+ * @param StudentCode The unique identifier of the student.
+ * @param ucCode The UC (subject) code for the new class.
+ * @param newClassCode The code of the new class the student wants to enroll in.
+ * @return True if no schedule overlap occurs, False if there is an overlap.
+ */
 bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::string newClassCode){
 
     std::vector<Classes> students_classes= this->getStudentClasses(StudentCode);
@@ -23,8 +38,14 @@ bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::strin
     }
     return true;
 }
-
-
+/**
+ * @brief Get a list of classes associated with a specific student.
+ *
+ * This function retrieves a list of classes in which a specific student is currently enrolled.
+ *
+ * @param StudentCode The unique identifier of the student.
+ * @return A vector containing the classes associated with the student.
+ */
 vector<Classes> Requests::getStudentClasses(int StudentCode){
     Read reader;
     reader.Read_Student();
@@ -45,7 +66,16 @@ vector<Classes> Requests::getStudentClasses(int StudentCode){
     }
     return aux;
 }
-
+/**
+ * @brief Get the time slots for a specific class with a given ClassCode and UcCode (subject code).
+ *
+ * This function retrieves the time slots (schedule) for a specific class identified by its ClassCode
+ * and UcCode (subject code).
+ *
+ * @param ClassCode The unique identifier for the class.
+ * @param UcCode The code of the UC (subject) to which the class belongs.
+ * @return A vector containing the time slots (schedule) for the specified class.
+ */
 
 vector<Slot> Requests::getClassSlots(std::string ClassCode, std::string UcCode){
     Read reader;
@@ -62,11 +92,16 @@ vector<Slot> Requests::getClassSlots(std::string ClassCode, std::string UcCode){
     }
     return aux;
 }
-
-
-
-
-
+/**
+ * @brief Check if there is a vacancy for a student to switch from an old class to a new class.
+ *
+ * This function checks if there is a vacancy in the new class compared to the old class for a specific UC (University Course).
+ *
+ * @param ucCode The UC code for which the switch is requested.
+ * @param oldClassCode The code of the old class.
+ * @param newClassCode The code of the new class.
+ * @return True if there is a vacancy to switch to the new class; otherwise, false.
+ */
 
 bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& newClassCode) {
     Read reader;
@@ -105,7 +140,15 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
 
     return true;
 }
-
+/**
+ * @brief Switch a student's class for a specific UC.
+ *
+ * This function allows a student to switch from their current class to a new class within the same UC, provided there is a vacancy and the new class is within capacity.
+ *
+ * @param StudentCode The code of the student requesting the switch.
+ * @param ucCode The UC code for which the switch is requested.
+ * @param newClassCode The code of the new class.
+ */
     void Requests::switchClass(int StudentCode, std::string ucCode, std::string newClassCode) {
         Action action;
         action.type = ActionType::switchClass ;
@@ -165,7 +208,15 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
         }
 
     }
-
+/**
+ * @brief Check if there is capacity in the new class for a specific UC.
+ *
+ * This function checks if there is capacity in the new class for a specific UC, considering the maximum occupancy limit.
+ *
+ * @param ucCode The UC code for which the capacity check is performed.
+ * @param newClassCode The code of the new class.
+ * @return True if there is capacity in the new class; otherwise, false.
+ */
 bool Requests::capacity(std::string ucCode, std::string newClassCode) {
     Read reader;
     reader.Read_Student();
@@ -186,7 +237,16 @@ bool Requests::capacity(std::string ucCode, std::string newClassCode) {
 
 }
 
-
+/**
+ * @brief Add a new UC (University Course) for a student.
+ *
+ * This function allows a student to add a new UC to their schedule, considering the maximum number of UCs and vacancy in the new UC.
+ *
+ * @param StudentCode The code of the student to add the UC.
+ * @param ucCode The code of the UC to be added.
+ * @param newClassCode The code of the class associated with the new UC.
+ * @return True if the UC was added successfully; otherwise, false.
+ */
 bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassCode) {
     Action action;
     action.type = ActionType::AddUC;
@@ -247,9 +307,15 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
         return true;
     }
 }
-
-// Função para remover uma UC de um aluno
-
+/**
+ * @brief Remove a UC (University Course) from a student's schedule.
+ *
+ * This function allows the removal of a UC from a student's schedule, updating the student's class information.
+ *
+ * @param StudentCode The code of the student from whom the UC will be removed.
+ * @param ucCode The code of the UC to be removed.
+ * @return True if the UC was successfully removed; otherwise, false.
+ */
 bool Requests::removeUC(int StudentCode, string ucCode) {
     Action action;
     action.type = ActionType::RemoveUC;
@@ -291,8 +357,16 @@ bool Requests::removeUC(int StudentCode, string ucCode) {
 
     return true;
 }
-
-// Função para trocar de UC para um aluno
+/**
+ * @brief Switch a student from one UC to another UC within the same class.
+ *
+ * This function allows a student to switch from one UC to another UC within the same class, subject to various checks.
+ *
+ * @param StudentCode The code of the student requesting the switch.
+ * @param ucCode The code of the current UC.
+ * @param newClassCode The code of the new class.
+ * @param newUCCode The code of the new UC.
+ */
 void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, const std::string& newUCCode) {
     Action action;
     action.type = ActionType::SwitchUC;
@@ -354,7 +428,11 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
     reader.removeStudentClass(StudentCode,ucCode,classCode);
 
 }
-
+/**
+ * @brief Undo the last student enrollment action.
+ *
+ * This function undoes the last student enrollment action, such as adding, switching, or removing a UC (subject) or class. It reverts the student's enrollment status based on the last accepted request.
+ */
 void Requests::undo() {
     Read reader;
     reader.Read_Student();

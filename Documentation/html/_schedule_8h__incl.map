@@ -1,0 +1,12 @@
+<map id="FEUP&#45;AED&#45;project/Schedule.h" name="FEUP&#45;AED&#45;project/Schedule.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" id="Node000002" href="$_student_8h.html" title=" " alt="" coords="16,80,93,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,34,74,69,69,66,94,31"/>
+<area shape="rect" id="Node000004" href="$_classes_8h.html" title=" " alt="" coords="117,80,197,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,31,141,66,137,69,112,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="40,155,93,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,107,64,139,59,140,54,108"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="143,109,95,147,92,143,140,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="129,155,185,181"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="160,107,160,139,154,139,154,107"/>
+</map>

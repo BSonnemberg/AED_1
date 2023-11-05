@@ -1,0 +1,5 @@
+<map id="compareStudentbyName" name="compareStudentbyName">
+<area shape="rect" id="Node000001" title="Compares two student objects based on their student names." alt="" coords="5,5,170,32"/>
+<area shape="rect" id="Node000002" href="$class_student.html#adfa5b05932a1abd3d51757a714c48633" title="Get the name of the student." alt="" coords="218,5,389,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,202,16,202,21,170,21"/>
+</map>

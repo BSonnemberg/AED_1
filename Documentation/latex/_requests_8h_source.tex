@@ -1,0 +1,75 @@
+\doxysection{Requests.\+h}
+\hypertarget{_requests_8h_source}{}\label{_requests_8h_source}\index{FEUP-\/AED-\/project/Requests.h@{FEUP-\/AED-\/project/Requests.h}}
+\mbox{\hyperlink{_requests_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PROJETO\_AED\_REQUESTS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PROJETO\_AED\_REQUESTS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ REQUESTS\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ REQUESTS\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_classes_8h}{Classes.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_student_8h}{Student.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_read_8h}{Read.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_slot_8h}{Slot.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b}{ActionType}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950bab9ebe0f5c663eb08e954dffa8897551b}{AddUC}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba830c54eb45e5944dbe032767c19ffb6d}{RemoveUC}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950ba26617f48cb45b1024036834d85b7774b}{SwitchUC}},}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950babb091e76d6536a77191070d6bddaaa84}{switchClass}},}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Adicione\ outros\ tipos\ de\ ação\ conforme\ necessário}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_action}{Action}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950b}{ActionType}}\ \mbox{\hyperlink{struct_action_a9171771045247ad4471b371ced19e959}{type}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_action_a72c3a69d83748cc11562824e1b3a7046}{studentCode}};}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_action_af90965d4a22c7407b0070fe4a5941d80}{ucCode}};}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_action_a3b82d7f95728a1327b7dcef2dcc65eba}{classCode}};}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_action_a279273192c7d6d5f13796919bc2a79e3}{description}};\ \textcolor{comment}{//\ Uma\ descrição\ da\ ação\ (opcional)}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_action_aae068d888fae3def0f2cee606d068916}{newClassCode}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{string}\ \ \mbox{\hyperlink{struct_action_a31dd4e8b9fec7a394e37af0bccd7ad33}{newUcCode}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_action_ab73b13cffdb1b32679cf46b783c7e404}{name}};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_requests}{Requests}}\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_requests_a491c078f83497f6013aa8bb8ddc697c8}{undo}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_requests_a1b0c05064a32e508ccb6cf19bb3b6398}{cap}}\ =30;}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_requests_a9dbecf74994e6e9a7f5e0a3e84e1d2c2}{Requests}}(\mbox{\hyperlink{class_read}{Read}}\ reader);}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_requests_a9dbecf74994e6e9a7f5e0a3e84e1d2c2}{Requests}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_requests_a661dfb22aca4687cead64f1dcccb9a73}{cheekClassOverlap}}(\textcolor{keywordtype}{int}\ StudentCode,\ std::string\ ucCode,\ std::string\ newClassCode);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_requests_8h_a21d5e8f8cdaa838586b31007df0a950babb091e76d6536a77191070d6bddaaa84}{switchClass}}(\ \textcolor{keywordtype}{int}\ StudentCode,\ std::string\ ucCode,\ std::string\ newClassCode);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_requests_aa186de6e06476332ee8e1b59e8e683bd}{vacancy}}(std::string\&\ ucCode,\ \textcolor{keywordtype}{string}\ oldClassCode,\ std::string\&\ newClassCode);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_requests_a90deae9ae0ad87478c9e68b5cad465d9}{capacity}}\ (\textcolor{keywordtype}{string}\ ucCode,\ \textcolor{keywordtype}{string}\ newClassCode);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_requests_a1e43413ca401286e55ae61ec0795496a}{addUC}}(\textcolor{keywordtype}{int}\ StudentCode,\ \ std::string\ ucCode,\ \ std::string\ newClassCode);}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5}{removeUC}}(\textcolor{keywordtype}{int}\ StudentCode,\ \ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a}{switchUC}}(\textcolor{keywordtype}{int}\ StudentCode,\ \textcolor{keywordtype}{string}\ ucCode,\ \textcolor{keywordtype}{string}\ newClassCode,\ \textcolor{keyword}{const}\ std::string\&\ newUCCode);}
+\DoxyCodeLine{00153\ \ \ \ \ vector<Classes>\ \mbox{\hyperlink{class_requests_a98598d5225f12e76784b59c3bc32c7f5}{getStudentClasses}}(\textcolor{keywordtype}{int}\ StudentCode);}
+\DoxyCodeLine{00163\ \ \ \ \ vector<Slot>\ \mbox{\hyperlink{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5}{getClassSlots}}(std::string\ ClassCode,\ std::string\ UcCode);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ std::stack<Action>\ acceptedRequests;\ \textcolor{comment}{//\ Fila\ para\ pedidos\ aceites}}
+\DoxyCodeLine{00169\ \ \ \ \ std::stack<Action>\ rejectedRequests;\ \textcolor{comment}{//\ Fila\ para\ pedidos\ recusados}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJETO\_AED\_REQUESTS\_H}}
+
+\end{DoxyCode}

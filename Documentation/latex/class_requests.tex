@@ -1,0 +1,598 @@
+\doxysection{Requests Class Reference}
+\hypertarget{class_requests}{}\label{class_requests}\index{Requests@{Requests}}
+
+
+Class for managing student enrollment actions.  
+
+
+
+
+{\ttfamily \#include $<$Requests.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_requests_a491c078f83497f6013aa8bb8ddc697c8}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Undo the last student enrollment action. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_requests_a96c2aae71dac81195b124b37e83fdacb}{Requests}} (\mbox{\hyperlink{class_read}{Read}} reader)
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_requests}{Requests} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_requests_a9dbecf74994e6e9a7f5e0a3e84e1d2c2}{Requests}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_requests}{Requests} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_requests_a661dfb22aca4687cead64f1dcccb9a73}{cheek\+Class\+Overlap}} (int Student\+Code, std\+::string uc\+Code, std\+::string new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Check for class schedule overlaps when enrolling in a new class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_requests_a7ed97404bc0301d666acbd8966d8c348}{switch\+Class}} (int Student\+Code, std\+::string uc\+Code, std\+::string new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Switch a student\textquotesingle{}s class within the same UC (subject). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_requests_aa186de6e06476332ee8e1b59e8e683bd}{vacancy}} (std\+::string \&uc\+Code, string old\+Class\+Code, std\+::string \&new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Check if there is a vacancy for a student in a new class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_requests_a90deae9ae0ad87478c9e68b5cad465d9}{capacity}} (string uc\+Code, string new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Check if the new class has the capacity to accommodate a student. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_requests_a1e43413ca401286e55ae61ec0795496a}{add\+UC}} (int Student\+Code, std\+::string uc\+Code, std\+::string new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Add a new UC (subject) to a student\textquotesingle{}s enrollment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5}{remove\+UC}} (int Student\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Remove a UC (subject) from a student\textquotesingle{}s enrollment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a}{switch\+UC}} (int Student\+Code, string uc\+Code, string new\+Class\+Code, const std\+::string \&new\+UCCode)
+\begin{DoxyCompactList}\small\item\em Switch a student\textquotesingle{}s UC (subject) and class. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ \mbox{\hyperlink{class_requests_a98598d5225f12e76784b59c3bc32c7f5}{get\+Student\+Classes}} (int Student\+Code)
+\begin{DoxyCompactList}\small\item\em Retrieve the list of classes in which a student is enrolled. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5}{get\+Class\+Slots}} (std\+::string Class\+Code, std\+::string Uc\+Code)
+\begin{DoxyCompactList}\small\item\em Retrieve the schedule slots of a class in a given UC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_requests_a1b0c05064a32e508ccb6cf19bb3b6398}{cap}} =30
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing student enrollment actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_requests_a96c2aae71dac81195b124b37e83fdacb}\label{class_requests_a96c2aae71dac81195b124b37e83fdacb} 
+\index{Requests@{Requests}!Requests@{Requests}}
+\index{Requests@{Requests}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{Requests()}{Requests()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Requests\+::\+Requests (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_read}{Read}}}]{reader }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_requests}{Requests} class. 
+
+Constructor for the \doxylink{class_requests}{Requests} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & An instance of the \doxylink{class_read}{Read} class for reading student and class data.\\
+\hline
+{\em reader} & An instance of the \doxylink{class_read}{Read} class for reading and managing class and student data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_requests_a9dbecf74994e6e9a7f5e0a3e84e1d2c2}\label{class_requests_a9dbecf74994e6e9a7f5e0a3e84e1d2c2} 
+\index{Requests@{Requests}!Requests@{Requests}}
+\index{Requests@{Requests}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{Requests()}{Requests()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Requests\+::\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_requests}{Requests} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_requests_a1e43413ca401286e55ae61ec0795496a}\label{class_requests_a1e43413ca401286e55ae61ec0795496a} 
+\index{Requests@{Requests}!addUC@{addUC}}
+\index{addUC@{addUC}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{addUC()}{addUC()}}
+{\footnotesize\ttfamily bool Requests\+::add\+UC (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Add a new UC (subject) to a student\textquotesingle{}s enrollment. 
+
+Add a new UC (University Course) for a student.
+
+This function adds a new UC to a student\textquotesingle{}s enrollment if conditions are met and updates the enrollment records.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em uc\+Code} & The code of the UC (subject) to add. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class associated with the UC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC is successfully added; false otherwise.
+\end{DoxyReturn}
+This function allows a student to add a new UC to their schedule, considering the maximum number of UCs and vacancy in the new UC.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The code of the student to add the UC. \\
+\hline
+{\em uc\+Code} & The code of the UC to be added. \\
+\hline
+{\em new\+Class\+Code} & The code of the class associated with the new UC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC was added successfully; otherwise, false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a1e43413ca401286e55ae61ec0795496a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a1e43413ca401286e55ae61ec0795496a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a90deae9ae0ad87478c9e68b5cad465d9}\label{class_requests_a90deae9ae0ad87478c9e68b5cad465d9} 
+\index{Requests@{Requests}!capacity@{capacity}}
+\index{capacity@{capacity}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily bool Requests\+::capacity (\begin{DoxyParamCaption}\item[{string}]{uc\+Code,  }\item[{string}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Check if the new class has the capacity to accommodate a student. 
+
+Check if there is capacity in the new class for a specific UC.
+
+This function checks if the new class has available capacity to accommodate a student, considering occupancy limits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The code of the UC (subject). \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is capacity; false if the class is full.
+\end{DoxyReturn}
+This function checks if there is capacity in the new class for a specific UC, considering the maximum occupancy limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The UC code for which the capacity check is performed. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is capacity in the new class; otherwise, false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_requests_a90deae9ae0ad87478c9e68b5cad465d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a90deae9ae0ad87478c9e68b5cad465d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a661dfb22aca4687cead64f1dcccb9a73}\label{class_requests_a661dfb22aca4687cead64f1dcccb9a73} 
+\index{Requests@{Requests}!cheekClassOverlap@{cheekClassOverlap}}
+\index{cheekClassOverlap@{cheekClassOverlap}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{cheekClassOverlap()}{cheekClassOverlap()}}
+{\footnotesize\ttfamily bool Requests\+::cheek\+Class\+Overlap (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Check for class schedule overlaps when enrolling in a new class. 
+
+Check for class schedule overlaps for a student\textquotesingle{}s enrollment in a new class.
+
+This function checks if there are any schedule overlaps between the student\textquotesingle{}s existing classes and a new class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em uc\+Code} & The code of the UC (subject) the student wants to enroll in. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class the student wants to enroll in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there are no schedule overlaps; false otherwise.
+\end{DoxyReturn}
+This function checks if enrolling a student in a new class with a specified UC (subject) causes a schedule overlap with their current enrolled classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique identifier of the student. \\
+\hline
+{\em uc\+Code} & The UC (subject) code for the new class. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class the student wants to enroll in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if no schedule overlap occurs, False if there is an overlap. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a661dfb22aca4687cead64f1dcccb9a73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a661dfb22aca4687cead64f1dcccb9a73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5}\label{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5} 
+\index{Requests@{Requests}!getClassSlots@{getClassSlots}}
+\index{getClassSlots@{getClassSlots}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{getClassSlots()}{getClassSlots()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Requests\+::get\+Class\+Slots (\begin{DoxyParamCaption}\item[{std\+::string}]{Class\+Code,  }\item[{std\+::string}]{Uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Retrieve the schedule slots of a class in a given UC. 
+
+Get the time slots for a specific class with a given Class\+Code and Uc\+Code (subject code).
+
+This function returns a vector of \doxylink{class_slot}{Slot} objects representing the schedule slots of a class in a specific UC (subject).
+
+
+\begin{DoxyParams}{Parameters}
+{\em Class\+Code} & The code of the class. \\
+\hline
+{\em Uc\+Code} & The code of the UC (subject) containing the class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_slot}{Slot} objects representing the class\textquotesingle{}s schedule slots.
+\end{DoxyReturn}
+This function retrieves the time slots (schedule) for a specific class identified by its Class\+Code and Uc\+Code (subject code).
+
+
+\begin{DoxyParams}{Parameters}
+{\em Class\+Code} & The unique identifier for the class. \\
+\hline
+{\em Uc\+Code} & The code of the UC (subject) to which the class belongs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the time slots (schedule) for the specified class. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_ae937bfaeb9b5adc21759bf2bc72eb4b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a98598d5225f12e76784b59c3bc32c7f5}\label{class_requests_a98598d5225f12e76784b59c3bc32c7f5} 
+\index{Requests@{Requests}!getStudentClasses@{getStudentClasses}}
+\index{getStudentClasses@{getStudentClasses}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{getStudentClasses()}{getStudentClasses()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ Requests\+::get\+Student\+Classes (\begin{DoxyParamCaption}\item[{int}]{Student\+Code }\end{DoxyParamCaption})}
+
+
+
+Retrieve the list of classes in which a student is enrolled. 
+
+Get a list of classes associated with a specific student.
+
+This function returns a vector of class objects representing the classes in which a student is currently enrolled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_classes}{Classes} objects representing the student\textquotesingle{}s enrolled classes.
+\end{DoxyReturn}
+This function retrieves a list of classes in which a specific student is currently enrolled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique identifier of the student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the classes associated with the student. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a98598d5225f12e76784b59c3bc32c7f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a98598d5225f12e76784b59c3bc32c7f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5}\label{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5} 
+\index{Requests@{Requests}!removeUC@{removeUC}}
+\index{removeUC@{removeUC}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{removeUC()}{removeUC()}}
+{\footnotesize\ttfamily bool Requests\+::remove\+UC (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Remove a UC (subject) from a student\textquotesingle{}s enrollment. 
+
+Remove a UC (University Course) from a student\textquotesingle{}s schedule.
+
+This function removes a UC from a student\textquotesingle{}s enrollment and updates the enrollment records.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em uc\+Code} & The code of the UC (subject) to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC is successfully removed; false otherwise.
+\end{DoxyReturn}
+This function allows the removal of a UC from a student\textquotesingle{}s schedule, updating the student\textquotesingle{}s class information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The code of the student from whom the UC will be removed. \\
+\hline
+{\em uc\+Code} & The code of the UC to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the UC was successfully removed; otherwise, false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a77bb8be1738d4eba5c221fdc6043d7a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a7ed97404bc0301d666acbd8966d8c348}\label{class_requests_a7ed97404bc0301d666acbd8966d8c348} 
+\index{Requests@{Requests}!switchClass@{switchClass}}
+\index{switchClass@{switchClass}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{switchClass()}{switchClass()}}
+{\footnotesize\ttfamily void Requests\+::switch\+Class (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Switch a student\textquotesingle{}s class within the same UC (subject). 
+
+Switch a student\textquotesingle{}s class for a specific UC.
+
+This function switches a student\textquotesingle{}s class within the same UC (subject) if conditions are met, updating enrollment records.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em uc\+Code} & The code of the UC (subject). \\
+\hline
+{\em new\+Class\+Code} & The code of the new class.\\
+\hline
+\end{DoxyParams}
+This function allows a student to switch from their current class to a new class within the same UC, provided there is a vacancy and the new class is within capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The code of the student requesting the switch. \\
+\hline
+{\em uc\+Code} & The UC code for which the switch is requested. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a7ed97404bc0301d666acbd8966d8c348_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a7ed97404bc0301d666acbd8966d8c348_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a}\label{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a} 
+\index{Requests@{Requests}!switchUC@{switchUC}}
+\index{switchUC@{switchUC}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{switchUC()}{switchUC()}}
+{\footnotesize\ttfamily void Requests\+::switch\+UC (\begin{DoxyParamCaption}\item[{int}]{Student\+Code,  }\item[{string}]{uc\+Code,  }\item[{string}]{new\+Class\+Code,  }\item[{const std\+::string \&}]{new\+UCCode }\end{DoxyParamCaption})}
+
+
+
+Switch a student\textquotesingle{}s UC (subject) and class. 
+
+Switch a student from one UC to another UC within the same class.
+
+This function switches a student\textquotesingle{}s UC and class, updating enrollment records and checking for schedule conflicts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The unique code of the student. \\
+\hline
+{\em uc\+Code} & The code of the UC (subject) to switch from. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class to switch to. \\
+\hline
+{\em new\+UCCode} & The code of the new UC (subject) to switch to.\\
+\hline
+\end{DoxyParams}
+This function allows a student to switch from one UC to another UC within the same class, subject to various checks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & The code of the student requesting the switch. \\
+\hline
+{\em uc\+Code} & The code of the current UC. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+{\em new\+UCCode} & The code of the new UC. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_ae740e8b002387e2d4d64ed85f53e8c2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_a491c078f83497f6013aa8bb8ddc697c8}\label{class_requests_a491c078f83497f6013aa8bb8ddc697c8} 
+\index{Requests@{Requests}!undo@{undo}}
+\index{undo@{undo}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Requests\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Undo the last student enrollment action. 
+
+This function undoes the last student enrollment action, such as adding, switching, or removing a UC (subject) or class. It reverts the student\textquotesingle{}s enrollment status based on the last accepted request. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_requests_a491c078f83497f6013aa8bb8ddc697c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_a491c078f83497f6013aa8bb8ddc697c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_requests_aa186de6e06476332ee8e1b59e8e683bd}\label{class_requests_aa186de6e06476332ee8e1b59e8e683bd} 
+\index{Requests@{Requests}!vacancy@{vacancy}}
+\index{vacancy@{vacancy}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{vacancy()}{vacancy()}}
+{\footnotesize\ttfamily bool Requests\+::vacancy (\begin{DoxyParamCaption}\item[{std\+::string \&}]{uc\+Code,  }\item[{string}]{old\+Class\+Code,  }\item[{std\+::string \&}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Check if there is a vacancy for a student in a new class. 
+
+Check if there is a vacancy for a student to switch from an old class to a new class.
+
+This function checks if there is a vacancy in the new class for a student to enroll, considering occupancy limits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The code of the UC (subject). \\
+\hline
+{\em old\+Class\+Code} & The code of the old class. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is a vacancy; false if the occupancy limit is reached.
+\end{DoxyReturn}
+This function checks if there is a vacancy in the new class compared to the old class for a specific UC (University Course).
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The UC code for which the switch is requested. \\
+\hline
+{\em old\+Class\+Code} & The code of the old class. \\
+\hline
+{\em new\+Class\+Code} & The code of the new class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is a vacancy to switch to the new class; otherwise, false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_requests_aa186de6e06476332ee8e1b59e8e683bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_requests_aa186de6e06476332ee8e1b59e8e683bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_requests_a1b0c05064a32e508ccb6cf19bb3b6398}\label{class_requests_a1b0c05064a32e508ccb6cf19bb3b6398} 
+\index{Requests@{Requests}!cap@{cap}}
+\index{cap@{cap}!Requests@{Requests}}
+\doxysubsubsection{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily int Requests\+::cap =30}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_requests_8h}{Requests.\+h}}\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_requests_8cpp}{Requests.\+cpp}}\end{DoxyCompactItemize}

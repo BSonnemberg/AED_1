@@ -1,0 +1,15 @@
+<map id="Schedule::printStudentClassUc" name="Schedule::printStudentClassUc">
+<area shape="rect" id="Node000001" title="Print the student information for a specific course (UC) and class based on the provided UC code,..." alt="" coords="5,81,208,108"/>
+<area shape="rect" id="Node000002" href="$_schedule_8cpp.html#a5766ce1f15abccedac689495ab36a5a6" title="Compares two student objects based on their student names." alt="" coords="257,5,422,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,78,255,41,277,34,278,40,256,47,148,83"/>
+<area shape="rect" id="Node000004" href="$_schedule_8cpp.html#aef0df6ea39dc5797e0c1bc1a08521b5a" title="Compares two student objects based on their student codes." alt="" coords="256,56,423,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,81,240,77,241,83,208,86"/>
+<area shape="rect" id="Node000006" href="$class_read.html#a626a6a8efa2c5d61d91835b98e246329" title="Get the &#39;students&#39; vector containing student information." alt="" coords="261,107,418,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="208,103,246,107,245,112,208,108"/>
+<area shape="rect" id="Node000007" href="$class_read.html#a8937d98453bd50947d4e3851e54691ba" title="Read student information from a CSV file and store it in the &#39;students&#39; vector." alt="" coords="269,157,410,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="148,106,256,143,278,150,277,155,255,148,146,111"/>
+<area shape="rect" id="Node000003" href="$class_student.html#adfa5b05932a1abd3d51757a714c48633" title="Get the name of the student." alt="" coords="471,5,642,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,16,455,16,455,21,422,21"/>
+<area shape="rect" id="Node000005" href="$class_student.html#acc4398bbb587e8f0223e03e0208622ea" title="Get the unique code of the student." alt="" coords="473,56,640,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="424,67,457,67,457,72,424,72"/>
+</map>

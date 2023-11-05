@@ -1,0 +1,30 @@
+<map id="FEUP&#45;AED&#45;project/Student.h" name="FEUP&#45;AED&#45;project/Student.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="349,5,539,32"/>
+<area shape="rect" id="Node000002" href="$_read_8cpp.html" title="This file contains the implementation of the Read class, which is responsible for reading class and s..." alt="" coords="5,155,195,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,41,130,157,128,152,400,36"/>
+<area shape="rect" id="Node000003" href="$_read_8h.html" title="This header file defines the Read class, which is responsible for reading and managing class and stud..." alt="" coords="356,80,532,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="447,48,447,80,441,80,441,48"/>
+<area shape="rect" id="Node000004" href="$_requests_8h.html" title="This file defines the Requests class and related data structures for managing student enrollment acti..." alt="" coords="219,155,419,181"/>
+<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="398,41,370,59,346,82,336,100,329,119,322,155,317,154,323,118,331,97,342,78,367,54,396,37"/>
+<area shape="rect" id="Node000010" href="$_schedule_8h.html" title=" " alt="" coords="556,80,756,107"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="496,35,620,77,618,82,494,40"/>
+<area shape="rect" id="Node000011" href="$_student_8cpp.html" title=" " alt="" coords="779,80,984,107"/>
+<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="536,32,805,77,804,82,535,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="369,113,161,157,160,151,368,108"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="411,117,342,156,339,152,408,112"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title=" " alt="" coords="485,304,672,331"/>
+<area shape="poly" id="edge11_Node000003_Node000007" title=" " alt="" coords="456,120,484,180,530,250,570,302,566,305,526,253,479,183,451,122"/>
+<area shape="rect" id="Node000009" href="$_schedule_8cpp.html" title=" " alt="" coords="493,155,707,181"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="486,111,574,152,571,156,484,116"/>
+<area shape="rect" id="Node000005" href="$_menu_8h.html" title=" " alt="" coords="762,229,939,256"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="427,181,762,227,761,232,426,187"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="260,189,230,202,205,218,193,236,194,244,199,254,217,268,244,280,317,297,403,307,485,312,485,317,402,313,316,303,243,285,215,273,195,258,189,246,188,234,201,214,227,198,258,184"/>
+<area shape="rect" id="Node000008" href="$_requests_8cpp.html" title=" " alt="" coords="209,229,423,256"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="320,197,319,229,314,229,315,197"/>
+<area shape="rect" id="Node000006" href="$_menu_8cpp.html" title=" " alt="" coords="755,304,946,331"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="853,272,853,304,848,304,848,272"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="789,263,627,306,626,301,788,258"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="698,112,764,153,809,192,842,227,838,231,805,196,761,157,695,116"/>
+<area shape="poly" id="edge16_Node000010_Node000007" title=" " alt="" coords="690,114,705,128,717,145,724,163,721,182,697,223,664,258,630,286,601,306,598,301,627,282,661,254,692,220,716,180,718,163,712,147,701,132,686,118"/>
+<area shape="poly" id="edge15_Node000010_Node000009" title=" " alt="" coords="639,121,612,156,608,153,635,117"/>
+</map>

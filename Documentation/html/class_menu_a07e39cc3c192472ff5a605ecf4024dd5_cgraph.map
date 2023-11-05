@@ -1,0 +1,33 @@
+<map id="Menu::menuChangeClass" name="Menu::menuChangeClass">
+<area shape="rect" id="Node000001" title="Display the menu for changing a student&#39;s Class for a given UC." alt="" coords="5,114,176,140"/>
+<area shape="rect" id="Node000002" href="$class_requests.html#a7ed97404bc0301d666acbd8966d8c348" title="Switch a student&#39;s class within the same UC (subject)." alt="" coords="224,114,378,140"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,124,208,124,208,130,176,130"/>
+<area shape="rect" id="Node000003" href="$class_requests.html#a90deae9ae0ad87478c9e68b5cad465d9" title="Check if the new class has the capacity to accommodate a student." alt="" coords="700,38,833,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,110,426,95,562,73,684,57,684,62,563,78,426,100,357,116"/>
+<area shape="rect" id="Node000004" href="$class_read.html#a626a6a8efa2c5d61d91835b98e246329" title="Get the &#39;students&#39; vector containing student information." alt="" coords="912,63,1068,90"/>
+<area shape="poly" id="edge14_Node000002_Node000004" title=" " alt="" coords="323,111,369,85,425,62,545,25,595,13,642,6,690,3,741,5,864,23,909,36,950,53,948,58,908,41,863,28,740,10,690,8,643,11,596,18,547,30,427,67,371,90,325,115"/>
+<area shape="rect" id="Node000005" href="$class_read.html#a8937d98453bd50947d4e3851e54691ba" title="Read student information from a CSV file and store it in the &#39;students&#39; vector." alt="" coords="919,139,1061,166"/>
+<area shape="poly" id="edge15_Node000002_Node000005" title=" " alt="" coords="378,127,904,146,904,152,378,132"/>
+<area shape="rect" id="Node000006" href="$class_requests.html#a661dfb22aca4687cead64f1dcccb9a73" title="Check for class schedule overlaps when enrolling in a new class." alt="" coords="426,190,621,216"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="341,138,427,168,466,182,465,187,425,173,340,143"/>
+<area shape="rect" id="Node000011" href="$class_read.html#ab74001c69506e474edf33f9441f253fb" title="Update the class associated with a student&#39;s UC (University Course)." alt="" coords="436,240,612,267"/>
+<area shape="poly" id="edge16_Node000002_Node000011" title=" " alt="" coords="317,139,363,182,394,206,427,226,442,232,439,237,425,231,391,210,359,186,313,143"/>
+<area shape="rect" id="Node000012" href="$class_requests.html#aa186de6e06476332ee8e1b59e8e683bd" title="Check if there is a vacancy for a student in a new class." alt="" coords="701,88,832,115"/>
+<area shape="poly" id="edge17_Node000002_Node000012" title=" " alt="" coords="378,120,685,103,685,109,379,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="834,56,896,63,896,68,833,61"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="832,62,865,74,956,128,954,133,863,79,830,67"/>
+<area shape="rect" id="Node000007" href="$class_requests.html#ae937bfaeb9b5adc21759bf2bc72eb4b5" title="Retrieve the schedule slots of a class in a given UC." alt="" coords="684,240,849,267"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="592,214,685,234,684,239,591,219"/>
+<area shape="rect" id="Node000010" href="$class_requests.html#a98598d5225f12e76784b59c3bc32c7f5" title="Retrieve the list of classes in which a student is enrolled." alt="" coords="669,190,864,216"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="622,200,654,200,654,206,622,206"/>
+<area shape="rect" id="Node000008" href="$class_read.html#acb6baf12351d9e048f9dacd5b21076f5" title="Get the &#39;lesson&#39; vector containing class information." alt="" coords="918,190,1062,216"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="828,237,912,218,914,223,829,242"/>
+<area shape="rect" id="Node000009" href="$class_read.html#a99eabbb8da3ec55dc51c690aa3ddbcc0" title="Read class information from a CSV file and store it in the &#39;lesson&#39; vector." alt="" coords="918,240,1062,267"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="849,251,903,251,903,256,849,256"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="791,187,950,95,952,100,793,191"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="828,186,912,167,914,172,829,192"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="864,200,902,200,902,206,864,206"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="829,214,914,234,912,239,828,219"/>
+<area shape="poly" id="edge18_Node000012_Node000004" title=" " alt="" coords="832,92,896,84,897,89,833,97"/>
+<area shape="poly" id="edge19_Node000012_Node000005" title=" " alt="" coords="829,113,914,132,912,137,828,118"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Schedule::printClassSchedule" name="Schedule::printClassSchedule">
+<area shape="rect" id="Node000001" title="Print the schedule for a specific class based on the provided class code." alt="" coords="396,5,591,32"/>
+<area shape="rect" id="Node000002" href="$class_menu.html#a1acead50b9875211b01a4a7f64d39b14" title="Display the menu for printing a class&#39;s schedule." alt="" coords="168,5,348,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,21,349,21,349,16,380,16"/>
+<area shape="rect" id="Node000003" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,5,120,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,21,120,21,120,16,152,16"/>
+</map>

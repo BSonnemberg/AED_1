@@ -1,0 +1,22 @@
+<map id="Read::addStudentClass" name="Read::addStudentClass">
+<area shape="rect" id="Node000001" title="Add a new student class entry to the &#39;students_classes.csv&#39; file." alt="" coords="553,107,712,133"/>
+<area shape="rect" id="Node000002" href="$class_requests.html#a1e43413ca401286e55ae61ec0795496a" title="Add a new UC (subject) to a student&#39;s enrollment." alt="" coords="374,107,497,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="538,123,498,123,498,117,538,117"/>
+<area shape="rect" id="Node000006" href="$class_requests.html#ae740e8b002387e2d4d64ed85f53e8c2a" title="Switch a student&#39;s UC (subject) and class." alt="" coords="366,157,505,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="563,140,491,159,490,154,562,135"/>
+<area shape="rect" id="Node000008" href="$class_requests.html#a491c078f83497f6013aa8bb8ddc697c8" title="Undo the last student enrollment action." alt="" coords="380,56,492,83"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="562,105,490,86,491,81,563,100"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="218,56,268,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,105,267,78,268,73,368,100"/>
+<area shape="rect" id="Node000004" href="$class_menu.html#ad79b0e4c2440cffb77b0d0417e246bc5" title="Display the menu for adding a new UC for a student." alt="" coords="177,107,309,133"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,123,310,123,310,117,358,117"/>
+<area shape="rect" id="Node000005" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,107,120,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="161,123,120,123,120,117,161,117"/>
+<area shape="rect" id="Node000007" href="$class_menu.html#a414d87b52170d8320872a5f69dc9f898" title="Display the menu for switching a student&#39;s UC and Class." alt="" coords="168,157,318,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="350,173,319,173,319,168,350,168"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="177,155,112,136,113,131,179,150"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="364,72,268,72,268,67,364,67"/>
+<area shape="rect" id="Node000009" href="$class_menu.html#a73c0982f4c0b8ee38660c92f3c082b28" title="Perform an undo operation in the menu." alt="" coords="198,5,288,32"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="367,54,287,33,289,28,368,49"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="184,39,169,46,120,78,81,108,78,104,117,73,166,42,182,34"/>
+</map>

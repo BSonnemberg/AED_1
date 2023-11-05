@@ -1,0 +1,11 @@
+<map id="Slot::overlaps" name="Slot::overlaps">
+<area shape="rect" id="Node000001" title="Check if the current time slot overlaps with another time slot." alt="" coords="5,81,105,108"/>
+<area shape="rect" id="Node000002" href="$class_slot.html#a52eddfa1b3cd1954a31535f5739fd2b6" title="Get the end time of the time slot." alt="" coords="156,5,277,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,78,152,42,164,36,166,41,154,46,82,83"/>
+<area shape="rect" id="Node000003" href="$class_slot.html#ae0fa32c6f96b3de7640b4e32492fcbac" title="Get the start time of the time slot." alt="" coords="153,56,280,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,84,137,79,138,84,106,89"/>
+<area shape="rect" id="Node000004" href="$class_slot.html#a7e4404bad632e27155d4ec95f4c0d90c" title="Get the type of the time slot." alt="" coords="167,107,266,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,100,152,107,151,112,105,105"/>
+<area shape="rect" id="Node000005" href="$class_slot.html#af04e1710ad666389e30ebad9671d0df4" title="Get the day of the week for the time slot." alt="" coords="153,157,280,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="82,106,154,143,166,149,164,153,152,148,80,111"/>
+</map>

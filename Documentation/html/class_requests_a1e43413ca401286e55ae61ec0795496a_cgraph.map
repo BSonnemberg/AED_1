@@ -1,0 +1,27 @@
+<map id="Requests::addUC" name="Requests::addUC">
+<area shape="rect" id="Node000001" title="Add a new UC (subject) to a student&#39;s enrollment." alt="" coords="5,107,129,133"/>
+<area shape="rect" id="Node000002" href="$class_read.html#a4e80d148d7cb2964130c8ce9a0d1eb95" title="Add a new student class entry to the &#39;students_classes.csv&#39; file." alt="" coords="195,5,354,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,104,123,73,175,42,192,35,194,40,178,46,126,77,86,108"/>
+<area shape="rect" id="Node000003" href="$class_requests.html#a90deae9ae0ad87478c9e68b5cad465d9" title="Check if the new class has the capacity to accommodate a student." alt="" coords="451,157,584,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,129,177,136,313,151,435,162,435,167,313,157,176,141,129,134"/>
+<area shape="rect" id="Node000004" href="$class_read.html#a626a6a8efa2c5d61d91835b98e246329" title="Get the &#39;students&#39; vector containing student information." alt="" coords="662,107,819,133"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="129,117,647,117,647,123,129,123"/>
+<area shape="rect" id="Node000005" href="$class_read.html#a8937d98453bd50947d4e3851e54691ba" title="Read student information from a CSV file and store it in the &#39;students&#39; vector." alt="" coords="670,157,811,184"/>
+<area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="97,131,134,148,177,163,298,191,394,204,490,204,614,193,668,185,668,190,615,199,491,209,393,209,297,197,176,168,133,153,95,136"/>
+<area shape="rect" id="Node000006" href="$class_requests.html#a661dfb22aca4687cead64f1dcccb9a73" title="Check for class schedule overlaps when enrolling in a new class." alt="" coords="177,56,372,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="124,103,201,84,202,90,125,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="579,154,663,135,664,140,580,159"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="584,168,654,168,654,173,584,173"/>
+<area shape="rect" id="Node000007" href="$class_requests.html#ae937bfaeb9b5adc21759bf2bc72eb4b5" title="Retrieve the schedule slots of a class in a given UC." alt="" coords="435,5,600,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="341,53,434,33,435,38,342,58"/>
+<area shape="rect" id="Node000010" href="$class_requests.html#a98598d5225f12e76784b59c3bc32c7f5" title="Retrieve the list of classes in which a student is enrolled." alt="" coords="420,56,614,83"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="373,67,405,67,405,72,373,72"/>
+<area shape="rect" id="Node000008" href="$class_read.html#acb6baf12351d9e048f9dacd5b21076f5" title="Get the &#39;lesson&#39; vector containing class information." alt="" coords="668,5,813,32"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="600,16,653,16,653,21,600,21"/>
+<area shape="rect" id="Node000009" href="$class_read.html#a99eabbb8da3ec55dc51c690aa3ddbcc0" title="Read class information from a CSV file and store it in the &#39;lesson&#39; vector." alt="" coords="669,56,812,83"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="580,30,664,49,663,55,579,35"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="580,81,664,100,663,105,579,86"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="543,81,597,111,663,143,679,149,677,154,661,148,595,116,541,86"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="579,53,663,33,664,39,580,58"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="615,67,653,67,653,72,615,72"/>
+</map>

@@ -4,11 +4,14 @@
 
 #include <limits>
 #include "Menu.h"
-
+/**
+ * @brief Default constructor for the Menu class.
+ */
 Menu::Menu() {}
 
-
-
+/**
+ * @brief Display and manage the first menu with various options.
+ */
 void Menu::firstMenu(){
     int option;
     do {
@@ -79,7 +82,9 @@ void Menu::firstMenu(){
     } while (option != 12);
 
 }
-
+/**
+ * @brief Display the menu for printing a student's schedule.
+ */
 void Menu::menuStudentSchedule() {
     int StudentCode;
     Schedule schedule;
@@ -89,7 +94,9 @@ void Menu::menuStudentSchedule() {
 
 
 }
-
+/**
+ * @brief Display the menu for printing a class's schedule.
+ */
 void Menu::menuClassSchedule() {
     string ClassCode;
     Schedule schedule;
@@ -97,7 +104,9 @@ void Menu::menuClassSchedule() {
     cin >> ClassCode;
     schedule.printClassSchedule(ClassCode);
 }
-
+/**
+ * @brief Display the menu for printing a UC's schedule.
+ */
 void Menu::menuUcSchedule() {
     string  UcCode;
     Schedule schedule;
@@ -105,7 +114,9 @@ void Menu::menuUcSchedule() {
     cin >> UcCode;
     schedule.printUcSchedule(UcCode);
 }
-
+/**
+ * @brief Display the menu for printing students of a given UC.
+ */
 void Menu::menuStudentUC() {
     string UcCode;
     string sorting;
@@ -128,7 +139,9 @@ void Menu::menuStudentUC() {
     }
     schedule.printStudentUc(UcCode, sorting);
 }
-
+/**
+ * @brief Display the menu for printing students of a given class.
+ */
 void Menu::menuStudentClass() {
     string ClassCode;
     string sorting;
@@ -151,7 +164,9 @@ void Menu::menuStudentClass() {
     }
     schedule.printStudentClass(ClassCode,sorting);
 }
-
+/**
+ * @brief Display the menu for printing students of a given Class and UC.
+ */
 void  Menu::menuStudentClassUC() {
     string UcCode;
     string ClassCode;
@@ -178,7 +193,9 @@ void  Menu::menuStudentClassUC() {
     }
     schedule.printStudentClassUc(UcCode,ClassCode,sorting);
 }
-
+/**
+ * @brief Display the menu for changing a student's Class for a given UC.
+ */
 void Menu::menuChangeClass() {
     int StudentCode;
     std::string ucCode;
@@ -197,7 +214,9 @@ void Menu::menuChangeClass() {
 
     request.switchClass(StudentCode,ucCode,newClassCode);
 }
-
+/**
+ * @brief Display the menu for adding a new UC for a student.
+ */
 void Menu::menuAddUc() {
     Read reader;
     Requests request (reader);
@@ -214,7 +233,9 @@ void Menu::menuAddUc() {
     request.addUC(StudentCode,ucCode,newClassCode);
 
 }
-
+/**
+ * @brief Display the menu for removing a UC from a student.
+ */
 void Menu::menuRemoveUc() {
     Read reader;
     Requests request (reader);
@@ -226,7 +247,9 @@ void Menu::menuRemoveUc() {
     cin >> ucCode;
     request.removeUC(StudentCode,ucCode);
 }
-
+/**
+ * @brief Display the menu for switching a student's UC and Class.
+ */
 void Menu::menuSwitchUC() {
     Read reader;
     Requests request (reader);
@@ -246,7 +269,12 @@ void Menu::menuSwitchUC() {
     request.switchUC(StudentCode,ucCode,newClassCode, newUCCode);
 
 }
-
+/**
+ * @brief Perform an undo operation in the menu.
+ *
+ * This function is responsible for undoing the last action executed in the menu, if possible.
+ * It uses the `Requests` class to manage undo operations.
+ */
 void Menu::undu() {
     Read reader;
     Requests request (reader);

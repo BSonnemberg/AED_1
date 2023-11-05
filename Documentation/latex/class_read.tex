@@ -1,0 +1,369 @@
+\doxysection{Read Class Reference}
+\hypertarget{class_read}{}\label{class_read}\index{Read@{Read}}
+
+
+This class handles reading and managing class, student, and UC data.  
+
+
+
+
+{\ttfamily \#include $<$Read.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_read_a99eabbb8da3ec55dc51c690aa3ddbcc0}{Read\+\_\+\+Classes}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_read}{Read} class information from a CSV file and store it in the \textquotesingle{}lesson\textquotesingle{} vector. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ \mbox{\hyperlink{class_read_acb6baf12351d9e048f9dacd5b21076f5}{get\+Classvector}} ()
+\begin{DoxyCompactList}\small\item\em Get the \textquotesingle{}lesson\textquotesingle{} vector containing class information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_a8937d98453bd50947d4e3851e54691ba}{Read\+\_\+\+Student}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_read}{Read} student information from a CSV file and store it in the \textquotesingle{}students\textquotesingle{} vector. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_read_a626a6a8efa2c5d61d91835b98e246329}{get\+Studentvector}} ()
+\begin{DoxyCompactList}\small\item\em Get the \textquotesingle{}students\textquotesingle{} vector containing student information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_ab74001c69506e474edf33f9441f253fb}{update\+Student\+Class}} (int student\+Code, string uc\+Code, string new\+Class\+Code)
+\begin{DoxyCompactList}\small\item\em Update the class associated with a student\textquotesingle{}s UC (University Course). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_a28d5834663aab0d248695ff30b90d3b0}{Read\+\_\+\+Classes\+\_\+\+Per\+\_\+\+Uc}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_read}{Read} class information per UC from a CSV file and store it in the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_classes___uc}{Classes\+\_\+\+Uc}} $>$ \mbox{\hyperlink{class_read_a12e8d888c08db74849572f1cf077bcfc}{get\+Classes\+Per\+Ucvector}} ()
+\begin{DoxyCompactList}\small\item\em Get the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector containing class information per UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_a4e80d148d7cb2964130c8ce9a0d1eb95}{add\+Student\+Class}} (int student\+Code, const std\+::string \&student\+Name, const std\+::string \&uc\+Code, const std\+::string \&class\+Code)
+\begin{DoxyCompactList}\small\item\em Add a new student class entry to the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_a707eb8d5ac6fb5d27e0c9e06ed8e44f4}{remove\+Student\+Class}} (int student\+Code, string uc\+Code, string class\+Code)
+\begin{DoxyCompactList}\small\item\em Remove a student class entry from the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_read_a545a2a1a7ef56e761d722d2e2906db04}{compare\+Student\+Codes}} (\mbox{\hyperlink{class_student}{Student}} a, \mbox{\hyperlink{class_student}{Student}} b)
+\begin{DoxyCompactList}\small\item\em Compare student codes for sorting purposes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_aa805e99df891334cd85ed9caf76a70ae}{sort\+Students\+By\+Code}} (std\+::vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \&students)
+\begin{DoxyCompactList}\small\item\em Sort students by their codes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_read_ac29582be73e6fde7def28d724bf6070c}{weekday\+To\+Number}} (const std\+::string \&day)
+\begin{DoxyCompactList}\small\item\em Convert a weekday string to a corresponding numeric representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_read_a3681b038bb107e853579d4da11d272ee}{sort\+Classes\+By\+Weekday\+And\+Start\+Hour}} (std\+::vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ \&aula)
+\begin{DoxyCompactList}\small\item\em Sort the \textquotesingle{}aula\textquotesingle{} vector of \doxylink{class_classes}{Classes} objects by weekday and start hour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles reading and managing class, student, and UC data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_read_a4e80d148d7cb2964130c8ce9a0d1eb95}\label{class_read_a4e80d148d7cb2964130c8ce9a0d1eb95} 
+\index{Read@{Read}!addStudentClass@{addStudentClass}}
+\index{addStudentClass@{addStudentClass}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{addStudentClass()}{addStudentClass()}}
+{\footnotesize\ttfamily void Read\+::add\+Student\+Class (\begin{DoxyParamCaption}\item[{int}]{student\+Code,  }\item[{const std\+::string \&}]{student\+Name,  }\item[{const std\+::string \&}]{uc\+Code,  }\item[{const std\+::string \&}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+Add a new student class entry to the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. 
+
+Adds a new student class entry to the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to add. \\
+\hline
+{\em student\+Name} & The name of the student to add. \\
+\hline
+{\em uc\+Code} & The UC code to associate with the student. \\
+\hline
+{\em class\+Code} & The class code to associate with the UC.\\
+\hline
+\end{DoxyParams}
+This function adds a new entry for a student\textquotesingle{}s class to the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. It checks if the entry already exists and appends the new entry if it doesn\textquotesingle{}t.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to add. \\
+\hline
+{\em student\+Name} & The name of the student to add. \\
+\hline
+{\em uc\+Code} & The UC (University Course) code to associate with the student. \\
+\hline
+{\em class\+Code} & The class code to associate with the UC. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a4e80d148d7cb2964130c8ce9a0d1eb95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a545a2a1a7ef56e761d722d2e2906db04}\label{class_read_a545a2a1a7ef56e761d722d2e2906db04} 
+\index{Read@{Read}!compareStudentCodes@{compareStudentCodes}}
+\index{compareStudentCodes@{compareStudentCodes}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{compareStudentCodes()}{compareStudentCodes()}}
+{\footnotesize\ttfamily bool Read\+::compare\+Student\+Codes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}}}]{a,  }\item[{\mbox{\hyperlink{class_student}{Student}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Compare student codes for sorting purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \doxylink{class_student}{Student} object to compare. \\
+\hline
+{\em b} & Second \doxylink{class_student}{Student} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the code of \doxylink{class_student}{Student} \textquotesingle{}a\textquotesingle{} is less than the code of \doxylink{class_student}{Student} \textquotesingle{}b\textquotesingle{}, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_read_a12e8d888c08db74849572f1cf077bcfc}\label{class_read_a12e8d888c08db74849572f1cf077bcfc} 
+\index{Read@{Read}!getClassesPerUcvector@{getClassesPerUcvector}}
+\index{getClassesPerUcvector@{getClassesPerUcvector}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{getClassesPerUcvector()}{getClassesPerUcvector()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_classes___uc}{Classes\+\_\+\+Uc}} $>$ Read\+::get\+Classes\+Per\+Ucvector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector containing class information per UC. 
+
+Returns the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector containing class information per UC.
+
+\begin{DoxyReturn}{Returns}
+Vector of \doxylink{class_classes___uc}{Classes\+\_\+\+Uc} objects. 
+\end{DoxyReturn}
+\Hypertarget{class_read_acb6baf12351d9e048f9dacd5b21076f5}\label{class_read_acb6baf12351d9e048f9dacd5b21076f5} 
+\index{Read@{Read}!getClassvector@{getClassvector}}
+\index{getClassvector@{getClassvector}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{getClassvector()}{getClassvector()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ Read\+::get\+Classvector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \textquotesingle{}lesson\textquotesingle{} vector containing class information. 
+
+Returns the \textquotesingle{}lesson\textquotesingle{} vector containing class information.
+
+\begin{DoxyReturn}{Returns}
+Vector of \doxylink{class_classes}{Classes} objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_acb6baf12351d9e048f9dacd5b21076f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a626a6a8efa2c5d61d91835b98e246329}\label{class_read_a626a6a8efa2c5d61d91835b98e246329} 
+\index{Read@{Read}!getStudentvector@{getStudentvector}}
+\index{getStudentvector@{getStudentvector}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{getStudentvector()}{getStudentvector()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ Read\+::get\+Studentvector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \textquotesingle{}students\textquotesingle{} vector containing student information. 
+
+Returns the \textquotesingle{}students\textquotesingle{} vector containing student information.
+
+\begin{DoxyReturn}{Returns}
+Vector of \doxylink{class_student}{Student} objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a626a6a8efa2c5d61d91835b98e246329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a99eabbb8da3ec55dc51c690aa3ddbcc0}\label{class_read_a99eabbb8da3ec55dc51c690aa3ddbcc0} 
+\index{Read@{Read}!Read\_Classes@{Read\_Classes}}
+\index{Read\_Classes@{Read\_Classes}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{Read\_Classes()}{Read\_Classes()}}
+{\footnotesize\ttfamily void Read\+::\+Read\+\_\+\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_read}{Read} class information from a CSV file and store it in the \textquotesingle{}lesson\textquotesingle{} vector. 
+
+Reads class information from a CSV file and stores it in the \textquotesingle{}lesson\textquotesingle{} vector. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a99eabbb8da3ec55dc51c690aa3ddbcc0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a28d5834663aab0d248695ff30b90d3b0}\label{class_read_a28d5834663aab0d248695ff30b90d3b0} 
+\index{Read@{Read}!Read\_Classes\_Per\_Uc@{Read\_Classes\_Per\_Uc}}
+\index{Read\_Classes\_Per\_Uc@{Read\_Classes\_Per\_Uc}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{Read\_Classes\_Per\_Uc()}{Read\_Classes\_Per\_Uc()}}
+{\footnotesize\ttfamily void Read\+::\+Read\+\_\+\+Classes\+\_\+\+Per\+\_\+\+Uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_read}{Read} class information per UC from a CSV file and store it in the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector. 
+
+Reads class information per UC (University Course) from a CSV file and stores it in the \textquotesingle{}classes\+Per\+Uc\textquotesingle{} vector. \Hypertarget{class_read_a8937d98453bd50947d4e3851e54691ba}\label{class_read_a8937d98453bd50947d4e3851e54691ba} 
+\index{Read@{Read}!Read\_Student@{Read\_Student}}
+\index{Read\_Student@{Read\_Student}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{Read\_Student()}{Read\_Student()}}
+{\footnotesize\ttfamily void Read\+::\+Read\+\_\+\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_read}{Read} student information from a CSV file and store it in the \textquotesingle{}students\textquotesingle{} vector. 
+
+Reads student information from a CSV file and stores it in the \textquotesingle{}students\textquotesingle{} vector. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a8937d98453bd50947d4e3851e54691ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a707eb8d5ac6fb5d27e0c9e06ed8e44f4}\label{class_read_a707eb8d5ac6fb5d27e0c9e06ed8e44f4} 
+\index{Read@{Read}!removeStudentClass@{removeStudentClass}}
+\index{removeStudentClass@{removeStudentClass}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{removeStudentClass()}{removeStudentClass()}}
+{\footnotesize\ttfamily void Read\+::remove\+Student\+Class (\begin{DoxyParamCaption}\item[{int}]{student\+Code,  }\item[{string}]{uc\+Code,  }\item[{string}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+Remove a student class entry from the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. 
+
+Removes a student class entry from the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to remove. \\
+\hline
+{\em student\+Name} & The name of the student to remove. \\
+\hline
+{\em uc\+Code} & The UC code to disassociate from the student. \\
+\hline
+{\em class\+Code} & The class code to disassociate from the UC.\\
+\hline
+\end{DoxyParams}
+This function removes an existing entry for a student\textquotesingle{}s class from the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file. It checks for a match and removes the entry accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to remove. \\
+\hline
+{\em student\+Name} & The name of the student to remove. \\
+\hline
+{\em uc\+Code} & The UC (University Course) code to disassociate from the student. \\
+\hline
+{\em class\+Code} & The class code to disassociate from the UC. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a707eb8d5ac6fb5d27e0c9e06ed8e44f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_a3681b038bb107e853579d4da11d272ee}\label{class_read_a3681b038bb107e853579d4da11d272ee} 
+\index{Read@{Read}!sortClassesByWeekdayAndStartHour@{sortClassesByWeekdayAndStartHour}}
+\index{sortClassesByWeekdayAndStartHour@{sortClassesByWeekdayAndStartHour}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{sortClassesByWeekdayAndStartHour()}{sortClassesByWeekdayAndStartHour()}}
+{\footnotesize\ttfamily void Read\+::sort\+Classes\+By\+Weekday\+And\+Start\+Hour (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_classes}{Classes}} $>$ \&}]{aula }\end{DoxyParamCaption})}
+
+
+
+Sort the \textquotesingle{}aula\textquotesingle{} vector of \doxylink{class_classes}{Classes} objects by weekday and start hour. 
+
+Sorts the \textquotesingle{}aula\textquotesingle{} vector of \doxylink{class_classes}{Classes} objects by weekday and start hour.
+
+This function sorts the input vector \textquotesingle{}aula\textquotesingle{} based on the weekday and start hour of each class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aula} & A vector of \doxylink{class_classes}{Classes} objects to be sorted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_a3681b038bb107e853579d4da11d272ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_aa805e99df891334cd85ed9caf76a70ae}\label{class_read_aa805e99df891334cd85ed9caf76a70ae} 
+\index{Read@{Read}!sortStudentsByCode@{sortStudentsByCode}}
+\index{sortStudentsByCode@{sortStudentsByCode}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{sortStudentsByCode()}{sortStudentsByCode()}}
+{\footnotesize\ttfamily void Read\+::sort\+Students\+By\+Code (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Sort students by their codes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Vector of \doxylink{class_student}{Student} objects to be sorted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_read_ab74001c69506e474edf33f9441f253fb}\label{class_read_ab74001c69506e474edf33f9441f253fb} 
+\index{Read@{Read}!updateStudentClass@{updateStudentClass}}
+\index{updateStudentClass@{updateStudentClass}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{updateStudentClass()}{updateStudentClass()}}
+{\footnotesize\ttfamily void Read\+::update\+Student\+Class (\begin{DoxyParamCaption}\item[{int}]{student\+Code,  }\item[{string}]{uc\+Code,  }\item[{string}]{new\+Class\+Code }\end{DoxyParamCaption})}
+
+
+
+Update the class associated with a student\textquotesingle{}s UC (University Course). 
+
+Updates the class associated with a student\textquotesingle{}s UC (University Course).
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to update. \\
+\hline
+{\em uc\+Code} & The UC code to update. \\
+\hline
+{\em new\+Class\+Code} & The new class code to associate with the student\textquotesingle{}s UC.\\
+\hline
+\end{DoxyParams}
+This function updates the class information for a specific student\textquotesingle{}s UC in the \textquotesingle{}students\+\_\+classes.\+csv\textquotesingle{} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & The code of the student to update. \\
+\hline
+{\em uc\+Code} & The code of the UC (University Course) to update. \\
+\hline
+{\em new\+Class\+Code} & The new class code to associate with the student\textquotesingle{}s UC. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_read_ab74001c69506e474edf33f9441f253fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_read_ac29582be73e6fde7def28d724bf6070c}\label{class_read_ac29582be73e6fde7def28d724bf6070c} 
+\index{Read@{Read}!weekdayToNumber@{weekdayToNumber}}
+\index{weekdayToNumber@{weekdayToNumber}!Read@{Read}}
+\doxysubsubsection{\texorpdfstring{weekdayToNumber()}{weekdayToNumber()}}
+{\footnotesize\ttfamily int Read\+::weekday\+To\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{day }\end{DoxyParamCaption})}
+
+
+
+Convert a weekday string to a corresponding numeric representation. 
+
+Converts a weekday string to a corresponding numeric representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & The weekday string (e.\+g., "{}\+Monday"{}, "{}\+Tuesday"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numeric representation of the weekday (1 for Monday, 2 for Tuesday, and so on). Returns 0 in case of an error or an invalid day. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_read_8h}{Read.\+h}}\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_read_8cpp}{Read.\+cpp}}\end{DoxyCompactItemize}

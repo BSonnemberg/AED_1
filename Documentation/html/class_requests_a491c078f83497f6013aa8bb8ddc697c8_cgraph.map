@@ -1,0 +1,13 @@
+<map id="Requests::undo" name="Requests::undo">
+<area shape="rect" id="Node000001" title="Undo the last student enrollment action." alt="" coords="5,107,118,133"/>
+<area shape="rect" id="Node000002" href="$class_read.html#a4e80d148d7cb2964130c8ce9a0d1eb95" title="Add a new student class entry to the &#39;students_classes.csv&#39; file." alt="" coords="176,5,334,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,104,114,73,164,42,179,35,181,40,167,46,118,77,79,108"/>
+<area shape="rect" id="Node000003" href="$class_read.html#a626a6a8efa2c5d61d91835b98e246329" title="Get the &#39;students&#39; vector containing student information." alt="" coords="177,56,333,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,103,186,84,188,90,116,109"/>
+<area shape="rect" id="Node000004" href="$class_read.html#a8937d98453bd50947d4e3851e54691ba" title="Read student information from a CSV file and store it in the &#39;students&#39; vector." alt="" coords="184,107,326,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,117,169,117,169,123,118,123"/>
+<area shape="rect" id="Node000005" href="$class_read.html#a707eb8d5ac6fb5d27e0c9e06ed8e44f4" title="Remove a student class entry from the &#39;students_classes.csv&#39; file." alt="" coords="166,157,344,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="116,131,188,150,186,156,115,137"/>
+<area shape="rect" id="Node000006" href="$class_read.html#ab74001c69506e474edf33f9441f253fb" title="Update the class associated with a student&#39;s UC (University Course)." alt="" coords="167,208,343,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="79,132,118,163,167,194,181,200,179,205,164,198,114,167,76,136"/>
+</map>

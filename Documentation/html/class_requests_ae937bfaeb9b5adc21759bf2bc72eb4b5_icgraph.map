@@ -1,0 +1,23 @@
+<map id="Requests::getClassSlots" name="Requests::getClassSlots">
+<area shape="rect" id="Node000001" title="Retrieve the schedule slots of a class in a given UC." alt="" coords="832,107,997,133"/>
+<area shape="rect" id="Node000002" href="$class_requests.html#a661dfb22aca4687cead64f1dcccb9a73" title="Check for class schedule overlaps when enrolling in a new class." alt="" coords="588,107,784,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="817,123,784,123,784,117,817,117"/>
+<area shape="rect" id="Node000003" href="$class_requests.html#a1e43413ca401286e55ae61ec0795496a" title="Add a new UC (subject) to a student&#39;s enrollment." alt="" coords="402,56,525,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="608,105,524,86,526,81,610,100"/>
+<area shape="rect" id="Node000007" href="$class_requests.html#a7ed97404bc0301d666acbd8966d8c348" title="Switch a student&#39;s class within the same UC (subject)." alt="" coords="386,107,540,133"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="573,123,540,123,540,117,573,117"/>
+<area shape="rect" id="Node000009" href="$class_requests.html#ae740e8b002387e2d4d64ed85f53e8c2a" title="Switch a student&#39;s UC (subject) and class." alt="" coords="394,157,533,184"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="610,140,526,159,524,154,608,135"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="228,5,278,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,54,277,27,278,22,391,49"/>
+<area shape="rect" id="Node000005" href="$class_menu.html#ad79b0e4c2440cffb77b0d0417e246bc5" title="Display the menu for adding a new UC for a student." alt="" coords="187,56,319,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="386,72,320,72,320,67,386,67"/>
+<area shape="rect" id="Node000006" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,107,120,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="186,90,116,109,115,103,184,85"/>
+<area shape="rect" id="Node000008" href="$class_menu.html#a07e39cc3c192472ff5a605ecf4024dd5" title="Display the menu for changing a student&#39;s Class for a given UC." alt="" coords="168,107,338,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="371,123,338,123,338,117,371,117"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="152,123,120,123,120,117,152,117"/>
+<area shape="rect" id="Node000010" href="$class_menu.html#a414d87b52170d8320872a5f69dc9f898" title="Display the menu for switching a student&#39;s UC and Class." alt="" coords="178,157,328,184"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="378,173,328,173,328,168,378,168"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="184,155,115,137,116,131,186,150"/>
+</map>

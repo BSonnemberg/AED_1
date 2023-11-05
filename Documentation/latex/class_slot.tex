@@ -1,0 +1,245 @@
+\doxysection{Slot Class Reference}
+\hypertarget{class_slot}{}\label{class_slot}\index{Slot@{Slot}}
+
+
+Represents a time slot with information about the day, start time, end time, and type.  
+
+
+
+
+{\ttfamily \#include $<$Slot.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_slot_a92a49d49328f84e7f8eb6c709d80b33c}{Slot}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_slot}{Slot} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_slot_a3c8901206b19d104ece29796fa451472}{Slot}} (std\+::string week\+Day, double begin\+Time, double duration, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \doxylink{class_slot}{Slot} class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_slot_af04e1710ad666389e30ebad9671d0df4}{get\+Week\+Day}} ()
+\begin{DoxyCompactList}\small\item\em Get the day of the week for the time slot. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_slot_a7e4404bad632e27155d4ec95f4c0d90c}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the time slot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_slot_ae0fa32c6f96b3de7640b4e32492fcbac}{get\+Start\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the start time of the time slot. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_slot_a52eddfa1b3cd1954a31535f5739fd2b6}{get\+End\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the end time of the time slot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_slot_a4500ba03903284243e913119b5596d6b}{overlaps}} (\mbox{\hyperlink{class_slot}{Slot}} \&other)
+\begin{DoxyCompactList}\small\item\em Check if the current time slot overlaps with another time slot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_slot_afb8c235e1e4be7dcdf82da6ab1768418}{operator==}} (\mbox{\hyperlink{class_slot}{Slot}} \&other)
+\begin{DoxyCompactList}\small\item\em Compare two time slots for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_slot_a3559a7b6f8a01904cfd4b6c613714946}{operator$<$}} (\mbox{\hyperlink{class_slot}{Slot}} \&other)
+\begin{DoxyCompactList}\small\item\em Compare two time slots for ordering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a time slot with information about the day, start time, end time, and type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_slot_a92a49d49328f84e7f8eb6c709d80b33c}\label{class_slot_a92a49d49328f84e7f8eb6c709d80b33c} 
+\index{Slot@{Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Slot\+::\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_slot}{Slot} class. 
+
+Initializes the time slot with default values. \Hypertarget{class_slot_a3c8901206b19d104ece29796fa451472}\label{class_slot_a3c8901206b19d104ece29796fa451472} 
+\index{Slot@{Slot}!Slot@{Slot}}
+\index{Slot@{Slot}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{Slot()}{Slot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Slot\+::\+Slot (\begin{DoxyParamCaption}\item[{std\+::string}]{week\+Day,  }\item[{double}]{start\+Time,  }\item[{double}]{duration,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \doxylink{class_slot}{Slot} class. 
+
+Initializes the time slot with the provided values for the day of the week, start time, duration, and type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em week\+Day} & The day of the week for the time slot. \\
+\hline
+{\em begin\+Time} & The start time of the time slot. \\
+\hline
+{\em duration} & The duration of the time slot. \\
+\hline
+{\em type} & The type of the time slot.\\
+\hline
+\end{DoxyParams}
+Initializes the time slot with the provided values for the day of the week, start time, duration, and type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em week\+Day} & The day of the week for the time slot. \\
+\hline
+{\em start\+Time} & The start time of the time slot. \\
+\hline
+{\em duration} & The duration of the time slot. \\
+\hline
+{\em type} & The type of the time slot. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_slot_a52eddfa1b3cd1954a31535f5739fd2b6}\label{class_slot_a52eddfa1b3cd1954a31535f5739fd2b6} 
+\index{Slot@{Slot}!getEndTime@{getEndTime}}
+\index{getEndTime@{getEndTime}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getEndTime()}{getEndTime()}}
+{\footnotesize\ttfamily double Slot\+::get\+End\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the end time of the time slot. 
+
+\begin{DoxyReturn}{Returns}
+The end time of the time slot as a floating-\/point number. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_slot_a52eddfa1b3cd1954a31535f5739fd2b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_slot_ae0fa32c6f96b3de7640b4e32492fcbac}\label{class_slot_ae0fa32c6f96b3de7640b4e32492fcbac} 
+\index{Slot@{Slot}!getStartTime@{getStartTime}}
+\index{getStartTime@{getStartTime}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getStartTime()}{getStartTime()}}
+{\footnotesize\ttfamily double Slot\+::get\+Start\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the start time of the time slot. 
+
+\begin{DoxyReturn}{Returns}
+The start time of the time slot as a floating-\/point number. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_slot_ae0fa32c6f96b3de7640b4e32492fcbac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_slot_a7e4404bad632e27155d4ec95f4c0d90c}\label{class_slot_a7e4404bad632e27155d4ec95f4c0d90c} 
+\index{Slot@{Slot}!getType@{getType}}
+\index{getType@{getType}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Slot\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the type of the time slot. 
+
+\begin{DoxyReturn}{Returns}
+The type of the time slot as a string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_slot_a7e4404bad632e27155d4ec95f4c0d90c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_slot_af04e1710ad666389e30ebad9671d0df4}\label{class_slot_af04e1710ad666389e30ebad9671d0df4} 
+\index{Slot@{Slot}!getWeekDay@{getWeekDay}}
+\index{getWeekDay@{getWeekDay}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{getWeekDay()}{getWeekDay()}}
+{\footnotesize\ttfamily std\+::string Slot\+::get\+Week\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the day of the week for the time slot. 
+
+\begin{DoxyReturn}{Returns}
+The day of the week as a string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_slot_af04e1710ad666389e30ebad9671d0df4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_slot_a3559a7b6f8a01904cfd4b6c613714946}\label{class_slot_a3559a7b6f8a01904cfd4b6c613714946} 
+\index{Slot@{Slot}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Slot\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Compare two time slots for ordering. 
+
+This function compares the current time slot with another time slot for ordering purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The time slot to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the current time slot is less than the other, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_slot_afb8c235e1e4be7dcdf82da6ab1768418}\label{class_slot_afb8c235e1e4be7dcdf82da6ab1768418} 
+\index{Slot@{Slot}!operator==@{operator==}}
+\index{operator==@{operator==}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Slot\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Compare two time slots for equality. 
+
+This function compares the current time slot with another time slot for equality.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The time slot to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the time slots are equal, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_slot_a4500ba03903284243e913119b5596d6b}\label{class_slot_a4500ba03903284243e913119b5596d6b} 
+\index{Slot@{Slot}!overlaps@{overlaps}}
+\index{overlaps@{overlaps}!Slot@{Slot}}
+\doxysubsubsection{\texorpdfstring{overlaps()}{overlaps()}}
+{\footnotesize\ttfamily bool Slot\+::overlaps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Check if the current time slot overlaps with another time slot. 
+
+This function checks if the current time slot overlaps with the provided time slot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The time slot to check for overlap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is an overlap, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_slot_a4500ba03903284243e913119b5596d6b_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_slot_8h}{Slot.\+h}}\item 
+FEUP-\/\+AED-\/project/\mbox{\hyperlink{_slot_8cpp}{Slot.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="Slot::getType" name="Slot::getType">
+<area shape="rect" id="Node000001" title="Get the type of the time slot." alt="" coords="153,5,251,32"/>
+<area shape="rect" id="Node000002" href="$class_slot.html#a4500ba03903284243e913119b5596d6b" title="Check if the current time slot overlaps with another time slot." alt="" coords="5,5,105,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>

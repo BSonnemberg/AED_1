@@ -1,0 +1,7 @@
+<map id="Requests::switchUC" name="Requests::switchUC">
+<area shape="rect" id="Node000001" title="Switch a student&#39;s UC (subject) and class." alt="" coords="366,5,505,32"/>
+<area shape="rect" id="Node000002" href="$class_menu.html#a414d87b52170d8320872a5f69dc9f898" title="Display the menu for switching a student&#39;s UC and Class." alt="" coords="168,5,318,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="350,21,319,21,319,16,350,16"/>
+<area shape="rect" id="Node000003" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,5,120,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,21,120,21,120,16,152,16"/>
+</map>
