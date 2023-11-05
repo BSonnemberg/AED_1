@@ -25,9 +25,9 @@ class Read {
         void updateStudentClass(int studentCode, string  ucCode, string newClassCode);
         void Read_Classes_Per_Uc();
         vector<Classes_Uc> getClassesPerUcvector();
-    void addStudentClass(int studentCode, const std::string& studentName, const std::string& ucCode, const std::string& classCode);
+     void addStudentClass(int studentCode, const std::string& studentName, const std::string& ucCode, const std::string& classCode);
 
-    void removeStudentClass(int studentCode, string studentName, string ucCode, string classCode);
+    void removeStudentClass(int studentCode, string ucCode, string classCode);
 
     bool compareStudentCodes(Student a, Student b);
     void sortStudentsByCode(std::vector<Student>& students);

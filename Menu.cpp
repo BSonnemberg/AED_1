@@ -23,7 +23,8 @@ void Menu::firstMenu(){
                   << "8 - Add  UC" << endl
                   << "9 - Remove UC" << endl
                   << "10 - Switch UC" << endl
-                  << "11 - Exit" << std::endl;
+                  << "11 - Undo last move" << endl
+                  << "12 - Exit" << std::endl;
         std::cout << "Please insert a number: ";
 
         std::cin >> option;
@@ -65,6 +66,9 @@ void Menu::firstMenu(){
                     menuSwitchUC();
                     break;
                 case 11:
+                    undu();
+                    break;
+                case 12:
                     std::cout << "Exiting the program. Goodbye!" << std::endl;
                     return; // Encerra o programa
                 default:
@@ -72,7 +76,7 @@ void Menu::firstMenu(){
                     break;
             }
         }
-    } while (option != 11);
+    } while (option != 12);
 
 }
 
@@ -241,4 +245,10 @@ void Menu::menuSwitchUC() {
 
     request.switchUC(StudentCode,ucCode,newClassCode, newUCCode);
 
+}
+
+void Menu::undu() {
+    Read reader;
+    Requests request (reader);
+    request.undo();
 }

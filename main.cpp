@@ -12,8 +12,20 @@ using namespace std;
 
 int main() {
 
-    Menu menu;
-    menu.firstMenu();
+   // Menu menu;
+    //menu.firstMenu();
+    Read reader;
+    Requests requests;
+
+    requests.addUC(202025232,"L.EIC001","1LEIC02");
+    requests.undo();
+
+
+
+
+
+
+
 
 
 

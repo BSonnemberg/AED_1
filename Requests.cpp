@@ -3,6 +3,7 @@
 
 
 Requests::Requests(Read reader) {}
+
 Requests::Requests() {}
 
 bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::string newClassCode){
@@ -106,7 +107,13 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
 }
 
     void Requests::switchClass(int StudentCode, std::string ucCode, std::string newClassCode) {
-        Read reader;
+        Action action;
+        action.type = ActionType::switchClass ;
+        action.studentCode=StudentCode;
+        action.ucCode = ucCode;
+        action.newClassCode=newClassCode;
+        action.description= "Switch";
+    Read reader;
         reader.Read_Student();
         std::vector<Student> students = reader.getStudentvector();
 
@@ -120,23 +127,29 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
                 studentFound = true;
 
                 if (student.getClassCode() == newClassCode) {
+
+                    rejectedRequests.push(action);
                     std::cout << "The student " << student.getStudentName() << " is already in the class "
                               << newClassCode << "." << std::endl;
                 } else {
                     checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
                     if (vacancy(ucCode, student.getClassCode(), newClassCode) && capacity(ucCode, newClassCode) && checkOverlap){
-
+                        action.classCode=student.getClassCode();
                         student.setClassCode(newClassCode);
+                        acceptedRequests.push(action);
                         std::cout << "The student " << student.getStudentName() << " was transferred to the class "
                                   << newClassCode << "." << std::endl;
                         reader.updateStudentClass(StudentCode, ucCode, newClassCode);
                     } else if (!vacancy(ucCode, student.getClassCode(), newClassCode)) {
+                        rejectedRequests.push(action);
                         std::cout << "The change causes imbalance in classes" << std::endl;
                     }  else {
                         if (checkOverlap==false){
+                            rejectedRequests.push(action);
                             cout<<"There is a schedule conflit";
                         }
                         else{
+                            rejectedRequests.push(action);
                             cout << "Não há vagas na nova turma!";
                         }
                     }
@@ -175,6 +188,12 @@ bool Requests::capacity(std::string ucCode, std::string newClassCode) {
 
 
 bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassCode) {
+    Action action;
+    action.type = ActionType::AddUC;
+    action.studentCode=StudentCode;
+    action.ucCode = ucCode;
+    action.classCode=newClassCode;
+    action.description= "Adicionada UC " + ucCode + " para o aluno " + std::to_string(StudentCode);
     Read reader;
     reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
@@ -188,6 +207,7 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
             studentName = student.getStudentName();
 
             if(student.getUcCode()==ucCode) {
+                rejectedRequests.push(action);
                 cout << "Student is already registered for the specified UC.";
                 return false;
             }
@@ -199,26 +219,31 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
 
 
     if (ucCount >= 7) {
+        rejectedRequests.push(action);
         std::cout << "The student is already registered in 7 UCs. Cannot add more." << std::endl;
         return false;
     }
     checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
 
     if (checkOverlap==false){
+        rejectedRequests.push(action);
         cout<<"There is a schedule conflit";
         return false;
     }
     // Verificar se há vaga na nova UC.
     else if (!capacity( ucCode, newClassCode)) {
+        rejectedRequests.push(action);
         std::cout << "No vacancy in the new UC. Cannot add." << std::endl;
         return false;
     }
 
     else {
         // Adicionar a UC para o aluno e atualizar o arquivo "students_classes.csv".
+        acceptedRequests.push(action);
         cout << studentName;
         reader.addStudentClass(StudentCode, studentName, ucCode, newClassCode);
         std::cout << "UC " << ucCode << " added to student " << StudentCode << "." << std::endl;
+
         return true;
     }
 }
@@ -226,6 +251,11 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
 // Função para remover uma UC de um aluno
 
 bool Requests::removeUC(int StudentCode, string ucCode) {
+    Action action;
+    action.type = ActionType::RemoveUC;
+    action.studentCode=StudentCode;
+    action.ucCode = ucCode;
+    action.description= "Remove";
     Read reader;
     reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
@@ -236,29 +266,48 @@ bool Requests::removeUC(int StudentCode, string ucCode) {
     for (Student& student : students) {
 
         if (student.getStudentCode() == StudentCode && student.getUcCode() == ucCode ) {
-            studentName = student.getStudentName();
-            classCode = student.getClassCode();
+            action.name= student.getStudentName();
+            classCode =student.getClassCode();
+            action.classCode = student.getClassCode();
 
             found = true;
+            acceptedRequests.push(action);
+            std::cout << "UC " << ucCode << " removed from student " << StudentCode << "." << std::endl;
+            reader.removeStudentClass(StudentCode,ucCode, classCode);
+
             return true;
         }
         std::cout << "UC not found for the student." << std::endl;
+        rejectedRequests.push(action);
         return false;
     }
 
     // Remover a UC do aluno e atualizar o arquivo "students_classes.csv".
-    reader.removeStudentClass(StudentCode, studentName,ucCode, classCode);
+    acceptedRequests.push(action);
     std::cout << "UC " << ucCode << " removed from student " << StudentCode << "." << std::endl;
+    reader.removeStudentClass(StudentCode,ucCode, classCode);
+
+
 
     return true;
 }
 
 // Função para trocar de UC para um aluno
 void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, const std::string& newUCCode) {
+    Action action;
+    action.type = ActionType::SwitchUC;
+    action.studentCode=StudentCode;
+    action.ucCode = ucCode;
+
+    action.newClassCode=newClassCode;
+    action.newUcCode = newUCCode;
+    action.description= "SwitchUC";
     string studentname;
+    string classCode;
     Read reader;
     reader.Read_Student();
     if (!capacity(newClassCode,newClassCode)) {
+        rejectedRequests.push(action);
         std::cout << "Transfer not allowed. The class has reached its maximum occupancy difference." << std::endl;
         return;
     }
@@ -271,15 +320,22 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
 
     for (Student& student : students) {
         if (student.getStudentCode() == StudentCode) {
+
             if (student.getUcCode() == ucCode) {
 
+
                 if (student.getClassCode() == newClassCode && student.getUcCode() == newUCCode) {
+                    rejectedRequests.push(action);
                     std::cout << "The student " << student.getStudentName() << " is already in the class " << newClassCode << "in uc" << newUCCode <<  "." << std::endl;
                 } else {
+                    rejectedRequests.push(action);
                     std::cout << "Student found." << std::endl;
                 }
                 found = true;
+                action.classCode=student.getClassCode();
+                action.name = student.getStudentName();
                 studentname = student.getStudentName();
+                classCode = student.getClassCode();
                 break;
             }
         }
@@ -287,12 +343,51 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
     bool checkOverlap=this->cheekClassOverlap(StudentCode, ucCode, newClassCode);
 
     if (checkOverlap==false){
+        rejectedRequests.push(action);
         cout<<"There is a schedule conflit";
     }
 
     // Remover a UC atual e adicionar a nova UC para o aluno
+    acceptedRequests.push(action);
+    cout<<"Switch UC";
+    reader.addStudentClass(StudentCode,studentname,newUCCode,newClassCode);
+    reader.removeStudentClass(StudentCode,ucCode,classCode);
 
-    removeUC(StudentCode, ucCode);
-    addUC(StudentCode,  newUCCode, newClassCode);
 }
+
+void Requests::undo() {
+    Read reader;
+    reader.Read_Student();
+    std::vector<Student> students = reader.getStudentvector();
+
+    if (!acceptedRequests.empty()) {
+        Action lastAction = acceptedRequests.top();
+        switch (lastAction.type){
+            case ActionType::AddUC:
+                cout << "UNDO";
+                reader.removeStudentClass(lastAction.studentCode, lastAction.ucCode,lastAction.classCode);
+                break;
+            case ActionType::SwitchUC:
+                cout << "Undo swutvhUc";
+                reader.removeStudentClass(lastAction.studentCode,lastAction.newUcCode, lastAction.newClassCode);
+                reader.addStudentClass(lastAction.studentCode,lastAction.name,lastAction.ucCode,lastAction.classCode);
+                break;
+            case ActionType::RemoveUC:
+                cout << "UNDO REMOVE";
+                reader.addStudentClass(lastAction.studentCode,lastAction.name,lastAction.ucCode,lastAction.classCode);
+                break;
+            case ActionType::switchClass:
+                cout << "UNDO SWITCHCLASS";
+                reader.updateStudentClass(lastAction.studentCode, lastAction.ucCode,lastAction.classCode);
+                break;
+
+
+
+        }
+    } else {
+        std::cout << "No actions to undo." << std::endl;
+    }
+           }
+
+
 

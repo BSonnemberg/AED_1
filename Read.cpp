@@ -212,7 +212,7 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
 }
 
 
-void Read::removeStudentClass(int studentCode,string studentName, string ucCode, string classCode) {
+void Read::removeStudentClass(int studentCode, string ucCode, string classCode) {
     std::string filename = "../schedule/students_classes.csv";
     std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome do arquivo temporário
     std::ifstream inFile(filename);

@@ -23,6 +23,7 @@ class Menu {
         void menuAddUc();
         void menuRemoveUc();
         void menuSwitchUC();
+        void undu();
 };
 
 

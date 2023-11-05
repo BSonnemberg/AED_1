@@ -17,11 +17,34 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <queue>
+#include <stack>
+
+enum class ActionType {
+    AddUC,
+    RemoveUC,
+    SwitchUC,
+    switchClass,
+    // Adicione outros tipos de ação conforme necessário
+};
+
+// Defina uma estrutura de dados para representar uma ação
+struct Action {
+    ActionType type;
+    int studentCode;
+    std::string ucCode;
+    std::string classCode;
+    std::string description; // Uma descrição da ação (opcional)
+    string newClassCode;
+    string  newUcCode;
+    string name;
+};
+
 
 
 class Requests {
 public:
-
+    void undo();
     int cap =30;
 
     Requests(Read reader);
@@ -39,6 +62,9 @@ public:
 
 private:
 
+
+    std::stack<Action> acceptedRequests; // Fila para pedidos aceites
+    std::stack<Action> rejectedRequests; // Fila para pedidos recusados
 
 
 };
