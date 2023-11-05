@@ -93,13 +93,13 @@ class Read {
 
         int weekdayToNumber(const std::string& day);
         /**
-         * @brief Sort the 'aula' vector of Classes objects by weekday and start hour.
+         * @brief Sort the '_class' vector of Classes objects by weekday and start hour.
          *
-         * This function sorts the input vector 'aula' based on the weekday and start hour of each class.
+         * This function sorts the input vector '_class' based on the weekday and start hour of each class.
          *
-         * @param aula A vector of Classes objects to be sorted.
+         * @param _class A vector of Classes objects to be sorted.
          */
-        void sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula);
+        void sortClassesByWeekdayAndStartHour(std::vector<Classes>& _clss);
 
 
 

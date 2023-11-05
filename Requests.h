@@ -7,9 +7,6 @@
  */
 #ifndef PROJETO_AED_REQUESTS_H
 #define PROJETO_AED_REQUESTS_H
-
-
-
 #ifndef REQUESTS_H
 #define REQUESTS_H
 
@@ -161,13 +158,13 @@ public:
     * @return A vector of Slot objects representing the class's schedule slots.
     */
     vector<Slot> getClassSlots(std::string ClassCode, std::string UcCode);
-
-private:
-
-
     std::stack<Action> acceptedRequests; // Fila para pedidos aceites
     std::stack<Action> rejectedRequests; // Fila para pedidos recusados
-
+    stack<Action> getAcceptRequests();
+    string actionTypeToString(ActionType type);
+    void saveStack();
+    ActionType actionTypeToEnum(string type);
+    void loadStack();
 
 };
 

@@ -1,6 +1,3 @@
-//
-// Created by Marta on 27/10/2023.
-//
 
 #ifndef PROJETO_AED_STUDENT_H
 #define PROJETO_AED_STUDENT_H
@@ -62,6 +59,7 @@ class Student {
          * @param newClassCode The new class code to set for the student.
          */
         void setClassCode(string& newClassCode);
+        void setUcCode(string& ucCode);
 
 
 };

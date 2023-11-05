@@ -178,6 +178,13 @@ void Read::updateStudentClass(int studentCode, string ucCode, string newClassCod
             if (currentStudentCode == std::to_string(studentCode) && currentUcCode == ucCode) {
                 outFile << studentCode << "," << studentName << "," << ucCode << "," << newClassCode << '\n';
                 updated = true;
+                for (Student& student : students) {
+                    if (student.getStudentCode() == studentCode && student.getUcCode()==ucCode) {
+                        student.setUcCode(ucCode);
+                        student.setClassCode(newClassCode);
+                        break;
+                    }
+                }
             } else {
                 outFile << currentStudentCode << "," << studentName << "," << currentUcCode << "," << classCode << '\n';
             }
@@ -245,6 +252,7 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
 
     // Escreva a nova entrada no arquivo
     outFile << studentCode << "," << studentName << "," << ucCode << "," << classCode << std::endl;
+    students.push_back(Student(studentCode, studentName, ucCode, classCode));
 
     // Feche os arquivos
     inFile.close();
@@ -268,6 +276,14 @@ void Read::removeStudentClass(int studentCode, string ucCode, string classCode) 
     std::ofstream outFile(tempFilename);
     std::string line;
     bool removed = false;
+    int studentIndex = -1;
+
+    for (size_t i = 0; i < students.size(); i++) {
+        if (students[i].getStudentCode() == studentCode && students[i].getUcCode() == ucCode) {
+            studentIndex = static_cast<int>(i);
+            break;
+        }
+    }
 
     while (std::getline(inFile, line)) {
         std::istringstream lineStream(line);
@@ -293,6 +309,9 @@ void Read::removeStudentClass(int studentCode, string ucCode, string classCode) 
     outFile.close();
 
     if (removed) {
+        if (studentIndex != -1) {
+            students.erase(students.begin() + studentIndex);
+        }
         if (std::remove(filename.c_str()) == 0 && std::rename(tempFilename.c_str(), filename.c_str()) == 0) {
             // Sucesso ao substituir o arquivo original após a remoção da entrada.
         } else {

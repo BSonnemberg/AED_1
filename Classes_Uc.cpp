@@ -1,7 +1,3 @@
-//
-// Created by Marta on 01/11/2023.
-//
-
 #include "Classes_Uc.h"
 
 /**

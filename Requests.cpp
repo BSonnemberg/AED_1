@@ -1,5 +1,7 @@
 #include "Requests.h"
 #include <algorithm>
+#include <fstream>
+#include <sstream>
 
 /**
  * @brief Constructor for the Requests class.
@@ -156,7 +158,7 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
         action.ucCode = ucCode;
         action.newClassCode=newClassCode;
         action.description= "Switch";
-    Read reader;
+        Read reader;
         reader.Read_Student();
         std::vector<Student> students = reader.getStudentvector();
 
@@ -442,11 +444,11 @@ void Requests::undo() {
         Action lastAction = acceptedRequests.top();
         switch (lastAction.type){
             case ActionType::AddUC:
-                cout << "UNDO";
+                cout << "UNDO ADDUC";
                 reader.removeStudentClass(lastAction.studentCode, lastAction.ucCode,lastAction.classCode);
                 break;
             case ActionType::SwitchUC:
-                cout << "Undo swutvhUc";
+                cout << "Undo SWITCHUC";
                 reader.removeStudentClass(lastAction.studentCode,lastAction.newUcCode, lastAction.newClassCode);
                 reader.addStudentClass(lastAction.studentCode,lastAction.name,lastAction.ucCode,lastAction.classCode);
                 break;
@@ -469,3 +471,82 @@ void Requests::undo() {
 
 
 
+stack<Action> Requests::getAcceptRequests(){
+    return acceptedRequests;
+}
+
+
+string Requests::actionTypeToString(ActionType type) {
+    switch (type) {
+        case ActionType::AddUC: return "AddUC";
+        case ActionType::RemoveUC: return "RemoveUC";
+        case ActionType::SwitchUC: return "SwitchUC";
+        case ActionType::switchClass: return "switchClass";
+        default: return " ";
+    }
+}
+
+
+void Requests::saveStack(){
+    string filename= "../schedule/saveStack.txt";
+    ofstream file(filename);
+    stack<Action>aux1;
+    if(file.is_open()){
+
+        while(acceptedRequests.size()>0){
+
+            Action aux2 = acceptedRequests.top();
+            aux1.push(aux2);
+            acceptedRequests.pop();
+        }
+        while(aux1.size()>0){
+
+            Action aux3 =aux1.top();
+            aux1.pop();
+            string line;
+
+            file << actionTypeToString(aux3.type) << ";"<<aux3.studentCode<< ";"<<aux3.ucCode<<";"<<aux3.classCode<<";"<<aux3.description<<";"<<aux3.newClassCode<<";"<<aux3.newUcCode<<";"<<aux3.name;
+        }
+    }
+    file.close();
+}
+
+ActionType Requests::actionTypeToEnum(string type) {
+    if(type=="AddUC") return ActionType::AddUC;
+    if(type== "RemoveUC") return ActionType::RemoveUC;
+    if(type=="SwitchUC") return ActionType::SwitchUC;
+    if(type=="switchClass") return ActionType::switchClass ;
+    return ActionType::AddUC;
+}
+
+
+void Requests::loadStack(){
+    std::string filename = "../schedule/saveStack.txt";
+    std::ifstream inFile(filename);
+
+    if (!inFile.is_open()) {
+        std::cerr << "Error opening the file." << std::endl;
+        return;
+    }
+    std::string line;
+    while (std::getline(inFile, line)) {
+
+        std::istringstream lineStream(line);
+        Action action;
+        string type;
+        string studentCode;
+        if (std::getline(lineStream, type, ';') &&
+            std::getline(lineStream, studentCode, ';') &&
+            std::getline(lineStream, action.ucCode, ';') &&
+            std::getline(lineStream, action.classCode, ';')&&
+            std::getline(lineStream, action.description, ';') &&
+            std::getline(lineStream, action.newClassCode, ';') &&
+            std::getline(lineStream, action.newUcCode, ';')&&
+            std::getline(lineStream, action.name, ';')){
+
+        }
+        action.studentCode = stoi(studentCode);
+        action.type= actionTypeToEnum(type);
+        acceptedRequests.push(action);
+    }
+}

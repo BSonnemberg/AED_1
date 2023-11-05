@@ -56,5 +56,7 @@ void Student::setClassCode(string& newClassCode){
     ClassCode = newClassCode;
 }
 
-
+void Student::setUcCode(string& ucCode){
+    UcCode = ucCode;
+}
 

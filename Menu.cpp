@@ -1,18 +1,17 @@
-//
-// Created by Marta on 31/10/2023.
-//
-
 #include <limits>
 #include "Menu.h"
 /**
  * @brief Default constructor for the Menu class.
  */
-Menu::Menu() {}
+Menu::Menu() {
+    this->requests=Requests (this->reader);
+}
 
 /**
  * @brief Display and manage the first menu with various options.
  */
 void Menu::firstMenu(){
+    requests.loadStack();
     int option;
     do {
         std::cout << '\n' << "--------------------Menu--------------------" << std::endl;
@@ -69,10 +68,11 @@ void Menu::firstMenu(){
                     menuSwitchUC();
                     break;
                 case 11:
-                    undu();
+                    menuUndo();
                     break;
                 case 12:
                     std::cout << "Exiting the program. Goodbye!" << std::endl;
+                    requests.saveStack();
                     return; // Encerra o programa
                 default:
                     std::cout << "Choose a valid number." << std::endl;
@@ -200,8 +200,6 @@ void Menu::menuChangeClass() {
     int StudentCode;
     std::string ucCode;
     std::string newClassCode;
-    Read reader;
-    Requests request (reader);
 
     cout << "Please insert the student code: ";
     cin >> StudentCode;
@@ -212,14 +210,12 @@ void Menu::menuChangeClass() {
     cout << "Please insert the New Class Code: ";
     cin >> newClassCode;
 
-    request.switchClass(StudentCode,ucCode,newClassCode);
+    this->requests.switchClass(StudentCode,ucCode,newClassCode);
 }
 /**
  * @brief Display the menu for adding a new UC for a student.
  */
 void Menu::menuAddUc() {
-    Read reader;
-    Requests request (reader);
     int StudentCode;
     std::string ucCode;
     std::string newClassCode;
@@ -230,29 +226,25 @@ void Menu::menuAddUc() {
     cout << "Please insert the new Class Code: ";
     cin >> newClassCode;
 
-    request.addUC(StudentCode,ucCode,newClassCode);
+    this->requests.addUC(StudentCode,ucCode,newClassCode);
 
 }
 /**
  * @brief Display the menu for removing a UC from a student.
  */
 void Menu::menuRemoveUc() {
-    Read reader;
-    Requests request (reader);
     int StudentCode;
     string ucCode;
     cout << "Please insert the student code: ";
     cin >> StudentCode;
     cout << "Please insert the ucCode: ";
     cin >> ucCode;
-    request.removeUC(StudentCode,ucCode);
+    this->requests.removeUC(StudentCode,ucCode);
 }
 /**
  * @brief Display the menu for switching a student's UC and Class.
  */
 void Menu::menuSwitchUC() {
-    Read reader;
-    Requests request (reader);
     int StudentCode;
     string ucCode;
     string newClassCode;
@@ -266,7 +258,8 @@ void Menu::menuSwitchUC() {
     cout << "Please insert the new UC Code: ";
     cin >> newUCCode;
 
-    request.switchUC(StudentCode,ucCode,newClassCode, newUCCode);
+    this->requests.switchUC(StudentCode,ucCode,newClassCode, newUCCode);
+
 
 }
 /**
@@ -275,8 +268,10 @@ void Menu::menuSwitchUC() {
  * This function is responsible for undoing the last action executed in the menu, if possible.
  * It uses the `Requests` class to manage undo operations.
  */
-void Menu::undu() {
-    Read reader;
-    Requests request (reader);
-    request.undo();
+void Menu::menuUndo() {
+    this->requests.undo();
+}
+
+Requests Menu::getRequests(){
+    return requests;
 }
