@@ -24,10 +24,10 @@ public:
      *
      * This function calculates the start and end times of a class based on its start hour and duration.
      *
-     * @param aula The class object for which to calculate the hours.
+     * @param _class The class object for which to calculate the hours.
      * @return A pair containing the start time and end time in hours and minutes.
      */
-    pair<std::pair<int, int>, std::pair<int, int>> calcularHoras(Classes aula);
+    pair<std::pair<int, int>, std::pair<int, int>> calcularHoras(Classes _class);
 
     /**
      * @brief Print the schedule for a specific class based on the provided class code.

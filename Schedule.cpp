@@ -11,15 +11,15 @@
  *
  * This function calculates the start and end times of a class based on its start hour and duration.
  *
- * @param aula The class object for which to calculate the hours.
+ * @param _class The class object for which to calculate the hours.
  * @return A pair containing the start time and end time in hours and minutes.
  */
-std::pair<std::pair<int, int>, std::pair<int, int>> Schedule:: calcularHoras(Classes aula) {
-    int horasInicio = static_cast<int>(aula.getStartHour());
-    double decimalMinutosInicio = (aula.getStartHour() - horasInicio) * 60;
+std::pair<std::pair<int, int>, std::pair<int, int>> Schedule:: calcularHoras(Classes _class) {
+    int horasInicio = static_cast<int>(_class.getStartHour());
+    double decimalMinutosInicio = (_class.getStartHour() - horasInicio) * 60;
     int minutosInicio = static_cast<int>(decimalMinutosInicio);
-    int horasFim = horasInicio + static_cast<int>(aula.getDuration());
-    int minutosFim = minutosInicio + static_cast<int>((aula.getDuration() - static_cast<int>(aula.getDuration())) * 60);
+    int horasFim = horasInicio + static_cast<int>(_class.getDuration());
+    int minutosFim = minutosInicio + static_cast<int>((_class.getDuration() - static_cast<int>(_class.getDuration())) * 60);
 
     while (minutosInicio >= 60) {
         minutosInicio -= 60;
@@ -46,7 +46,7 @@ void Schedule::printStudentSchedule(int studentCode) {
     reader.Read_Student();
     vector<Student> students = reader.getStudentvector();
     reader.Read_Classes();
-    vector<Classes> aula = reader.getClassvector();
+    vector<Classes> _class = reader.getClassvector();
     vector<Classes> aux;
 
     for (Student student : students){
@@ -56,7 +56,7 @@ void Schedule::printStudentSchedule(int studentCode) {
                 cout << "Schedule for Student " << student.getStudentName() << " (Student Code: " << student.getStudentCode() << "):\n";
                 ft=false;
             }
-            for (Classes Class : aula) {
+            for (Classes Class : _class) {
                 if (Class.getUcCode() == student.getUcCode() && Class.getClassCode()==student.getClassCode()) {
                     aux.push_back(Class);
                 }
@@ -91,13 +91,13 @@ void Schedule::printClassSchedule(std::string ClassCode) {
 
     Read reader;
     reader.Read_Classes();
-    vector<Classes> aula = reader.getClassvector();
+    vector<Classes> _class = reader.getClassvector();
     vector<Classes> aux;
 
     bool found = false;
     string currentDay = "";
 
-    for (Classes Class : aula) {
+    for (Classes Class : _class) {
         if (Class.getClassCode() == ClassCode) {
             aux.push_back(Class);
         }
@@ -134,13 +134,13 @@ void Schedule::printClassSchedule(std::string ClassCode) {
 void Schedule::printUcSchedule(std::string UcCode) {
     Read reader;
     reader.Read_Classes();
-    vector<Classes> aula = reader.getClassvector();
+    vector<Classes> _class = reader.getClassvector();
     vector<Classes> aux;
 
     pair <int,int>currenthour ; // Inicialização das variáveis
     string currentType = "";
 
-    for (Classes Class : aula) {
+    for (Classes Class : _class) {
         if (Class.getUcCode() == UcCode) {
             aux.push_back(Class);
         }
@@ -158,7 +158,7 @@ void Schedule::printUcSchedule(std::string UcCode) {
                 currentDay = Class.getWeekday();
                 cout << "-----" << currentDay << "-----" << endl;
                 currenthour = {-1,-1}; // Reiniciar a hora ao mudar de dia
-                currentType = ""; // Reiniciar o tipo de aula ao mudar de dia
+                currentType = ""; // Reiniciar o tipo de _class ao mudar de dia
             }
 
             if (horas.first != currenthour || currentType != Class.getType()) {

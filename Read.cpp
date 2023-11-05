@@ -101,14 +101,14 @@ int Read::weekdayToNumber(const std::string& day) {
     return 0; // Em caso de erro ou dia inválido
 }
 /**
- * @brief Sorts the 'aula' vector of Classes objects by weekday and start hour.
+ * @brief Sorts the '_class' vector of Classes objects by weekday and start hour.
  *
- * This function sorts the input vector 'aula' based on the weekday and start hour of each class.
+ * This function sorts the input vector '_class' based on the weekday and start hour of each class.
  *
- * @param aula A vector of Classes objects to be sorted.
+ * @param _class A vector of Classes objects to be sorted.
  */
-void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& aula) {
-    std::sort(aula.begin(), aula.end(), [this](Classes a, Classes b) {
+void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& _class) {
+    std::sort(_class.begin(), _class.end(), [this](Classes a, Classes b) {
         // Primeiro, compara os dias da semana
         if (weekdayToNumber(a.getWeekday()) != weekdayToNumber(b.getWeekday())) {
             return weekdayToNumber(a.getWeekday()) < weekdayToNumber(b.getWeekday());

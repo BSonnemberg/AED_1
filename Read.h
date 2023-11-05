@@ -99,7 +99,7 @@ class Read {
          *
          * @param _class A vector of Classes objects to be sorted.
          */
-        void sortClassesByWeekdayAndStartHour(std::vector<Classes>& _clss);
+        void sortClassesByWeekdayAndStartHour(std::vector<Classes>& _class);
 
 
 
