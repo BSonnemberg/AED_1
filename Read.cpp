@@ -14,6 +14,7 @@ using namespace std;
 /**
  * @brief Reads class information from a CSV file and stores it in the 'lesson' vector.
  */
+ // Complexity: O(n)
 void Read::Read_Classes() {
 
     string ClassCode, UcCode, Weekday, Type;
@@ -53,6 +54,7 @@ vector<Classes> Read::getClassvector(){
 /**
  * @brief Reads student information from a CSV file and stores it in the 'students' vector.
  */
+ // Complexity: O(n)
 void Read::Read_Student() {
     int StudentCode;
     string StudentName, UcCode,ClassCode;
@@ -91,6 +93,7 @@ vector<Student> Read::getStudentvector() {
  * @return Numeric representation of the weekday (1 for Monday, 2 for Tuesday, and so on).
  *         Returns 0 in case of an error or an invalid day.
  */
+ // Complexity: O(1)
 int Read::weekdayToNumber(const std::string& day) {
     // Mapeamento dos dias da semana para números
     if (day == "Monday") return 1;
@@ -107,6 +110,7 @@ int Read::weekdayToNumber(const std::string& day) {
  *
  * @param _class A vector of Classes objects to be sorted.
  */
+ // Complexity : O(n*log n)
 void Read::sortClassesByWeekdayAndStartHour(std::vector<Classes>& _class) {
     std::sort(_class.begin(), _class.end(), [this](Classes a, Classes b) {
         // Primeiro, compara os dias da semana
@@ -159,7 +163,7 @@ vector<Classes_Uc> Read::getClassesPerUcvector() {
  */
 void Read::updateStudentClass(int studentCode, string ucCode, string newClassCode) {
     std::string filename = "../schedule/students_classes.csv";
-    std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome de arquivo temporário
+    std::string tempFilename = "../schedule/students_classes_temp.csv";
     std::ifstream inFile(filename);
     std::ofstream outFile(tempFilename);
     std::string line;
@@ -196,7 +200,6 @@ void Read::updateStudentClass(int studentCode, string ucCode, string newClassCod
 
     if (updated) {
         if (std::remove(filename.c_str()) == 0 && std::rename(tempFilename.c_str(), filename.c_str()) == 0) {
-            // Sucesso ao substituir o arquivo original
         } else {
             std::cerr << "Error replacing the original file." << std::endl;
         }
@@ -204,17 +207,15 @@ void Read::updateStudentClass(int studentCode, string ucCode, string newClassCod
 }
 
 /**
- * @brief Adds a new student class entry to the 'students_classes.csv' file.
+ * @brief Add a new entry for a student with the provided details.
  *
- * This function adds a new entry for a student's class to the 'students_classes.csv' file. It checks if the entry already exists and appends the new entry if it doesn't.
- *
- * @param studentCode The code of the student to add.
- * @param studentName The name of the student to add.
- * @param ucCode The UC (University Course) code to associate with the student.
- * @param classCode The class code to associate with the UC.
+ * @param studentCode The code identifying the student.
+ * @param studentName The name of the student.
+ * @param ucCode The code identifying the University Course.
+ * @param classCode The class code to add for the student.
  */
 void Read::addStudentClass(int studentCode, const std::string& studentName, const std::string& ucCode, const std::string& classCode) {
-    // Abra o arquivo original para leitura
+
     std::string filename = "../schedule/students_classes.csv";
     std::ifstream inFile(filename);
 
@@ -223,7 +224,7 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
         return;
     }
 
-    // Verifique se a entrada já existe no arquivo
+
     std::string line;
     while (std::getline(inFile, line)) {
         std::istringstream lineStream(line);
@@ -241,7 +242,6 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
         }
     }
 
-    // Agora abra o arquivo para adicionar a nova entrada
     std::ofstream outFile(filename, std::ios::app);  // Abra o arquivo no modo de anexar
 
     if (!outFile.is_open()) {
@@ -250,28 +250,25 @@ void Read::addStudentClass(int studentCode, const std::string& studentName, cons
         return;
     }
 
-    // Escreva a nova entrada no arquivo
+
     outFile << studentCode << "," << studentName << "," << ucCode << "," << classCode << std::endl;
     students.push_back(Student(studentCode, studentName, ucCode, classCode));
 
-    // Feche os arquivos
+
     inFile.close();
     outFile.close();
 }
 
 /**
- * @brief Removes a student class entry from the 'students_classes.csv' file.
+ * @brief Remove the student's class information based on provided parameters.
  *
- * This function removes an existing entry for a student's class from the 'students_classes.csv' file. It checks for a match and removes the entry accordingly.
- *
- * @param studentCode The code of the student to remove.
- * @param studentName The name of the student to remove.
- * @param ucCode The UC (University Course) code to disassociate from the student.
- * @param classCode The class code to disassociate from the UC.
+ * @param studentCode The code identifying the student.
+ * @param ucCode The code identifying the University Course.
+ * @param classCode The class code to remove for the student.
  */
 void Read::removeStudentClass(int studentCode, string ucCode, string classCode) {
     std::string filename = "../schedule/students_classes.csv";
-    std::string tempFilename = "../schedule/students_classes_temp.csv"; // Nome do arquivo temporário
+    std::string tempFilename = "../schedule/students_classes_temp.csv";
     std::ifstream inFile(filename);
     std::ofstream outFile(tempFilename);
     std::string line;
@@ -296,10 +293,10 @@ void Read::removeStudentClass(int studentCode, string ucCode, string classCode) 
             std::getline(lineStream, currentclassCode)) {
 
             if (currentStudentCode == std::to_string(studentCode) && currentUcCode == ucCode) {
-                // A entrada corresponde ao aluno e UC, então não a copiamos para o arquivo de saída (removemos).
+
                 removed = true;
             } else {
-                // A entrada não corresponde, então a copiamos para o arquivo de saída.
+
                 outFile << currentStudentCode << "," << currentstudentName << "," << currentUcCode << "," << currentclassCode << '\n';
             }
         }
@@ -313,7 +310,7 @@ void Read::removeStudentClass(int studentCode, string ucCode, string classCode) 
             students.erase(students.begin() + studentIndex);
         }
         if (std::remove(filename.c_str()) == 0 && std::rename(tempFilename.c_str(), filename.c_str()) == 0) {
-            // Sucesso ao substituir o arquivo original após a remoção da entrada.
+
         } else {
             std::cerr << "Error replacing the original file." << std::endl;
         }

@@ -1,9 +1,0 @@
-<map id="Requests::removeUC" name="Requests::removeUC">
-<area shape="rect" id="Node000001" title="Remove a UC (subject) from a student&#39;s enrollment." alt="" coords="5,56,149,83"/>
-<area shape="rect" id="Node000002" href="$class_read.html#a626a6a8efa2c5d61d91835b98e246329" title="Get the &#39;students&#39; vector containing student information." alt="" coords="208,5,364,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,53,213,34,214,39,136,58"/>
-<area shape="rect" id="Node000003" href="$class_read.html#a8937d98453bd50947d4e3851e54691ba" title="Read student information from a CSV file and store it in the &#39;students&#39; vector." alt="" coords="215,56,357,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,67,200,67,200,72,149,72"/>
-<area shape="rect" id="Node000004" href="$class_read.html#a707eb8d5ac6fb5d27e0c9e06ed8e44f4" title="Remove a student class entry from the &#39;students_classes.csv&#39; file." alt="" coords="197,107,375,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,81,214,100,213,105,135,86"/>
-</map>

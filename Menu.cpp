@@ -1,7 +1,7 @@
 #include <limits>
 #include "Menu.h"
 /**
- * @brief Default constructor for the Menu class.
+ * @brief Constructor for Menu class.
  */
 Menu::Menu() {
     this->requests=Requests (this->reader);
@@ -32,7 +32,7 @@ void Menu::firstMenu(){
         std::cin >> option;
 
         if (std::cin.fail()) {
-            std::cin.clear(); // Limpa o estado de erro
+            std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descarta a entrada inválida
             std::cout << "Invalid input. Please enter a valid number." << std::endl;
         } else {
@@ -73,7 +73,7 @@ void Menu::firstMenu(){
                 case 12:
                     std::cout << "Exiting the program. Goodbye!" << std::endl;
                     requests.saveStack();
-                    return; // Encerra o programa
+                    return;
                 default:
                     std::cout << "Choose a valid number." << std::endl;
                     break;
@@ -271,6 +271,11 @@ void Menu::menuSwitchUC() {
 void Menu::menuUndo() {
     this->requests.undo();
 }
+
+/**
+ * @brief Get the Requests object associated with the Menu.
+ * @return Requests object.
+ */
 
 Requests Menu::getRequests(){
     return requests;

@@ -55,6 +55,13 @@ string Student::getClassCode() {
 void Student::setClassCode(string& newClassCode){
     ClassCode = newClassCode;
 }
+/**
+ * @brief Set the UC (subject) code for the student.
+ *
+ * This function sets the UC code for the student.
+ *
+ * @param ucCode The UC code to set for the student.
+ */
 
 void Student::setUcCode(string& ucCode){
     UcCode = ucCode;

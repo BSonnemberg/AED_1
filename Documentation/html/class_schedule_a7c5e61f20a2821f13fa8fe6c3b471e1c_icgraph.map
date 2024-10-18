@@ -1,7 +1,0 @@
-<map id="Schedule::printUcSchedule" name="Schedule::printUcSchedule">
-<area shape="rect" id="Node000001" title="Print the schedule for a specific course (UC) based on the provided UC code." alt="" coords="379,5,557,32"/>
-<area shape="rect" id="Node000002" href="$class_menu.html#af80a0caed06ad9718803be8c58bdd6ea" title="Display the menu for printing a UC&#39;s schedule." alt="" coords="168,5,331,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="364,21,332,21,332,16,364,16"/>
-<area shape="rect" id="Node000003" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,5,120,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,21,120,21,120,16,152,16"/>
-</map>

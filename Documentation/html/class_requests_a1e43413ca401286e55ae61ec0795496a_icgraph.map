@@ -1,9 +1,0 @@
-<map id="Requests::addUC" name="Requests::addUC">
-<area shape="rect" id="Node000001" title="Add a new UC (subject) to a student&#39;s enrollment." alt="" coords="348,31,471,57"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="209,5,259,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,36,259,25,259,20,333,30"/>
-<area shape="rect" id="Node000003" href="$class_menu.html#ad79b0e4c2440cffb77b0d0417e246bc5" title="Display the menu for adding a new UC for a student." alt="" coords="168,56,300,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="333,58,301,62,300,57,332,52"/>
-<area shape="rect" id="Node000004" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,56,120,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="152,72,120,72,120,67,152,67"/>
-</map>

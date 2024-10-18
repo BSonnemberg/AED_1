@@ -23,6 +23,7 @@ Requests::Requests() {}
  * @param newClassCode The code of the new class the student wants to enroll in.
  * @return True if no schedule overlap occurs, False if there is an overlap.
  */
+ //Complexity: O(n * m)
 bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::string newClassCode){
 
     std::vector<Classes> students_classes= this->getStudentClasses(StudentCode);
@@ -48,6 +49,7 @@ bool Requests::cheekClassOverlap(int StudentCode, std::string ucCode, std::strin
  * @param StudentCode The unique identifier of the student.
  * @return A vector containing the classes associated with the student.
  */
+//Complexity: O(m * n)
 vector<Classes> Requests::getStudentClasses(int StudentCode){
     Read reader;
     reader.Read_Student();
@@ -137,7 +139,7 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
     }
 
     if (abs(differenceWithOldClass)> maxOccupancyDifference) {
-        return false; // A diferença de ocupação excede o limite em relação à turma antiga da mesma UC.
+        return false;
     }
 
     return true;
@@ -195,7 +197,7 @@ bool Requests::vacancy(std::string& ucCode, string oldClassCode, std::string& ne
                         }
                         else{
                             rejectedRequests.push(action);
-                            cout << "Não há vagas na nova turma!";
+                            cout << "There are no vacancies in the class!";
                         }
                     }
 
@@ -255,7 +257,7 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
     action.studentCode=StudentCode;
     action.ucCode = ucCode;
     action.classCode=newClassCode;
-    action.description= "Adicionada UC " + ucCode + " para o aluno " + std::to_string(StudentCode);
+    action.description= "Added UC " + ucCode + " to the student " + std::to_string(StudentCode);
     Read reader;
     reader.Read_Student();
     std::vector<Student> students = reader.getStudentvector();
@@ -292,7 +294,6 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
         cout<<"There is a schedule conflit";
         return false;
     }
-    // Verificar se há vaga na nova UC.
     else if (!capacity( ucCode, newClassCode)) {
         rejectedRequests.push(action);
         std::cout << "No vacancy in the new UC. Cannot add." << std::endl;
@@ -300,9 +301,7 @@ bool Requests::addUC(int StudentCode, std::string ucCode,  std::string newClassC
     }
 
     else {
-        // Adicionar a UC para o aluno e atualizar o arquivo "students_classes.csv".
         acceptedRequests.push(action);
-        cout << studentName;
         reader.addStudentClass(StudentCode, studentName, ucCode, newClassCode);
         std::cout << "UC " << ucCode << " added to student " << StudentCode << "." << std::endl;
 
@@ -388,7 +387,7 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
         return;
     }
 
-// Verificar conflito de horários.
+
 
 
     std::vector<Student> students = reader.getStudentvector();
@@ -423,7 +422,7 @@ void Requests::switchUC(int StudentCode, string ucCode,  string newClassCode, co
         cout<<"There is a schedule conflit";
     }
 
-    // Remover a UC atual e adicionar a nova UC para o aluno
+
     acceptedRequests.push(action);
     cout<<"Switch UC";
     reader.addStudentClass(StudentCode,studentname,newUCCode,newClassCode);
@@ -469,13 +468,20 @@ void Requests::undo() {
     }
            }
 
-
+/**
+ * @brief Retrieve the accepted requests stack.
+ * @return The stack containing the accepted requests.
+ */
 
 stack<Action> Requests::getAcceptRequests(){
     return acceptedRequests;
 }
 
-
+/**
+ * @brief Convert an action type to a string representation.
+ * @param type The ActionType enum to be converted.
+ * @return String representation of the ActionType.
+ */
 string Requests::actionTypeToString(ActionType type) {
     switch (type) {
         case ActionType::AddUC: return "AddUC";
@@ -486,7 +492,9 @@ string Requests::actionTypeToString(ActionType type) {
     }
 }
 
-
+/**
+ * @brief Save the accepted requests stack to a file.
+ */
 void Requests::saveStack(){
     string filename= "../schedule/saveStack.txt";
     ofstream file(filename);
@@ -510,7 +518,11 @@ void Requests::saveStack(){
     }
     file.close();
 }
-
+/**
+ * @brief Convert a string representation to an action type enum.
+ * @param type String representation of the ActionType.
+ * @return The corresponding ActionType enum.
+ */
 ActionType Requests::actionTypeToEnum(string type) {
     if(type=="AddUC") return ActionType::AddUC;
     if(type== "RemoveUC") return ActionType::RemoveUC;
@@ -518,7 +530,9 @@ ActionType Requests::actionTypeToEnum(string type) {
     if(type=="switchClass") return ActionType::switchClass ;
     return ActionType::AddUC;
 }
-
+/**
+ * @brief Save the accepted requests stack to a file.
+ */
 
 void Requests::loadStack(){
     std::string filename = "../schedule/saveStack.txt";

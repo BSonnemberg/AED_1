@@ -1,7 +1,0 @@
-<map id="Requests::removeUC" name="Requests::removeUC">
-<area shape="rect" id="Node000001" title="Remove a UC (subject) from a student&#39;s enrollment." alt="" coords="371,5,514,32"/>
-<area shape="rect" id="Node000002" href="$class_menu.html#a374b3531c7f88ca41ece6b02d2ee7c6b" title="Display the menu for removing a UC from a student." alt="" coords="168,5,323,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,21,323,21,323,16,355,16"/>
-<area shape="rect" id="Node000003" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,5,120,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,21,120,21,120,16,152,16"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="Requests::undo" name="Requests::undo">
-<area shape="rect" id="Node000001" title="Undo the last student enrollment action." alt="" coords="305,31,417,57"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="188,5,237,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,34,237,25,238,20,290,29"/>
-<area shape="rect" id="Node000003" href="$class_menu.html#a73c0982f4c0b8ee38660c92f3c082b28" title="Perform an undo operation in the menu." alt="" coords="168,56,257,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="290,59,258,64,257,59,289,54"/>
-<area shape="rect" id="Node000004" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,56,120,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="152,72,120,72,120,67,152,67"/>
-</map>

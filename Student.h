@@ -59,6 +59,13 @@ class Student {
          * @param newClassCode The new class code to set for the student.
          */
         void setClassCode(string& newClassCode);
+        /**
+        * @brief Sets the UC (subject) code for the object.
+        *
+        * This method updates the UC code for the object.
+        *
+        * @param ucCode The UC code to set for the object.
+        */
         void setUcCode(string& ucCode);
 
 

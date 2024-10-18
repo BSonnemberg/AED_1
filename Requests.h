@@ -28,7 +28,6 @@ enum class ActionType {
     RemoveUC,
     SwitchUC,
     switchClass,
-    // Adicione outros tipos de ação conforme necessário
 };
 
 /**
@@ -36,14 +35,14 @@ enum class ActionType {
  * @brief Data structure to represent a student enrollment action.
  */
 struct Action {
-    ActionType type;
-    int studentCode;
-    std::string ucCode;
-    std::string classCode;
-    std::string description; // Uma descrição da ação (opcional)
-    string newClassCode;
-    string  newUcCode;
-    string name;
+    ActionType type;           /**< Type of action */
+    int studentCode;           /**< Unique identifier of the student */
+    std::string ucCode;        /**< Code of the University Course (UC) */
+    std::string classCode;     /**< Code of the class */
+    std::string description;   /**< Description of the action (optional) */
+    std::string newClassCode;  /**< Code of the new class (for certain actions) */
+    std::string newUcCode;     /**< Code of the new University Course (for certain actions) */
+    std::string name;          /**< Name of the student */
 };
 
 
@@ -158,12 +157,28 @@ public:
     * @return A vector of Slot objects representing the class's schedule slots.
     */
     vector<Slot> getClassSlots(std::string ClassCode, std::string UcCode);
-    std::stack<Action> acceptedRequests; // Fila para pedidos aceites
-    std::stack<Action> rejectedRequests; // Fila para pedidos recusados
-    stack<Action> getAcceptRequests();
+    std::stack<Action> acceptedRequests; /**< Stack for accepted requests */
+    std::stack<Action> rejectedRequests;  /**< Stack for rejected requests */
+    stack<Action> getAcceptRequests();/**< Get the stack of accepted requests */
+    /**
+     * @brief Function to convert ActionType enum to a string.
+     * @param type The ActionType enum value.
+     * @return A string representing the ActionType.
+     */
     string actionTypeToString(ActionType type);
+    /**
+     * @brief Function to save the stack of accepted requests to a file.
+     */
     void saveStack();
+    /**
+     * @brief Function to convert a string to ActionType enum.
+     * @param type The string representing the ActionType.
+     * @return An ActionType enum value.
+     */
     ActionType actionTypeToEnum(string type);
+    /**
+     * @brief Function to load the stack of accepted requests from a file.
+     */
     void loadStack();
 
 };

@@ -73,6 +73,10 @@ class Menu {
          * @brief Perform an undo operation in the menu.
          */
         void menuUndo();
+        /**
+        * @brief Retrieve the Requests object associated with the Menu.
+        * @return Requests object.
+        */
         Requests getRequests();
 
     private:

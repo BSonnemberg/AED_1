@@ -1,7 +1,0 @@
-<map id="Schedule::printStudentClass" name="Schedule::printStudentClass">
-<area shape="rect" id="Node000001" title="Print the student information for a specific class based on the provided class code and sorting type." alt="" coords="387,5,573,32"/>
-<area shape="rect" id="Node000002" href="$class_menu.html#a834d54763dfa6294184f21d7463350f7" title="Display the menu for printing students of a given class." alt="" coords="168,5,339,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,21,339,21,339,16,371,16"/>
-<area shape="rect" id="Node000003" href="$class_menu.html#a44eef43d2bddbb8d57079451a5bee6ba" title="Display and manage the first menu with various options." alt="" coords="5,5,120,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,21,120,21,120,16,152,16"/>
-</map>
